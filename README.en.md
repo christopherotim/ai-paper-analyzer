@@ -56,10 +56,6 @@ python run.py basic 2025-07-29
 | ⚡ **Batch Processing**     | Support multi-date batch analysis            | Efficiently process large amounts of data      |
 | 🔄 **Incremental Updates**  | Intelligently detect processed content       | Avoid duplicate work, save time                |
 
-<!-- 📸 Screenshot needed: Feature overview -->
-
-![Feature Overview](screenshots/features-overview.png)
-
 ## 🚀 Use Cases
 
 ### 👨‍🔬 Researchers
@@ -92,7 +88,7 @@ python run.py basic 2025-07-29
 
 ```bash
 # Clone project
-git clone <repository-url>
+git clone https://github.com/ZsTs119/ai-paper-analyzer.git
 cd ai-paper-analyzer
 
 # Install dependencies
@@ -161,7 +157,9 @@ python run.py status  # Check system status
 
 <!-- 📸 Screenshot needed: GUI detailed operation steps -->
 
-![GUI Operation Steps](screenshots/gui-steps.png)
+![GUI Operation Steps](screenshots/gui-steps1.png)
+![GUI Operation Steps](screenshots/gui-steps2.png)
+![GUI Operation Steps](screenshots/gui-steps3.png)
 
 ### 💻 Command Line Scripts (Professional & Efficient)
 
@@ -207,7 +205,9 @@ python run.py status
 
 <!-- 📸 Screenshot needed: CLI execution examples -->
 
-![CLI Examples](screenshots/cli-examples.png)
+![CLI Examples](screenshots/cli-examples1.png)
+![CLI Examples](screenshots/cli-examples2.png)
+![CLI Examples](screenshots/cli-examples3.png)
 
 ## 📊 Output Results
 
@@ -236,7 +236,8 @@ data/
 
 <!-- 📸 Screenshot needed: Analysis report example -->
 
-![Analysis Report Example](screenshots/analysis-report.png)
+![Analysis Report Example](screenshots/analysis-report1.png)
+![Analysis Report Example](screenshots/analysis-report2.png)
 
 ## 🔧 Advanced Configuration
 
@@ -605,10 +606,6 @@ python tools/batch_processor.py daily --start 2025-02-01 --end 2025-02-28
 - **Storage space**: About 1-2MB analysis results per paper
 - **Network traffic**: About 100-500KB per paper
 
-<!-- 📸 Screenshot needed: Performance monitoring interface -->
-
-![Performance Monitor](screenshots/performance-monitor.png)
-
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
@@ -617,8 +614,13 @@ This project is licensed under the [MIT License](LICENSE).
 
 - [HuggingFace](https://huggingface.co/) - Providing paper data source
 - [Zhipu AI](https://open.bigmodel.cn/) - AI analysis service
-- [Doubao AI](https://console.volcengine.com/) - AI analysis service
 - All contributors and users for their support
+
+## 👨‍💻 Author
+
+- ZsTs119
+- Email: zsts@foxmail.com
+- GitHub: https://github.com/ZsTs119
 
 ---
 

@@ -88,8 +88,8 @@ python run.py --help
 
 ```bash
 # 克隆项目
-git clone <repository-url>
-cd paper-analysis-system
+git clone https://github.com/ZsTs119/ai-paper-analyzer.git
+cd ai-paper-analyzer
 
 # 安装依赖
 pip install -r requirements.txt
@@ -615,6 +615,12 @@ python tools/batch_processor.py daily --start 2025-02-01 --end 2025-02-28
 - [HuggingFace](https://huggingface.co/) - 提供论文数据源
 - [智谱 AI](https://open.bigmodel.cn/) - AI 分析服务
 - 所有贡献者和用户的支持
+
+## 👨‍💻 作者
+
+- ZsTs119
+- Email: zsts@foxmail.com
+- GitHub: https://github.com/ZsTs119
 
 ---
 
