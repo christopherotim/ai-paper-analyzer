@@ -99,12 +99,12 @@ pip install -r requirements.txt
 
 Support multiple AI services, choose one:
 
-| AI Service | Environment Variable | Get Address                                              |
-| ---------- | -------------------- | -------------------------------------------------------- |
-| Zhipu AI   | `ZHIPUAI_API_KEY`    | [Zhipu AI Open Platform](https://open.bigmodel.cn/)      |
-| Doubao AI  | `ARK_API_KEY`        | [Volcano Engine](https://console.volcengine.com/)        |
-| OpenAI     | `OPENAI_API_KEY`     | [OpenAI Platform](https://platform.openai.com/)          |
-| Qwen       | `DASHSCOPE_API_KEY`  | [Alibaba Cloud DashScope](https://dashscope.aliyun.com/) |
+| AI Service | Environment Variable | Get Address                                                                                                    |
+| ---------- | -------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Zhipu AI   | `ZHIPUAI_API_KEY`    | [Zhipu AI Open Platform](https://www.bigmodel.cn/invite?icode=hk0Lc1L7oGy17bOhwrIMDGczbXFgPRGIalpycrEwJ28%3D/) |
+| Doubao AI  | `ARK_API_KEY`        | [Volcano Engine](https://console.volcengine.com/)                                                              |
+| OpenAI     | `OPENAI_API_KEY`     | [OpenAI Platform](https://platform.openai.com/)                                                                |
+| Qwen       | `DASHSCOPE_API_KEY`  | [Alibaba Cloud DashScope](https://dashscope.aliyun.com/)                                                       |
 
 **Method 1: GUI Configuration (Recommended)**
 
