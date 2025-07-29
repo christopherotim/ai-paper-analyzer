@@ -30,7 +30,8 @@ python run_gui.py
 
 <!-- 📸 Screenshot needed: GUI workflow -->
 
-![GUI Workflow](screenshots/gui-workflow.gif)
+![GUI Workflow](screenshots/gui-workflow-gui.gif)
+![CLI Workflow](screenshots/gui-workflow-cli.gif)
 
 ### 💻 Command Line Version (Recommended for Professionals)
 

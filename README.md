@@ -30,7 +30,8 @@ python run_gui.py
 
 <!-- 📸 需要截图：GUI界面操作流程 -->
 
-![GUI操作流程](screenshots/gui-workflow.png)
+![GUI操作流程](screenshots/gui-workflow-gui.gif)
+![CLI操作流程](screenshots/gui-workflow-cli.gif)
 
 ### 💻 命令行版（推荐专业用户）
 

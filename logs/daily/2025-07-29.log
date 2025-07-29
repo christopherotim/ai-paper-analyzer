@@ -1,0 +1,231 @@
+2025-07-29 21:09:02,824 [INFO] config_manager: 模型配置加载成功: config\models.yaml
+2025-07-29 21:09:02,829 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-07-29 21:09:02,829 [INFO] config_manager: 配置文件加载完成
+2025-07-29 21:09:02,830 [INFO] main_app: 论文分析系统启动
+2025-07-29 21:09:02,830 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-07-29 21:09:02,832 [INFO] main_app: 开始日常分析: 2025-07-29
+2025-07-29 21:09:02,834 [INFO] downloader: 开始下载 2025-07-29 的论文元数据
+2025-07-29 21:09:03,831 [INFO] downloader: API请求成功，状态码: 200
+2025-07-29 21:09:03,840 [INFO] downloader: JSON文件保存成功: data\daily_reports\metadata\2025-07-29.json
+2025-07-29 21:09:03,841 [INFO] downloader: 元数据保存成功: data\daily_reports\metadata\2025-07-29.json
+2025-07-29 21:09:03,842 [INFO] downloader: 成功下载并保存元数据到: data\daily_reports\metadata\2025-07-29.json
+2025-07-29 21:09:04,765 [INFO] cleaner: 开始清洗 2025-07-29 的论文数据
+2025-07-29 21:09:04,765 [INFO] cleaner: 数据预处理完成: 原始 18 条 -> 精简 18 条
+2025-07-29 21:10:22,003 [INFO] ai_client_GLM-4.5-Air: API调用: GLM-4.5-Air_chat, 状态: success, 耗时: 77.24秒
+2025-07-29 21:10:22,103 [INFO] cleaner: AI清洗成功，提取了 1 条记录
+2025-07-29 21:10:22,103 [INFO] cleaner: 数据清洗完成，原始数据: 18 条，清洗后: 1 条
+2025-07-29 21:10:22,105 [INFO] cleaner: JSON文件保存成功: data\daily_reports\cleaned\2025-07-29_clean.json
+2025-07-29 21:10:22,105 [INFO] cleaner: 清洗数据保存成功: data\daily_reports\cleaned\2025-07-29_clean.json
+2025-07-29 21:10:22,105 [INFO] cleaner: 数据清洗完成: data\daily_reports\cleaned\2025-07-29_clean.json
+2025-07-29 21:10:22,305 [INFO] parser: 从清洗数据中解析出 15 篇论文
+2025-07-29 21:10:22,508 [INFO] analyzer: 开始批量分析 15 篇论文
+2025-07-29 21:10:22,509 [INFO] analyzer: 批量分析完成，成功: 0/0，跳过: 15
+2025-07-29 21:10:57,658 [INFO] config_manager: 模型配置加载成功: config\models.yaml
+2025-07-29 21:10:57,664 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-07-29 21:10:57,664 [INFO] config_manager: 配置文件加载完成
+2025-07-29 21:10:57,665 [INFO] main_app: 论文分析系统启动
+2025-07-29 21:10:57,665 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-07-29 21:10:57,666 [INFO] main_app: 成功加载 16 个分析结果
+2025-07-29 21:10:57,667 [INFO] main_app: 开始高级分析: 2025-07-29
+2025-07-29 21:10:58,186 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-07-29 21:10:58,186 [INFO] classifier: 开始MD切分 16 篇论文
+2025-07-29 21:10:58,187 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\ARC-Hunyuan-Video-7B真实世界短视频的结构化视频理解.md
+2025-07-29 21:10:58,288 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\智能体强化策略优化.md
+2025-07-29 21:10:58,390 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\重建4D空间智能综述.md
+2025-07-29 21:10:58,493 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\SmallThinker一种专为本地部署而原生训练的高效大型语言模型家族.md
+2025-07-29 21:10:58,594 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\Rep-MTL释放表示级任务显著性在多任务学习中的力量.md
+2025-07-29 21:10:58,695 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\基于区域的聚类判别用于视觉表示学习.md
+2025-07-29 21:10:58,797 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\几何平均策略优化.md
+2025-07-29 21:10:58,899 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\GPT-IMAGE-EDIT-15M百万规模的GPT生成图像数据集.md
+2025-07-29 21:10:59,000 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\ForCenNet面向文档图像矫正的前景中心网络.md
+2025-07-29 21:10:59,102 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\JAM具有细粒度可控性和美学对齐的小型基于流的歌曲生成器.md
+2025-07-29 21:10:59,205 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\音乐竞技场文本到音乐的实时评估.md
+2025-07-29 21:10:59,307 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\自我进化代理综述通向超级人工智能之路.md
+2025-07-29 21:10:59,410 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\UloRL一种推进大语言模型推理能力的超长输出强化学习方法.md
+2025-07-29 21:10:59,512 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\Met²Net用于复杂气象系统的解耦两阶段时空预测模型.md
+2025-07-29 21:10:59,614 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\ScenePainter基于概念关系对齐的语义一致持续3D场景生成.md
+2025-07-29 21:10:59,716 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\GenoMAS通过代码驱动的基因表达分析进行科学发现的多智能体框架.md
+2025-07-29 21:10:59,920 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-07-29 21:10:59,920 [INFO] classifier: 开始批量分类 16 篇论文
+2025-07-29 21:10:59,920 [INFO] classifier: 开始分类论文: 2507.20939
+2025-07-29 21:11:00,923 [INFO] classifier: 开始分类论文: 2507.19849
+2025-07-29 21:12:07,998 [INFO] config_manager: 模型配置加载成功: config\models.yaml
+2025-07-29 21:12:08,004 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-07-29 21:12:08,004 [INFO] config_manager: 配置文件加载完成
+2025-07-29 21:12:08,005 [INFO] main_app: 论文分析系统启动
+2025-07-29 21:12:08,005 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-07-29 21:12:08,007 [INFO] main_app: 开始日常分析: 2024-05-15
+2025-07-29 21:12:08,008 [INFO] downloader: 开始下载 2024-05-15 的论文元数据
+2025-07-29 21:12:08,856 [INFO] downloader: API请求成功，状态码: 200
+2025-07-29 21:12:08,864 [INFO] downloader: JSON文件保存成功: data\daily_reports\metadata\2024-05-15.json
+2025-07-29 21:12:08,865 [INFO] downloader: 元数据保存成功: data\daily_reports\metadata\2024-05-15.json
+2025-07-29 21:12:08,865 [INFO] downloader: 成功下载并保存元数据到: data\daily_reports\metadata\2024-05-15.json
+2025-07-29 21:12:09,376 [INFO] cleaner: 开始清洗 2024-05-15 的论文数据
+2025-07-29 21:12:09,377 [INFO] cleaner: 数据预处理完成: 原始 8 条 -> 精简 8 条
+2025-07-29 21:12:56,378 [INFO] config_manager: 模型配置加载成功: config\models.yaml
+2025-07-29 21:12:56,383 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-07-29 21:12:56,383 [INFO] config_manager: 配置文件加载完成
+2025-07-29 21:12:56,384 [INFO] main_app: 论文分析系统启动
+2025-07-29 21:12:56,384 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-07-29 21:12:56,386 [INFO] main_app: 开始日常分析: 2024-05-15
+2025-07-29 21:12:56,386 [INFO] downloader: 开始下载 2024-05-15 的论文元数据
+2025-07-29 21:12:57,253 [INFO] downloader: API请求成功，状态码: 200
+2025-07-29 21:12:57,262 [INFO] downloader: JSON文件保存成功: data\daily_reports\metadata\2024-05-15.json
+2025-07-29 21:12:57,263 [INFO] downloader: 元数据保存成功: data\daily_reports\metadata\2024-05-15.json
+2025-07-29 21:12:57,264 [INFO] downloader: 成功下载并保存元数据到: data\daily_reports\metadata\2024-05-15.json
+2025-07-29 21:12:57,783 [INFO] cleaner: 开始清洗 2024-05-15 的论文数据
+2025-07-29 21:12:57,784 [INFO] cleaner: 数据预处理完成: 原始 8 条 -> 精简 8 条
+2025-07-29 21:13:30,246 [INFO] ai_client_GLM-4.5-Air: API调用: GLM-4.5-Air_chat, 状态: success, 耗时: 32.46秒
+2025-07-29 21:13:30,330 [INFO] cleaner: AI清洗成功，提取了 1 条记录
+2025-07-29 21:13:30,330 [INFO] cleaner: 数据清洗完成，原始数据: 8 条，清洗后: 1 条
+2025-07-29 21:13:30,332 [INFO] cleaner: JSON文件保存成功: data\daily_reports\cleaned\2024-05-15_clean.json
+2025-07-29 21:13:30,333 [INFO] cleaner: 清洗数据保存成功: data\daily_reports\cleaned\2024-05-15_clean.json
+2025-07-29 21:13:30,333 [INFO] cleaner: 数据清洗完成: data\daily_reports\cleaned\2024-05-15_clean.json
+2025-07-29 21:13:30,536 [INFO] parser: 从清洗数据中解析出 8 篇论文
+2025-07-29 21:13:30,730 [INFO] analyzer: 开始批量分析 8 篇论文
+2025-07-29 21:13:30,731 [INFO] analyzer: 批量分析完成，成功: 0/0，跳过: 8
+2025-07-29 21:13:47,664 [INFO] config_manager: 模型配置加载成功: config\models.yaml
+2025-07-29 21:13:47,668 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-07-29 21:13:47,669 [INFO] config_manager: 配置文件加载完成
+2025-07-29 21:13:47,670 [INFO] main_app: 论文分析系统启动
+2025-07-29 21:13:47,670 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-07-29 21:13:47,670 [INFO] main_app: 成功加载 8 个分析结果
+2025-07-29 21:13:47,672 [INFO] main_app: 开始高级分析: 2024-05-15
+2025-07-29 21:13:48,194 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-07-29 21:13:48,194 [INFO] classifier: 开始MD切分 8 篇论文
+2025-07-29 21:13:48,195 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\超越缩放定律使用联想记忆理解Transformer性能.md
+2025-07-29 21:13:48,297 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\Coin3D基于代理引导条件的可控和交互式3D资产生成.md
+2025-07-29 21:13:48,399 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\Hunyuan-DiT具有细粒度中文理解能力的多分辨率扩散Transformer.md
+2025-07-29 21:13:48,499 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\理解在线与离线对齐算法之间的性能差距.md
+2025-07-29 21:13:48,601 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\SpeechVerse大规模可泛化的音频语言模型.md
+2025-07-29 21:13:48,702 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\基于密集Blob表示的合成文本到图像生成.md
+2025-07-29 21:13:48,805 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\时间宝贵将时间维度压缩到通道中用于移动视频理解.md
+2025-07-29 21:13:48,910 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\SpeechGuard探索多模态大语言模型的对抗鲁棒性.md
+2025-07-29 21:13:49,108 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-07-29 21:13:49,108 [INFO] classifier: 开始批量分类 8 篇论文
+2025-07-29 21:13:49,108 [INFO] classifier: 开始分类论文: 2405.08707
+2025-07-29 21:13:50,110 [INFO] classifier: 开始分类论文: 2405.08054
+2025-07-29 21:13:51,115 [INFO] classifier: 开始分类论文: 2405.08748
+2025-07-29 21:13:52,117 [INFO] classifier: 开始分类论文: 2405.08448
+2025-07-29 21:13:53,121 [INFO] classifier: 开始分类论文: 2405.08295
+2025-07-29 21:13:54,124 [INFO] classifier: 开始分类论文: 2405.08246
+2025-07-29 21:13:55,127 [INFO] classifier: 开始分类论文: 2405.08344
+2025-07-29 21:13:56,130 [INFO] classifier: 开始分类论文: 2405.08317
+2025-07-29 21:13:57,132 [INFO] classifier: 批量分类完成，成功: 0/0，跳过: 8
+2025-07-29 21:13:57,334 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-07-29 21:13:57,336 [INFO] classifier: 汇总报告生成成功: data\analysis_results\2024-05-15\模型分类汇总.md
+2025-07-29 21:13:57,336 [INFO] main_app: 高级分析完成: 2024-05-15
+2025-07-29 21:15:39,735 [INFO] config_manager: 模型配置加载成功: config\models.yaml
+2025-07-29 21:15:39,741 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-07-29 21:15:39,741 [INFO] config_manager: 配置文件加载完成
+2025-07-29 21:15:39,742 [INFO] main_app: 论文分析系统启动
+2025-07-29 21:15:39,742 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-07-29 21:15:39,743 [INFO] main_app: 成功加载 8 个分析结果
+2025-07-29 21:15:39,744 [INFO] main_app: 开始高级分析: 2024-05-15
+2025-07-29 21:15:40,249 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-07-29 21:15:40,249 [INFO] classifier: 开始MD切分 8 篇论文
+2025-07-29 21:15:40,250 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\超越缩放定律使用联想记忆理解Transformer性能.md
+2025-07-29 21:15:40,352 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\Coin3D基于代理引导条件的可控和交互式3D资产生成.md
+2025-07-29 21:15:40,454 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\Hunyuan-DiT具有细粒度中文理解能力的多分辨率扩散Transformer.md
+2025-07-29 21:15:40,557 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\理解在线与离线对齐算法之间的性能差距.md
+2025-07-29 21:15:40,659 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\SpeechVerse大规模可泛化的音频语言模型.md
+2025-07-29 21:15:40,760 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\基于密集Blob表示的合成文本到图像生成.md
+2025-07-29 21:15:40,862 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\时间宝贵将时间维度压缩到通道中用于移动视频理解.md
+2025-07-29 21:15:40,963 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\SpeechGuard探索多模态大语言模型的对抗鲁棒性.md
+2025-07-29 21:15:41,186 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-07-29 21:15:41,186 [INFO] classifier: 开始批量分类 8 篇论文
+2025-07-29 21:15:41,187 [INFO] classifier: 开始分类论文: 2405.08707
+2025-07-29 21:15:42,188 [INFO] classifier: 开始分类论文: 2405.08054
+2025-07-29 21:15:43,190 [INFO] classifier: 开始分类论文: 2405.08748
+2025-07-29 21:15:44,193 [INFO] classifier: 开始分类论文: 2405.08448
+2025-07-29 21:15:45,196 [INFO] classifier: 开始分类论文: 2405.08295
+2025-07-29 21:15:46,200 [INFO] classifier: 开始分类论文: 2405.08246
+2025-07-29 21:15:47,204 [INFO] classifier: 开始分类论文: 2405.08344
+2025-07-29 21:15:48,208 [INFO] classifier: 开始分类论文: 2405.08317
+2025-07-29 21:15:49,212 [INFO] classifier: 批量分类完成，成功: 0/0，跳过: 8
+2025-07-29 21:15:49,425 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-07-29 21:15:49,428 [INFO] classifier: 汇总报告生成成功: data\analysis_results\2024-05-15\模型分类汇总.md
+2025-07-29 21:15:49,428 [INFO] main_app: 高级分析完成: 2024-05-15
+2025-07-29 21:16:14,758 [INFO] config_manager: 模型配置加载成功: config\models.yaml
+2025-07-29 21:16:14,763 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-07-29 21:16:14,764 [INFO] config_manager: 配置文件加载完成
+2025-07-29 21:16:14,765 [INFO] main_app: 论文分析系统启动
+2025-07-29 21:16:14,765 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-07-29 21:16:14,766 [INFO] main_app: 成功加载 8 个分析结果
+2025-07-29 21:16:14,767 [INFO] main_app: 开始高级分析: 2024-05-15
+2025-07-29 21:16:15,279 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-07-29 21:16:15,279 [INFO] classifier: 开始MD切分 8 篇论文
+2025-07-29 21:16:15,280 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\超越缩放定律使用联想记忆理解Transformer性能.md
+2025-07-29 21:16:15,382 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\Coin3D基于代理引导条件的可控和交互式3D资产生成.md
+2025-07-29 21:16:15,483 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\Hunyuan-DiT具有细粒度中文理解能力的多分辨率扩散Transformer.md
+2025-07-29 21:16:15,584 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\理解在线与离线对齐算法之间的性能差距.md
+2025-07-29 21:16:15,687 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\SpeechVerse大规模可泛化的音频语言模型.md
+2025-07-29 21:16:15,790 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\基于密集Blob表示的合成文本到图像生成.md
+2025-07-29 21:16:15,891 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\时间宝贵将时间维度压缩到通道中用于移动视频理解.md
+2025-07-29 21:16:15,994 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\SpeechGuard探索多模态大语言模型的对抗鲁棒性.md
+2025-07-29 21:16:16,204 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-07-29 21:16:16,205 [INFO] classifier: 开始批量分类 8 篇论文
+2025-07-29 21:16:16,205 [INFO] classifier: 开始分类论文: 2405.08707
+2025-07-29 21:16:17,209 [INFO] classifier: 开始分类论文: 2405.08054
+2025-07-29 21:16:25,394 [INFO] config_manager: 模型配置加载成功: config\models.yaml
+2025-07-29 21:16:25,400 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-07-29 21:16:25,400 [INFO] config_manager: 配置文件加载完成
+2025-07-29 21:16:25,401 [INFO] main_app: 论文分析系统启动
+2025-07-29 21:16:25,402 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-07-29 21:16:25,402 [INFO] main_app: 成功加载 8 个分析结果
+2025-07-29 21:16:25,404 [INFO] main_app: 开始高级分析: 2024-05-15
+2025-07-29 21:16:25,934 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-07-29 21:16:25,934 [INFO] classifier: 开始MD切分 8 篇论文
+2025-07-29 21:16:25,936 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\超越缩放定律使用联想记忆理解Transformer性能.md
+2025-07-29 21:16:26,038 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\Coin3D基于代理引导条件的可控和交互式3D资产生成.md
+2025-07-29 21:16:26,142 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\Hunyuan-DiT具有细粒度中文理解能力的多分辨率扩散Transformer.md
+2025-07-29 21:16:26,245 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\理解在线与离线对齐算法之间的性能差距.md
+2025-07-29 21:16:26,348 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\SpeechVerse大规模可泛化的音频语言模型.md
+2025-07-29 21:16:26,452 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\基于密集Blob表示的合成文本到图像生成.md
+2025-07-29 21:16:26,553 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\时间宝贵将时间维度压缩到通道中用于移动视频理解.md
+2025-07-29 21:16:26,658 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\SpeechGuard探索多模态大语言模型的对抗鲁棒性.md
+2025-07-29 21:16:26,879 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-07-29 21:16:26,880 [INFO] classifier: 开始批量分类 8 篇论文
+2025-07-29 21:16:26,880 [INFO] classifier: 开始分类论文: 2405.08707
+2025-07-29 21:16:27,883 [INFO] classifier: 开始分类论文: 2405.08054
+2025-07-29 21:16:28,885 [INFO] classifier: 开始分类论文: 2405.08748
+2025-07-29 21:16:29,888 [INFO] classifier: 开始分类论文: 2405.08448
+2025-07-29 21:16:30,891 [INFO] classifier: 开始分类论文: 2405.08295
+2025-07-29 21:16:31,893 [INFO] classifier: 开始分类论文: 2405.08246
+2025-07-29 21:16:32,895 [INFO] classifier: 开始分类论文: 2405.08344
+2025-07-29 21:16:33,898 [INFO] classifier: 开始分类论文: 2405.08317
+2025-07-29 21:16:34,900 [INFO] classifier: 批量分类完成，成功: 0/0，跳过: 8
+2025-07-29 21:16:35,110 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-07-29 21:16:35,113 [INFO] classifier: 汇总报告生成成功: data\analysis_results\2024-05-15\模型分类汇总.md
+2025-07-29 21:16:35,113 [INFO] main_app: 高级分析完成: 2024-05-15
+2025-07-29 21:18:00,308 [INFO] config_manager: 模型配置加载成功: config\models.yaml
+2025-07-29 21:18:00,313 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-07-29 21:18:00,315 [INFO] config_manager: 配置文件加载完成
+2025-07-29 21:18:00,315 [INFO] main_app: 论文分析系统启动
+2025-07-29 21:18:00,316 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-07-29 21:18:00,316 [INFO] main_app: 成功加载 8 个分析结果
+2025-07-29 21:18:00,318 [INFO] main_app: 开始高级分析: 2024-05-15
+2025-07-29 21:18:00,831 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-07-29 21:18:00,831 [INFO] classifier: 开始MD切分 8 篇论文
+2025-07-29 21:18:00,833 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\超越缩放定律使用联想记忆理解Transformer性能.md
+2025-07-29 21:18:00,935 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\Coin3D基于代理引导条件的可控和交互式3D资产生成.md
+2025-07-29 21:18:01,037 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\Hunyuan-DiT具有细粒度中文理解能力的多分辨率扩散Transformer.md
+2025-07-29 21:18:01,140 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\理解在线与离线对齐算法之间的性能差距.md
+2025-07-29 21:18:01,242 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\SpeechVerse大规模可泛化的音频语言模型.md
+2025-07-29 21:18:01,344 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\基于密集Blob表示的合成文本到图像生成.md
+2025-07-29 21:18:01,446 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\时间宝贵将时间维度压缩到通道中用于移动视频理解.md
+2025-07-29 21:18:01,549 [INFO] classifier: MD文件创建成功: data\analysis_results\2024-05-15\SpeechGuard探索多模态大语言模型的对抗鲁棒性.md
+2025-07-29 21:18:01,759 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-07-29 21:18:01,759 [INFO] classifier: 开始批量分类 8 篇论文
+2025-07-29 21:18:01,760 [INFO] classifier: 开始分类论文: 2405.08707
+2025-07-29 21:18:02,762 [INFO] classifier: 开始分类论文: 2405.08054
+2025-07-29 21:18:03,763 [INFO] classifier: 开始分类论文: 2405.08748
+2025-07-29 21:18:04,765 [INFO] classifier: 开始分类论文: 2405.08448
+2025-07-29 21:18:05,768 [INFO] classifier: 开始分类论文: 2405.08295
+2025-07-29 21:18:06,771 [INFO] classifier: 开始分类论文: 2405.08246
+2025-07-29 21:18:07,773 [INFO] classifier: 开始分类论文: 2405.08344
+2025-07-29 21:18:08,775 [INFO] classifier: 开始分类论文: 2405.08317
+2025-07-29 21:18:09,778 [INFO] classifier: 批量分类完成，成功: 0/0，跳过: 8
+2025-07-29 21:18:09,986 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-07-29 21:18:09,989 [INFO] classifier: 汇总报告生成成功: data\analysis_results\2024-05-15\模型分类汇总.md
+2025-07-29 21:18:09,989 [INFO] main_app: 高级分析完成: 2024-05-15
