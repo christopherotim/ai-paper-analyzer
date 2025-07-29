@@ -1,0 +1,184 @@
+# AI模型配置文件
+# 支持多种主流AI模型厂商，以智谱AI为主
+
+# 默认使用的AI模型
+default_model: zhipu
+
+# AI模型配置
+ai_models:
+  # 智谱AI（主要使用）
+  zhipu:
+    name: "智谱AI"
+    api_key_env: "ZHIPUAI_API_KEY"
+    base_url: "https://open.bigmodel.cn/api/paas/v4/"
+    models:
+      GLM-4.5-Air:
+        name: "GLM-4.5-Air"
+        max_tokens: 8192
+        temperature: 0.7
+        description: "智谱AI 4.5轻量版模型，性能优化"
+      GLM-4:
+        name: "GLM-4"
+        max_tokens: 8192
+        temperature: 0.7
+        description: "智谱AI最新一代大模型"
+      GLM-4-Flash:
+        name: "GLM-4-Flash"
+        max_tokens: 8192
+        temperature: 0.7
+        description: "智谱AI快速响应模型"
+    default_model: "GLM-4.5-Air"
+    timeout: 60
+    max_retries: 3
+    retry_delay: 2
+
+  # OpenAI（备用）
+  openai:
+    name: "OpenAI"
+    api_key_env: "OPENAI_API_KEY"
+    base_url: "https://api.openai.com/v1"
+    models:
+      gpt-4:
+        name: "GPT-4"
+        max_tokens: 8192
+        temperature: 0.7
+        description: "OpenAI GPT-4模型"
+      gpt-4-turbo:
+        name: "GPT-4 Turbo"
+        max_tokens: 128000
+        temperature: 0.7
+        description: "OpenAI GPT-4 Turbo模型"
+      gpt-3.5-turbo:
+        name: "GPT-3.5 Turbo"
+        max_tokens: 4096
+        temperature: 0.7
+        description: "OpenAI GPT-3.5 Turbo模型"
+    default_model: "gpt-4"
+    timeout: 60
+    max_retries: 3
+    retry_delay: 2
+
+  # 豆包AI（备用）
+  doubao:
+    name: "豆包AI"
+    api_key_env: "ARK_API_KEY"
+    base_url: "https://ark.cn-beijing.volces.com/api/v3"
+    models:
+      doubao-pro-32k:
+        name: "豆包Pro 32K"
+        max_tokens: 32768
+        temperature: 0.7
+        description: "豆包AI专业版32K模型"
+      doubao-1-5-pro-32k-250115:
+        name: "豆包1.5 Pro 32K"
+        max_tokens: 32768
+        temperature: 0.7
+        description: "豆包AI 1.5专业版32K模型"
+    default_model: "doubao-pro-32k"
+    timeout: 60
+    max_retries: 3
+    retry_delay: 2
+
+  # 阿里云通义千问（备用）
+  qwen:
+    name: "通义千问"
+    api_key_env: "DASHSCOPE_API_KEY"
+    base_url: "https://dashscope.aliyuncs.com/api/v1"
+    models:
+      qwen-turbo:
+        name: "通义千问Turbo"
+        max_tokens: 8192
+        temperature: 0.7
+        description: "阿里云通义千问Turbo模型"
+      qwen-plus:
+        name: "通义千问Plus"
+        max_tokens: 32768
+        temperature: 0.7
+        description: "阿里云通义千问Plus模型"
+      qwen-max:
+        name: "通义千问Max"
+        max_tokens: 8192
+        temperature: 0.7
+        description: "阿里云通义千问Max模型"
+    default_model: "qwen-plus"
+    timeout: 60
+    max_retries: 3
+    retry_delay: 2
+
+  # 百度文心一言（备用）
+  ernie:
+    name: "文心一言"
+    api_key_env: "QIANFAN_ACCESS_KEY"
+    secret_key_env: "QIANFAN_SECRET_KEY"
+    base_url: "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop"
+    models:
+      ernie-4.0:
+        name: "文心一言4.0"
+        max_tokens: 8192
+        temperature: 0.7
+        description: "百度文心一言4.0模型"
+      ernie-3.5:
+        name: "文心一言3.5"
+        max_tokens: 8192
+        temperature: 0.7
+        description: "百度文心一言3.5模型"
+      ernie-turbo:
+        name: "文心一言Turbo"
+        max_tokens: 8192
+        temperature: 0.7
+        description: "百度文心一言Turbo模型"
+    default_model: "ernie-4.0"
+    timeout: 60
+    max_retries: 3
+    retry_delay: 2
+
+  # 腾讯混元（备用）
+  hunyuan:
+    name: "腾讯混元"
+    api_key_env: "HUNYUAN_SECRET_ID"
+    secret_key_env: "HUNYUAN_SECRET_KEY"
+    base_url: "https://hunyuan.tencentcloudapi.com"
+    models:
+      hunyuan-pro:
+        name: "混元Pro"
+        max_tokens: 8192
+        temperature: 0.7
+        description: "腾讯混元Pro模型"
+      hunyuan-standard:
+        name: "混元标准版"
+        max_tokens: 4096
+        temperature: 0.7
+        description: "腾讯混元标准版模型"
+    default_model: "hunyuan-pro"
+    timeout: 60
+    max_retries: 3
+    retry_delay: 2
+
+# 应用配置
+app_config:
+  # 默认输出目录
+  default_output_dir: "data/daily_reports"
+
+  # 默认分析结果目录
+  default_analysis_dir: "data/analysis_results"
+
+  # 默认日志目录
+  default_log_dir: "logs"
+
+  # API请求间隔（秒）
+  api_request_delay: 1
+
+  # 批处理大小
+  batch_size: 10
+
+  # 是否启用AI功能
+  enable_ai: true
+
+  # 知识库文件
+  knowledge_base_file: "模型分类.md"
+
+# 代理配置（可选）
+proxy_config:
+  http_proxy: null
+  https_proxy: null
+  no_proxy: "localhost,127.0.0.1"

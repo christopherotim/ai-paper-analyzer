@@ -1,12 +1,4 @@
-# HuggingFace Daily Papers Download and Analysis System
-
-<div align="center">
-  
-![HF Paper Analysis](https://img.shields.io/badge/HF-Paper%20Analysis-yellow)
-![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
-
-</div>
+# 🤖 AI Paper Intelligence Analysis System
 
 <div align="center">
 
@@ -14,314 +6,630 @@
 
 </div>
 
-> 🚀 **Automatically track, download, analyze, and categorize the latest AI papers and models on HuggingFace, helping you easily stay at the forefront of AI development!**
+> **One-click fetch, intelligent analysis, automatic classification** - Let AI help you read papers and escape from information overload!
 
-## 🌟 Project Highlights
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![AI Models](https://img.shields.io/badge/AI-Zhipu|Doubao|OpenAI|Qwen-orange.svg)](#)
 
-- **Fully Automated Process**: From metadata crawling to summary generation, the entire process is automated
-- **AI-Driven Analysis**: Utilizes GLM-4 and Ark large models to provide high-quality Chinese summaries and classifications
-- **Batch Processing Capability**: Supports processing for single day or any date range
-- **Intelligent Model Classification**: Automatically classifies models based on a knowledge base for research and application
-- **Formatted Output**: Generates standardized Markdown files for easy integration into knowledge bases or blogs
+Hundreds of AI papers are published daily - tired of manual screening? Let AI help you! This system automatically fetches the latest papers from HuggingFace, uses multiple AI models for intelligent analysis and classification, and generates readable analysis reports.
 
-## 📊 Workflow Diagram
+<!-- 📸 Screenshot needed: Main interface -->
 
-```mermaid
-graph TD
-    A[HF Paper Crawling] -->|Paper_metadata_download.py| B(Raw Metadata JSON)
-    B --> C{Data Cleaning}
-    C -->|HF-day-paper+GLMs-api-clean.py| D[Structured Data]
-    D --> E{Content Analysis}
-    E -->|HF-day-paper+GLMs-api.py| F[Paper Summaries]
-    F --> G{Output Processing}
-    G -->|split_hf_glms_json_to_md.py| H[Individual Model MD Files]
-    H --> I{Model Classification}
-    I -->|classify_and_generate_mdDouBao.py| J[Classification Report]
-```
+![System Main Interface](screenshots/main-interface.png)
 
-## Project Overview
+## ⚡ Get Started in 30 Seconds
 
-This project is a comprehensive automated tool for downloading, processing, analyzing, and categorizing the latest AI papers and models published on HuggingFace. The system supports both single-day processing and batch processing, and provides content analysis capabilities based on Zhipu AI and Ark large language models.
-
-## ⚡ Quick Start
-
-### Environment Setup
+### 🎨 GUI Version (Recommended for Beginners)
 
 ```bash
-# Clone the repository
-git clone https://github.com/ZsTs119/AI-Research-Radar.git
-cd AI-Research-Radar
+python run_gui.py
+```
+
+**Zero barrier to entry**: Click "Start Analysis" → Select Date → Wait for Completion ✨
+
+<!-- 📸 Screenshot needed: GUI workflow -->
+
+![GUI Workflow](screenshots/gui-workflow.gif)
+
+### 💻 Command Line Version (Recommended for Professionals)
+
+```bash
+python run.py basic 2025-07-29
+```
+
+**One command does it all**: Auto-download, analyze, generate reports
+
+<!-- 📸 Screenshot needed: CLI execution process -->
+
+![CLI Execution](screenshots/cli-execution1.png)
+![CLI Execution](screenshots/cli-execution2.png)
+
+## 🎯 Core Features
+
+| Feature                     | Description                                  | Value                                          |
+| --------------------------- | -------------------------------------------- | ---------------------------------------------- |
+| 📡 **Auto Fetch**           | Get latest paper data from HuggingFace       | No manual search, ensure nothing is missed     |
+| 🤖 **AI Analysis**          | Support Zhipu AI, Doubao, OpenAI, Qwen, etc. | Multi-model cross-validation, improve accuracy |
+| 📊 **Smart Classification** | Automatic tagging and topic categorization   | Quickly locate research areas of interest      |
+| 📈 **Visual Reports**       | Generate structured analysis reports         | Clear research trends and hotspots at a glance |
+| ⚡ **Batch Processing**     | Support multi-date batch analysis            | Efficiently process large amounts of data      |
+| 🔄 **Incremental Updates**  | Intelligently detect processed content       | Avoid duplicate work, save time                |
+
+<!-- 📸 Screenshot needed: Feature overview -->
+
+![Feature Overview](screenshots/features-overview.png)
+
+## 🚀 Use Cases
+
+### 👨‍🔬 Researchers
+
+- **Quick field updates**: Daily auto-fetch relevant paper abstracts
+- **Discover research hotspots**: AI automatically identifies trending research directions
+- **Track competitors**: Monitor latest achievements from specific institutions or authors
+
+### 👨‍💼 Product Managers
+
+- **Technology trend analysis**: Understand AI technology development directions
+- **Competitive tech research**: Analyze competitors' technology layouts
+- **Product planning reference**: Make product roadmaps based on latest research
+
+### 👨‍💻 Developers
+
+- **Technology selection reference**: Learn about latest algorithms and tools
+- **Learning resource discovery**: Find papers worth deep research
+- **Inspiration source**: Get project ideas from latest research
+
+### 👨‍🎓 Students and Scholars
+
+- **Literature research**: Quickly filter relevant research literature
+- **Study planning**: Adjust learning focus based on hotspots
+- **Paper writing**: Understand latest research status and development trends
+
+## 🛠️ Installation & Configuration
+
+### 1. Environment Setup
+
+```bash
+# Clone project
+git clone <repository-url>
+cd ai-paper-analyzer
 
 # Install dependencies
-# Method 1: Install essential dependencies directly
-pip install requests zhipuai tqdm volcenginesdkarkruntime
-
-# Method 2: Install all dependencies using requirements.txt
 pip install -r requirements.txt
 ```
 
-### One-Click Run Example
+### 2. API Key Configuration
+
+Support multiple AI services, choose one:
+
+| AI Service | Environment Variable | Get Address                                              |
+| ---------- | -------------------- | -------------------------------------------------------- |
+| Zhipu AI   | `ZHIPUAI_API_KEY`    | [Zhipu AI Open Platform](https://open.bigmodel.cn/)      |
+| Doubao AI  | `ARK_API_KEY`        | [Volcano Engine](https://console.volcengine.com/)        |
+| OpenAI     | `OPENAI_API_KEY`     | [OpenAI Platform](https://platform.openai.com/)          |
+| Qwen       | `DASHSCOPE_API_KEY`  | [Alibaba Cloud DashScope](https://dashscope.aliyun.com/) |
+
+**Method 1: GUI Configuration (Recommended)**
 
 ```bash
-# Set API keys
-export ZHIPUAI_API_KEY=your_zhipu_api_key  # Linux/Mac
-export ARK_API_KEY=your_ark_api_key        # Linux/Mac
-
-# Download, process, and analyze today's papers
-python Paper_metadata_download.py
-python HF-day-paper+GLMs-api-clean.py
-python HF-day-paper+GLMs-api.py
-python split_hf_glms_json_to_md.py HF-day-paper+GLMs-api
-python classify_and_generate_mdDouBao.py $(date +%Y-%m-%d) 模型分类.md
+python run_gui.py
+# Click "Configure API Key" button, enter key and test connection
 ```
 
-## Script Functions and Dependencies
+<!-- 📸 Screenshot needed: API key configuration interface -->
 
-### Core Data Processing Scripts
+![API Key Configuration](screenshots/api-config.png)
 
-| Script Name                    | Main Function                                    | Dependencies                         |
-| ------------------------------ | ------------------------------------------------ | ------------------------------------ |
-| Paper_metadata_download.py     | Download daily paper metadata from HF-mirror.com | requests, json, os, sys, datetime    |
-| HF-day-paper+GLMs-api-clean.py | Clean and structure raw paper data               | json, os, sys, re, datetime, zhipuai |
-| HF-day-paper+GLMs-api.py       | Generate paper summaries using GLM-4 model       | json, os, sys, re, datetime, zhipuai |
-| batch_paper_download.py        | Process papers for a specified date range        | os, sys, subprocess, datetime, tqdm  |
-
-### Content Classification and Generation Scripts
-
-| Script Name                       | Main Function                                                  | Dependencies                                         |
-| --------------------------------- | -------------------------------------------------------------- | ---------------------------------------------------- |
-| split_hf_glms_json_to_md.py       | Split JSON files into individual Markdown files                | os, sys, json, re                                    |
-| classify_and_generate_md.py       | Classify model files for a single date based on knowledge base | os, sys, re, json, argparse                          |
-| classify_and_generate_mdDouBao.py | Enhanced classification script with Ark model API support      | os, sys, re, json, argparse, volcenginesdkarkruntime |
-| batch_classify_md.py              | Batch call classify_and_generate_mdDouBao.py for processing    | os, sys, re, subprocess, glob                        |
-
-## Usage Guide
-
-### 1. Data Download and Processing
-
-#### Single Day Processing
+**Method 2: Environment Variables**
 
 ```bash
-# Process papers for a specific date (format: YYYY-MM-DD)
-python Paper_metadata_download.py 2024-06-11
+# Windows
+set ZHIPUAI_API_KEY=your_api_key_here
 
-# If no date parameter is provided, automatically process the previous day's data
-python Paper_metadata_download.py
+# Linux/Mac
+export ZHIPUAI_API_KEY=your_api_key_here
+```
+
+### 3. Verify Installation
+
+```bash
+python run.py status  # Check system status
+```
+
+## 📖 User Guide
+
+### 🎨 GUI Interface (Zero Barrier)
+
+1. **Launch Interface**
+
+   ```bash
+   python run_gui.py
+   ```
+
+2. **Basic Operations**
+
+   - Select AI model (Zhipu AI, Doubao, etc.)
+   - Click "Configure API Key" to set key
+   - Select analysis date
+   - Click "Start Analysis"
+
+3. **Advanced Features**
+   - Real-time analysis progress
+   - Silent mode operation
+   - Batch process multiple dates
+
+<!-- 📸 Screenshot needed: GUI detailed operation steps -->
+
+![GUI Operation Steps](screenshots/gui-steps.png)
+
+### 💻 Command Line Scripts (Professional & Efficient)
+
+#### Basic Analysis
+
+```bash
+# Analyze today's papers
+python run.py basic
+
+# Analyze specific date
+python run.py basic 2025-07-29
+
+# Silent mode
+python run.py basic 2025-07-29 --silent
+```
+
+#### Advanced Analysis
+
+```bash
+# Deep analysis of basic analysis results
+python run.py advanced 2025-07-29
+
+# Auto mode (recommended)
+python run.py advanced --auto
 ```
 
 #### Batch Processing
 
 ```bash
-# Process papers for a specified date range
-python batch_paper_download.py
+# Batch analyze multiple dates
+python tools/batch_processor.py daily --start 2025-07-25 --end 2025-07-29
+
+# Complete pipeline processing
+python tools/batch_processor.py pipeline --start 2025-07-25 --end 2025-07-27
 ```
 
-### 2. JSON to Markdown Conversion
+#### System Status
 
 ```bash
-# Process a single JSON file
-python split_hf_glms_json_to_md.py HF-day-paper+GLMs-api/2024-06-11_HF_glms_api_clean.json
-
-# Process all JSON files in a directory
-python split_hf_glms_json_to_md.py HF-day-paper+GLMs-api
+# View configuration and running status
+python run.py status
 ```
 
-### 3. Model Classification and Content Generation
+<!-- 📸 Screenshot needed: CLI execution examples -->
 
-> Note: You must execute the JSON splitting step above to generate individual Markdown files before performing model classification
+![CLI Examples](screenshots/cli-examples.png)
 
-#### Single Day Model Classification
+## 📊 Output Results
+
+### 📁 File Structure
+
+```
+data/
+├── daily_reports/           # Basic analysis results
+│   ├── metadata/           # Original paper metadata
+│   ├── cleaned/            # Cleaned structured data
+│   └── reports/            # Generated analysis reports
+└── analysis_results/       # Advanced analysis results
+    ├── categories/         # Classification statistics
+    ├── trends/            # Trend analysis
+    └── summaries/         # Comprehensive reports
+```
+
+### 📋 Report Content
+
+- **Paper Abstracts**: AI-extracted key information
+- **Technical Classification**: Auto-identified research fields
+- **Innovation Analysis**: Main contributions of papers
+- **Application Scenarios**: Potential practical applications
+- **Technology Maturity**: Assessment of technology development stage
+- **Trend Analysis**: Research hotspots and development directions
+
+<!-- 📸 Screenshot needed: Analysis report example -->
+
+![Analysis Report Example](screenshots/analysis-report.png)
+
+## 🔧 Advanced Configuration
+
+### AI Model Configuration
+
+Edit `config/models.yaml` to customize AI model parameters:
+
+```yaml
+ai_models:
+  zhipu:
+    name: "Zhipu AI"
+    default_model: "GLM-4.5-Air"
+    api_base: "https://open.bigmodel.cn/api/paas/v4/"
+    max_tokens: 4000
+    temperature: 0.3
+  openai:
+    name: "OpenAI"
+    default_model: "gpt-4"
+    api_base: "https://api.openai.com/v1/"
+    max_tokens: 4000
+    temperature: 0.3
+```
+
+### Logging Configuration
+
+Edit `config/logging.yaml` to adjust log level and output format:
+
+```yaml
+version: 1
+formatters:
+  default:
+    format: "%(asctime)s [%(levelname)s] %(message)s"
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: INFO
+    formatter: default
+  file:
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: default
+    filename: logs/app.log
+```
+
+### Application Configuration
+
+Edit `config/app.yaml` to modify output directory, batch size, etc.:
+
+```yaml
+output_dir: "data/daily_reports"
+analysis_dir: "data/analysis_results"
+ai_model: "zhipu"
+use_ai: true
+batch_size: 10
+api_delay: 1
+```
+
+## 🎨 Classification System
+
+The system supports the following intelligent classifications:
+
+### 🤖 AI Model Categories
+
+- **Text Generation**: Large language models, dialogue systems, text summarization
+- **Image Generation**: Image synthesis, style transfer, image editing
+- **Video Generation**: Video synthesis, animation generation, video editing
+- **Audio Generation**: Speech synthesis, music generation, audio processing
+- **3D Generation**: 3D modeling, scene generation, virtual reality
+- **Multimodal Generation**: Cross-modal conversion, multimodal understanding
+- **Cross-modal Generation**: Text-to-image, image-to-text, etc.
+- **Game & Strategy Generation**: Game AI, strategy optimization
+- **Scientific Computing & Data Generation**: Scientific simulation, data analysis
+
+<!-- 📸 Screenshot needed: Classification results -->
+
+![Classification Results](screenshots/classification-results.png)
+
+## 🎯 Best Practices
+
+### 📅 Daily Usage Recommendations
+
+1. **Daily scheduled runs**: Recommend running previous day's analysis every morning
+2. **Choose appropriate AI model**: Zhipu AI for cost-effectiveness, OpenAI for better quality
+3. **Batch processing**: Process weekly data in batches on weekends
+4. **Regular cleanup**: Regularly clean old analysis results to save storage space
+
+### ⚡ Performance Optimization
+
+1. **Concurrent processing**: Increase `batch_size` parameter to improve processing speed
+2. **API rate limiting**: Adjust `api_delay` to avoid triggering API limits
+3. **Cache utilization**: Repeated analysis automatically uses cached results
+
+### 🛡️ Error Handling
+
+1. **Network issues**: System automatically retries, no manual intervention needed
+2. **API limits**: Automatically reduces request frequency
+3. **Data anomalies**: Abnormal data will be marked and skipped
+
+## 🔍 Troubleshooting
+
+### Common Issues & Solutions
+
+#### 1. API Key Related Issues
+
+**Issue**: "Invalid API key" prompt
+
+```
+❌ API key invalid or expired
+```
+
+**Solutions**:
+
+- Check if API key is correctly copied (watch for leading/trailing spaces)
+- Confirm API key hasn't expired and has sufficient balance
+- Use GUI's "Test Connection" feature to verify key
+
+**Issue**: "Insufficient API permissions" prompt
+
+```
+❌ Insufficient API key permissions, please check model access rights
+```
+
+**Solutions**:
+
+- Confirm API key has access to corresponding model
+- Contact AI service provider to enable appropriate permissions
+- Try using other supported AI models
+
+#### 2. Network Connection Issues
+
+**Issue**: Connection timeout or network errors
+
+```
+❌ Connection timeout, please check network connection
+❌ Network connection failed, please check network settings
+```
+
+**Solutions**:
+
+- Check if network connection is normal
+- Confirm firewall isn't blocking program network access
+- If on corporate network, contact network admin to open relevant domain access
+- Try using VPN or proxy
+
+#### 3. Encoding Issues
+
+**Issue**: Encoding errors on Windows
+
+```
+'gbk' codec can't encode character
+```
+
+**Solutions**:
+
+- Ensure using UTF-8 encoded terminal
+- Run in PowerShell: `chcp 65001`
+- Use GUI version to avoid encoding issues
+
+#### 4. Dependency Package Issues
+
+**Issue**: Missing dependency packages
+
+```
+ModuleNotFoundError: No module named 'xxx'
+```
+
+**Solutions**:
 
 ```bash
-# Process all model files in a single date directory
-python classify_and_generate_mdDouBao.py 2024-06-11 模型分类.md
+# Reinstall dependencies
+pip install -r requirements.txt
+
+# Or install missing package individually
+pip install package_name
 ```
 
-#### Batch Model Classification
+#### 5. Permission Issues
+
+**Issue**: Insufficient file write permissions
+
+```
+PermissionError: [Errno 13] Permission denied
+```
+
+**Solutions**:
+
+- Ensure write permissions to project directory
+- Windows users can try running as administrator
+- Check if data directory exists and is writable
+
+### 📋 System Requirements
+
+#### Minimum Requirements
+
+- **Python**: 3.8+
+- **Memory**: 4GB RAM
+- **Storage**: 2GB available space
+- **Network**: Stable internet connection
+
+#### Recommended Configuration
+
+- **Python**: 3.10+
+- **Memory**: 8GB+ RAM
+- **Storage**: 10GB+ available space (for storing analysis results)
+- **Network**: High-speed stable network connection
+
+### 🐛 Debug Mode
+
+Enable verbose logging:
 
 ```bash
-# Process all date directories
-python batch_classify_md.py ./ 模型分类.md
+# Set log level to DEBUG
+export LOG_LEVEL=DEBUG
 
-# Process only a single directory
-python batch_classify_md.py 2024-06-11 模型分类.md
+# Or modify in config file
+# config/logging.yaml
 ```
 
-## Output File Structure
+View detailed error information:
 
-The processed files will be saved in the following structure:
+```bash
+# Use --verbose parameter
+python run.py basic 2025-07-29 --verbose
 
-1. Raw metadata: `Paper_metadata_download/YYYY-MM-DD.json`
-2. Cleaned data: `HF-day-paper+GLMs-api-clean/YYYY-MM-DD_clean.json`
-3. Final analysis results: `HF-day-paper+GLMs-api/YYYY-MM-DD_HF_glms_api_clean.json`
-4. Individual model Markdown: `YYYY-MM-DD/model_name.md`
-5. Model classification summary: `YYYY-MM-DD/模型分类汇总.md`
+# View log file
+tail -f logs/app.log
+```
 
-## System Requirements and Notes
+## 🤝 Contributing
 
-1. **Dependency Installation**
+Welcome to submit Issues and Pull Requests!
 
-   ```bash
-   # Method 1: Install essential dependencies directly
-   pip install requests zhipuai tqdm volcenginesdkarkruntime
+### Development Environment Setup
 
-   # Method 2: Install all dependencies using requirements.txt
-   pip install -r requirements.txt
-   ```
+```bash
+# Install development dependencies
+pip install -r requirements-dev.txt
 
-2. **API Key Configuration**
+# Run tests
+python -m pytest tests/
 
-   - Zhipu AI API Key
+# Code formatting
+black src/ tests/
+```
 
-     - Register an account and apply for an API key on the [Zhipu AI website](https://open.bigmodel.cn/)
-     - The scripts `HF-day-paper+GLMs-api-clean.py` and `HF-day-paper+GLMs-api.py` require this key
-     - After obtaining the key, replace it in the scripts or set an environment variable:
+### Commit Guidelines
 
-     ```bash
-     # Windows
-     set ZHIPUAI_API_KEY=your_zhipu_api_key
+- Feature development: `feat: add new feature`
+- Bug fixes: `fix: fix some issue`
+- Documentation updates: `docs: update documentation`
 
-     # Linux/Mac
-     export ZHIPUAI_API_KEY=your_zhipu_api_key
-     ```
+## ❓ Frequently Asked Questions (FAQ)
 
-   - Ark API Key
+### Q1: Which AI models are supported?
 
-     - Register an account and apply for an API key on the [Volcano Engine Ark Model Platform](https://www.volcengine.com/product/ark)
-     - The `classify_and_generate_mdDouBao.py` script requires this key for model classification and content generation
-     - Set through environment variables:
+**A**: Currently supports the following AI models:
 
-     ```bash
-     # Windows
-     set ARK_API_KEY=your_ark_api_key
+- **Zhipu AI**: GLM-4.5-Air, GLM-4, etc.
+- **Doubao AI**: doubao-pro-32k, etc.
+- **OpenAI**: GPT-4, GPT-3.5-turbo, etc.
+- **Qwen**: qwen-plus, qwen-turbo, etc.
+- **ERNIE**: Requires additional secret_key configuration
+- **Hunyuan**: Requires additional secret_key and signature algorithm configuration
 
-     # Linux/Mac
-     export ARK_API_KEY=your_ark_api_key
-     ```
+### Q2: How many papers can be processed daily?
 
-   - Environment Variable Configuration Details
+**A**: Processing capacity depends on:
 
-     - **Windows Environment Variable Setup Methods**:
+- **API limits**: Call frequency limits of various AI service providers
+- **Network speed**: Speed of downloading and uploading data
+- **Hardware configuration**: CPU and memory affect processing speed
+- Typically can process 50-200 papers daily
 
-       - **Temporary Environment Variables** (valid only for the current terminal session):
+### Q3: How accurate are the analysis results?
 
-         ```powershell
-         # CMD Command Prompt
-         set ZHIPUAI_API_KEY=your_api_key
-         set ARK_API_KEY=your_api_key
+**A**: Analysis accuracy depends on:
 
-         # PowerShell
-         $env:ZHIPUAI_API_KEY = "your_api_key"
-         $env:ARK_API_KEY = "your_api_key"
-         ```
+- **AI model quality**: GPT-4 > Zhipu AI > other models
+- **Paper quality**: Well-structured papers have better analysis results
+- **Prompt optimization**: System uses specially optimized prompts
+- Recommend using multiple models for cross-validation of important results
 
-       - **Permanent Environment Variables** (remain valid after restart):
+### Q4: How to improve processing speed?
 
-         ```powershell
-         # User-level environment variables
-         [Environment]::SetEnvironmentVariable("ZHIPUAI_API_KEY", "your_api_key", "User")
-         [Environment]::SetEnvironmentVariable("ARK_API_KEY", "your_api_key", "User")
+**A**: Optimization suggestions:
 
-         # System-level environment variables (requires admin privileges)
-         [Environment]::SetEnvironmentVariable("ZHIPUAI_API_KEY", "your_api_key", "Machine")
-         [Environment]::SetEnvironmentVariable("ARK_API_KEY", "your_api_key", "Machine")
-         ```
+- Increase `batch_size` parameter (note API limits)
+- Use faster AI models (like Zhipu AI)
+- Ensure stable network connection
+- Use SSD storage to improve I/O speed
 
-       - **Reading Environment Variables**:
+### Q5: Where is data stored?
 
-         ```powershell
-         # CMD Command Prompt
-         echo %ZHIPUAI_API_KEY%
+**A**: All data is stored locally:
 
-         # PowerShell
-         $env:ZHIPUAI_API_KEY
-         ```
+- **Raw data**: `data/daily_reports/metadata/`
+- **Cleaned data**: `data/daily_reports/cleaned/`
+- **Analysis results**: `data/daily_reports/reports/`
+- **Classification results**: `data/analysis_results/`
 
-     - **Linux/Mac Environment Variable Setup Methods**:
+### Q6: How to backup and restore data?
 
-       - **Temporary Environment Variables** (valid only for the current terminal session):
+**A**: Backup recommendations:
 
-         ```bash
-         export ZHIPUAI_API_KEY=your_api_key
-         export ARK_API_KEY=your_api_key
-         ```
+```bash
+# Backup all data
+tar -czf backup_$(date +%Y%m%d).tar.gz data/
 
-       - **Permanent Environment Variables** (remain valid after restart):
+# Restore data
+tar -xzf backup_20250729.tar.gz
+```
 
-         ```bash
-         # Add to ~/.bashrc, ~/.zshrc or ~/.profile
-         echo 'export ZHIPUAI_API_KEY=your_api_key' >> ~/.bashrc
-         echo 'export ARK_API_KEY=your_api_key' >> ~/.bashrc
-         source ~/.bashrc  # Take effect immediately
-         ```
+### Q7: Can classifications be customized?
 
-       - **Reading Environment Variables**:
-         ```bash
-         echo $ZHIPUAI_API_KEY
-         ```
+**A**: Yes, by modifying prompts:
 
-     - **Notes**:
-       - Temporary environment variables are only valid in the current terminal session and need to be reset after closing the terminal
-       - Permanent environment variables are saved in system or user configuration files and remain available after restart
-       - It is recommended to use permanent environment variables to avoid reconfiguring every time the project is started
-       - Environment variable names are case-sensitive, make sure they match exactly with the names used in the code
+- Edit classification prompts in `src/core/classifier.py`
+- Modify classification knowledge base content
+- Retrain or adjust AI model parameters
 
-3. **Processing Notes**
+### Q8: Does it support offline use?
 
-   - Batch processing a large number of dates may take a considerable amount of time, please be patient
-   - The system will automatically skip dates with no data and mark them in the log
-   - Filenames are automatically filtered for invalid characters to ensure system compatibility
-   - If API rate limiting is encountered, it is recommended to appropriately extend the batch processing time interval
+**A**: Partial features support offline:
 
-4. **Date Format Requirements**
-   - All date inputs must strictly follow the `YYYY-MM-DD` format
-   - Directory structures should also follow this naming convention
+- **Data download**: Requires network connection
+- **AI analysis**: Requires calling online AI services
+- **Result viewing**: Can view generated results offline
+- **Batch processing**: Can process downloaded data offline (without AI analysis)
 
-## Advanced Usage
+### Q9: How to handle large amounts of historical data?
 
-1. **Custom Knowledge Base**: Replace the `模型分类.md` file content to customize classification rules
-2. **Batch Range Control**: Modify the date range parameters in `batch_paper_download.py`
-3. **API Model Selection**: Switch between different GLM model versions in the code as needed
+**A**: Batch processing recommendations:
 
-## Troubleshooting
+```bash
+# Use batch processing tool
+python tools/batch_processor.py daily --start 2025-01-01 --end 2025-07-29
 
-1. **API Call Failures**: Check API key settings and network connections
-2. **Poor Content Generation Quality**: Try adjusting prompts or switching to a more advanced model
-3. **Date Directory Not Created Correctly**: Ensure the system has sufficient file write permissions
+# Process in batches to avoid API limits
+python tools/batch_processor.py daily --start 2025-01-01 --end 2025-01-31
+python tools/batch_processor.py daily --start 2025-02-01 --end 2025-02-28
+```
 
-## 📝 Practical Application Scenarios
+### Q10: How to get help when encountering problems?
 
-- **Research Teams**: Automatically track the latest research results in the field, saving literature research time
-- **AI Practitioners**: Quickly understand the characteristics and application directions of newly released models
-- **Technical Bloggers**: Generate high-quality Chinese AI paper interpretation content
-- **Educational Institutions**: Provide the latest research cases and model introductions for AI courses
+**A**: Ways to get help:
 
-## 🤝 Contribution Guidelines
+1. **Check documentation**: Read this README and tools/README.md
+2. **Check logs**: View logs/app.log file
+3. **Submit Issues**: Submit detailed problem descriptions on GitHub
+4. **Community discussion**: Participate in project discussion area
+5. **Contact developers**: Contact via email or other means
 
-Contributions to this project are welcome! You can participate in the following ways:
+## 📈 Performance Benchmarks
 
-1. Submit Issues to report problems or suggest new features
-2. Submit Pull Requests to improve the code
-3. Improve project documentation or add use cases
-4. Share your experiences and results using this project
+### Processing Speed Reference
 
-## 📅 Project Roadmap
+| Configuration           | Paper Count | Processing Time | Average Speed      |
+| ----------------------- | ----------- | --------------- | ------------------ |
+| Basic Config            | 50 papers   | 15-20 minutes   | 2.5-3.3 papers/min |
+| Recommended Config      | 100 papers  | 25-35 minutes   | 2.9-4 papers/min   |
+| High Performance Config | 200 papers  | 45-60 minutes   | 3.3-4.4 papers/min |
 
-- [x] Basic paper crawling and processing functionality
-- [x] Zhipu AI model integration
-- [x] Ark large model support
-- [x] Batch processing functionality
-- [ ] Web interface development
-- [ ] Data visualization functionality
-- [ ] Multi-language support
-- [ ] Docker containerized deployment
+### Resource Usage
 
-## 📜 License
+- **Memory usage**: Typically 200-500MB
+- **Storage space**: About 1-2MB analysis results per paper
+- **Network traffic**: About 100-500KB per paper
 
-This project is licensed under the MIT License, see the LICENSE file for details.
+<!-- 📸 Screenshot needed: Performance monitoring interface -->
 
-## 👨‍💻 Author
+![Performance Monitor](screenshots/performance-monitor.png)
 
-- ZsTs119
-- Email: zsts@foxmail.com
-- GitHub: https://github.com/ZsTs119
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## 🙏 Acknowledgments
+
+- [HuggingFace](https://huggingface.co/) - Providing paper data source
+- [Zhipu AI](https://open.bigmodel.cn/) - AI analysis service
+- [Doubao AI](https://console.volcengine.com/) - AI analysis service
+- All contributors and users for their support
+
+---
+
+⭐ If this project helps you, please give us a Star!
+
+📧 Have questions or suggestions? Welcome to submit [Issues](../../issues) or contact us.
+
+# View log file
+
+tail -f logs/app.log
+
+```
+
+```

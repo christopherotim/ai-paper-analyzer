@@ -1,0 +1,90 @@
+[
+    {
+        "paper_id": "2405.08707",
+        "paper_url": "https://arxiv.org/abs/2405.08707",
+        "title": "Beyond Scaling Laws: Understanding Transformer Performance with Associative Memory",
+        "translation": "超越缩放定律：使用联想记忆理解Transformer性能",
+        "authors": "David Bau, Dong Eui Chang, Hyung Won Chung, David Fouhey, J. Alex Halderman, Sanmi Koyejo, Nate Kushman, Jonathan P. Shen, Joshua B. Tenenbaum, Antonio Torralba (MIT, UMass Amherst, UIUC, Microsoft Research, Google)",
+        "publish_date": "2024-05-14",
+        "model_function": "通过联想记忆理论解释Transformer性能，超越传统缩放定律视角，提供模型处理长序列和复杂依赖的新理解",
+        "page_content": "**作者团队**：David Bau, Dong Eui Chang, Hyung Won Chung, David Fouhey, J. Alex Halderman, Sanmi Koyejo, Nate Kushman, Jonathan P. Shen, Joshua B. Tenenbaum, Antonio Torralba (MIT, UMass Amherst, UIUC, Microsoft Research, Google)\n**发表日期**：2024-05-14\n**模型功能**：通过联想记忆理论解释Transformer性能，超越传统缩放定律视角，提供模型处理长序列和复杂依赖的新理解",
+        "analysis_time": "2025-07-29T14:41:29.576794"
+    },
+    {
+        "paper_id": "2405.08054",
+        "paper_url": "https://arxiv.org/abs/2405.08054",
+        "title": "Coin3D: Controllable and Interactive 3D Assets Generation with Proxy-Guided Conditioning",
+        "translation": "Coin3D：基于代理引导条件的可控和交互式3D资产生成",
+        "authors": "Xiaoxiao Long, Weihao Yu, Jiaxu Geng, Zhiwen Liang, Yijie Guo, Zhenxing Zhang, Hao Zhang, Yong-Jin Liu, Baining Guo",
+        "publish_date": "2024-05-14",
+        "model_function": "通过代理引导条件实现可控和交互式的3D资产生成，支持实时调整和控制3D资产的形状、材质等属性",
+        "page_content": "**作者团队**：Xiaoxiao Long, Weihao Yu, Jiaxu Geng, Zhiwen Liang, Yijie Guo, Zhenxing Zhang, Hao Zhang, Yong-Jin Liu, Baining Guo\n**发表日期**：2024-05-14\n**模型功能**：通过代理引导条件实现可控和交互式的3D资产生成，支持实时调整和控制3D资产的形状、材质等属性",
+        "analysis_time": "2025-07-29T14:41:44.675033"
+    },
+    {
+        "paper_id": "2405.08748",
+        "paper_url": "https://arxiv.org/abs/2405.08748",
+        "title": "Hunyuan-DiT: A Powerful Multi-Resolution Diffusion Transformer with Fine-Grained Chinese Understanding",
+        "translation": "Hunyuan-DiT：具有细粒度中文理解能力的多分辨率扩散Transformer",
+        "authors": "Tencent AI Lab, Shanghai Jiao Tong University, Tsinghua University, Tencent PCG, Beijing Academy of Artificial Intelligence",
+        "publish_date": "2024-05-08",
+        "model_function": "多分辨率扩散Transformer，具有细粒度中文理解能力，用于高质量图像生成",
+        "page_content": "**作者团队**：Tencent AI Lab, Shanghai Jiao Tong University, Tsinghua University, Tencent PCG, Beijing Academy of Artificial Intelligence\n**发表日期**：2024-05-08\n**模型功能**：多分辨率扩散Transformer，具有细粒度中文理解能力，用于高质量图像生成",
+        "analysis_time": "2025-07-29T14:41:53.535897"
+    },
+    {
+        "paper_id": "2405.08448",
+        "paper_url": "https://arxiv.org/abs/2405.08448",
+        "title": "Understanding the performance gap between online and offline alignment algorithms",
+        "translation": "理解在线与离线对齐算法之间的性能差距",
+        "authors": "Ivan Vulić, Sabrina J. Mielke, Anna Korhonen, Desmond J. Elliott, Hinrich Schütze, Goran Glavaš",
+        "publish_date": "2024-05-14",
+        "model_function": "分析在线与离线对齐算法性能差距，探索优化对齐算法效果的方法",
+        "page_content": "**作者团队**：Ivan Vulić, Sabrina J. Mielke, Anna Korhonen, Desmond J. Elliott, Hinrich Schütze, Goran Glavaš\n**发表日期**：2024-05-14\n**模型功能**：分析在线与离线对齐算法性能差距，探索优化对齐算法效果的方法",
+        "analysis_time": "2025-07-29T14:42:04.409630"
+    },
+    {
+        "paper_id": "2405.08295",
+        "paper_url": "https://arxiv.org/abs/2405.08295",
+        "title": "SpeechVerse: A Large-scale Generalizable Audio Language Model",
+        "translation": "SpeechVerse：大规模可泛化的音频语言模型",
+        "authors": "Yuxuan Wang, Yu Wu, Zhuo Chen, Yitong Li, Xie Chen, Jinyu Li, Shuai Bai, Xu Tan, Jinyu Xiong, Lei Xie, Bin Liu, Michael A. Zenger, Tao Qin, Jiebo Luo, Tie-Yan Liu (香港科技大学、香港中文大学、微软亚洲研究院等)",
+        "publish_date": "2024-05-14",
+        "model_function": "大规模音频语言模型，支持音频理解与生成，具备多任务处理能力和强泛化性",
+        "page_content": "**作者团队**：Yuxuan Wang, Yu Wu, Zhuo Chen, Yitong Li, Xie Chen, Jinyu Li, Shuai Bai, Xu Tan, Jinyu Xiong, Lei Xie, Bin Liu, Michael A. Zenger, Tao Qin, Jiebo Luo, Tie-Yan Liu (香港科技大学、香港中文大学、微软亚洲研究院等)\n**发表日期**：2024-05-14\n**模型功能**：大规模音频语言模型，支持音频理解与生成，具备多任务处理能力和强泛化性",
+        "analysis_time": "2025-07-29T14:42:17.097332"
+    },
+    {
+        "paper_id": "2405.08246",
+        "paper_url": "https://arxiv.org/abs/2405.08246",
+        "title": "Compositional Text-to-Image Generation with Dense Blob Representations",
+        "translation": "基于密集Blob表示的合成文本到图像生成",
+        "authors": "Yufei Guo (University of Oxford), Chen Sun (University of Oxford), Neil Houlsby (Google DeepMind), Philip Torr (University of Oxford), Maja Pantic (University of Oxford)",
+        "publish_date": "2024-05-13",
+        "model_function": "使用密集Blob表示进行合成文本到图像生成，通过分解文本描述为多个密集blob，提高组成关系的处理能力",
+        "page_content": "**作者团队**：Yufei Guo (University of Oxford), Chen Sun (University of Oxford), Neil Houlsby (Google DeepMind), Philip Torr (University of Oxford), Maja Pantic (University of Oxford)\n**发表日期**：2024-05-13\n**模型功能**：使用密集Blob表示进行合成文本到图像生成，通过分解文本描述为多个密集blob，提高组成关系的处理能力",
+        "analysis_time": "2025-07-29T14:42:29.383751"
+    },
+    {
+        "paper_id": "2405.08344",
+        "paper_url": "https://arxiv.org/abs/2405.08344",
+        "title": "No Time to Waste: Squeeze Time into Channel for Mobile Video Understanding",
+        "translation": "时间宝贵：将时间维度压缩到通道中用于移动视频理解",
+        "authors": "Hui Chen, Jiaqi Wang, Zhi Tian, Xinyang Jiang, Weiming Hu, Nanning Zheng",
+        "publish_date": "2024-05-14",
+        "model_function": "高效移动视频理解，通过时间维度压缩到通道维度降低计算复杂度",
+        "page_content": "**作者团队**：Hui Chen, Jiaqi Wang, Zhi Tian, Xinyang Jiang, Weiming Hu, Nanning Zheng\n**发表日期**：2024-05-14\n**模型功能**：高效移动视频理解，通过时间维度压缩到通道维度降低计算复杂度",
+        "analysis_time": "2025-07-29T14:42:39.859455"
+    },
+    {
+        "paper_id": "2405.08317",
+        "paper_url": "https://arxiv.org/abs/2405.08317",
+        "title": "SpeechGuard: Exploring the Adversarial Robustness of Multimodal Large Language Models",
+        "translation": "《SpeechGuard：探索多模态大语言模型的对抗鲁棒性》",
+        "authors": "Zhaowei Zhu, Yufei Guo, Jian Jiao, Yufei Gu, Shiliang Zhang, Xipeng Qiu, Xuanjing Huang (华东师范大学)",
+        "publish_date": "2024-05-14",
+        "model_function": "提高多模态大语言模型在面对对抗性攻击时的鲁棒性和安全性",
+        "page_content": "**作者团队**：Zhaowei Zhu, Yufei Guo, Jian Jiao, Yufei Gu, Shiliang Zhang, Xipeng Qiu, Xuanjing Huang (华东师范大学)\n**发表日期**：2024-05-14\n**模型功能**：提高多模态大语言模型在面对对抗性攻击时的鲁棒性和安全性",
+        "analysis_time": "2025-07-29T14:50:02.119563"
+    }
+]

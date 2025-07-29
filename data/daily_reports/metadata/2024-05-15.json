@@ -1,0 +1,1393 @@
+[
+    {
+        "paper": {
+            "id": "2405.08707",
+            "authors": [
+                {
+                    "_id": "6644fb26c1a4481c95a34bff",
+                    "name": "Xueyan Niu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644fb26c1a4481c95a34c00",
+                    "user": {
+                        "_id": "6667bdfd215b4c38f7ef17bb",
+                        "avatarUrl": "/avatars/cad66dd576c3261ec5c276ae00e666d1.svg",
+                        "isPro": false,
+                        "fullname": "Bo Bai",
+                        "user": "atomistic",
+                        "type": "user"
+                    },
+                    "name": "Bo Bai",
+                    "status": "claimed_verified",
+                    "statusLastChangedAt": "2024-06-11T06:59:48.062Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644fb26c1a4481c95a34c01",
+                    "name": "Lei Deng",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644fb26c1a4481c95a34c02",
+                    "name": "Wei Han",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-05-14T15:48:36.000Z",
+            "submittedOnDailyAt": "2024-05-15T16:42:54.864Z",
+            "title": "Beyond Scaling Laws: Understanding Transformer Performance with\n  Associative Memory",
+            "submittedOnDailyBy": {
+                "_id": "60f1abe7544c2adfd699860c",
+                "avatarUrl": "https://cdn-avatars.hf-mirror.com/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+                "isPro": true,
+                "fullname": "AK",
+                "user": "akhaliq",
+                "type": "user"
+            },
+            "summary": "Increasing the size of a Transformer model does not always lead to enhanced\nperformance. This phenomenon cannot be explained by the empirical scaling laws.\nFurthermore, improved generalization ability occurs as the model memorizes the\ntraining samples. We present a theoretical framework that sheds light on the\nmemorization process and performance dynamics of transformer-based language\nmodels. We model the behavior of Transformers with associative memories using\nHopfield networks, such that each transformer block effectively conducts an\napproximate nearest-neighbor search. Based on this, we design an energy\nfunction analogous to that in the modern continuous Hopfield network which\nprovides an insightful explanation for the attention mechanism. Using the\nmajorization-minimization technique, we construct a global energy function that\ncaptures the layered architecture of the Transformer. Under specific\nconditions, we show that the minimum achievable cross-entropy loss is bounded\nfrom below by a constant approximately equal to 1. We substantiate our\ntheoretical results by conducting experiments with GPT-2 on various data sizes,\nas well as training vanilla Transformers on a dataset of 2M tokens.",
+            "upvotes": 33,
+            "discussionId": "6644fb26c1a4481c95a34c42",
+            "ai_summary": "A theoretical framework using Hopfield networks explains memorization and performance dynamics in Transformer-based language models, showing bounds on achievable cross-entropy loss.",
+            "ai_keywords": [
+                "Transformer model",
+                "Hopfield networks",
+                "associative memories",
+                "nearest-neighbor search",
+                "attention mechanism",
+                "energy function",
+                "majorization-minimization technique",
+                "cross-entropy loss",
+                "GPT-2",
+                "vanilla Transformers"
+            ]
+        },
+        "publishedAt": "2024-05-14T11:48:36.000Z",
+        "title": "Beyond Scaling Laws: Understanding Transformer Performance with\n  Associative Memory",
+        "summary": "Increasing the size of a Transformer model does not always lead to enhanced\nperformance. This phenomenon cannot be explained by the empirical scaling laws.\nFurthermore, improved generalization ability occurs as the model memorizes the\ntraining samples. We present a theoretical framework that sheds light on the\nmemorization process and performance dynamics of transformer-based language\nmodels. We model the behavior of Transformers with associative memories using\nHopfield networks, such that each transformer block effectively conducts an\napproximate nearest-neighbor search. Based on this, we design an energy\nfunction analogous to that in the modern continuous Hopfield network which\nprovides an insightful explanation for the attention mechanism. Using the\nmajorization-minimization technique, we construct a global energy function that\ncaptures the layered architecture of the Transformer. Under specific\nconditions, we show that the minimum achievable cross-entropy loss is bounded\nfrom below by a constant approximately equal to 1. We substantiate our\ntheoretical results by conducting experiments with GPT-2 on various data sizes,\nas well as training vanilla Transformers on a dataset of 2M tokens.",
+        "thumbnail": "https://cdn-thumbnails.hf-mirror.com/social-thumbnails/papers/2405.08707.png",
+        "numComments": 0,
+        "submittedBy": {
+            "_id": "60f1abe7544c2adfd699860c",
+            "avatarUrl": "https://cdn-avatars.hf-mirror.com/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+            "fullname": "AK",
+            "name": "akhaliq",
+            "type": "user",
+            "isPro": true,
+            "isHf": true,
+            "isHfAdmin": false,
+            "isMod": false,
+            "followerCount": 7528
+        },
+        "isAuthorParticipating": false
+    },
+    {
+        "paper": {
+            "id": "2405.08054",
+            "authors": [
+                {
+                    "_id": "6644e03e366e9c68806db777",
+                    "name": "Wenqi Dong",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644e03e366e9c68806db778",
+                    "user": {
+                        "_id": "63d748ff6f49aa82306b7e48",
+                        "avatarUrl": "/avatars/9f0b8b8a09b14d76e52ed1bd312e6b63.svg",
+                        "isPro": false,
+                        "fullname": "BB Yang",
+                        "user": "ybbbbt",
+                        "type": "user"
+                    },
+                    "name": "Bangbang Yang",
+                    "status": "claimed_verified",
+                    "statusLastChangedAt": "2024-05-16T10:43:06.250Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644e03e366e9c68806db779",
+                    "name": "Lin Ma",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644e03e366e9c68806db77a",
+                    "name": "Xiao Liu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644e03e366e9c68806db77b",
+                    "name": "Liyuan Cui",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644e03e366e9c68806db77c",
+                    "name": "Hujun Bao",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644e03e366e9c68806db77d",
+                    "user": {
+                        "_id": "641a74bdf5e9c66105015385",
+                        "avatarUrl": "/avatars/13f966357de0ef5bb192ae566ad85ca0.svg",
+                        "isPro": false,
+                        "fullname": "Zack Ma",
+                        "user": "yuewenma",
+                        "type": "user"
+                    },
+                    "name": "Yuewen Ma",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T17:37:03.774Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644e03e366e9c68806db77e",
+                    "name": "Zhaopeng Cui",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-05-13T17:56:13.000Z",
+            "submittedOnDailyAt": "2024-05-15T14:48:07.868Z",
+            "title": "Coin3D: Controllable and Interactive 3D Assets Generation with\n  Proxy-Guided Conditioning",
+            "submittedOnDailyBy": {
+                "_id": "60f1abe7544c2adfd699860c",
+                "avatarUrl": "https://cdn-avatars.hf-mirror.com/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+                "isPro": true,
+                "fullname": "AK",
+                "user": "akhaliq",
+                "type": "user"
+            },
+            "summary": "As humans, we aspire to create media content that is both freely willed and\nreadily controlled. Thanks to the prominent development of generative\ntechniques, we now can easily utilize 2D diffusion methods to synthesize images\ncontrolled by raw sketch or designated human poses, and even progressively\nedit/regenerate local regions with masked inpainting. However, similar\nworkflows in 3D modeling tasks are still unavailable due to the lack of\ncontrollability and efficiency in 3D generation. In this paper, we present a\nnovel controllable and interactive 3D assets modeling framework, named Coin3D.\nCoin3D allows users to control the 3D generation using a coarse geometry proxy\nassembled from basic shapes, and introduces an interactive generation workflow\nto support seamless local part editing while delivering responsive 3D object\npreviewing within a few seconds. To this end, we develop several techniques,\nincluding the 3D adapter that applies volumetric coarse shape control to the\ndiffusion model, proxy-bounded editing strategy for precise part editing,\nprogressive volume cache to support responsive preview, and volume-SDS to\nensure consistent mesh reconstruction. Extensive experiments of interactive\ngeneration and editing on diverse shape proxies demonstrate that our method\nachieves superior controllability and flexibility in the 3D assets generation\ntask.",
+            "upvotes": 26,
+            "discussionId": "6644e03f366e9c68806db7b5",
+            "projectPage": "https://zju3dv.github.io/coin3d/",
+            "ai_summary": "Coin3D is an interactive 3D modeling framework that uses a coarse geometry proxy to control 3D generation, supports seamless local editing, and provides responsive previews using diffusion models and various novel techniques.",
+            "ai_keywords": [
+                "generative techniques",
+                "2D diffusion methods",
+                "masked inpainting",
+                "3D generation",
+                "controllable and interactive 3D assets modeling",
+                "Coin3D",
+                "coarse geometry proxy",
+                "interactive generation workflow",
+                "3D adapter",
+                "proxy-bounded editing strategy",
+                "progressive volume cache",
+                "volume-SDS",
+                "mesh reconstruction",
+                "interactive generation",
+                "local editing",
+                "responsive preview"
+            ]
+        },
+        "publishedAt": "2024-05-13T13:56:13.000Z",
+        "title": "Coin3D: Controllable and Interactive 3D Assets Generation with\n  Proxy-Guided Conditioning",
+        "summary": "As humans, we aspire to create media content that is both freely willed and\nreadily controlled. Thanks to the prominent development of generative\ntechniques, we now can easily utilize 2D diffusion methods to synthesize images\ncontrolled by raw sketch or designated human poses, and even progressively\nedit/regenerate local regions with masked inpainting. However, similar\nworkflows in 3D modeling tasks are still unavailable due to the lack of\ncontrollability and efficiency in 3D generation. In this paper, we present a\nnovel controllable and interactive 3D assets modeling framework, named Coin3D.\nCoin3D allows users to control the 3D generation using a coarse geometry proxy\nassembled from basic shapes, and introduces an interactive generation workflow\nto support seamless local part editing while delivering responsive 3D object\npreviewing within a few seconds. To this end, we develop several techniques,\nincluding the 3D adapter that applies volumetric coarse shape control to the\ndiffusion model, proxy-bounded editing strategy for precise part editing,\nprogressive volume cache to support responsive preview, and volume-SDS to\nensure consistent mesh reconstruction. Extensive experiments of interactive\ngeneration and editing on diverse shape proxies demonstrate that our method\nachieves superior controllability and flexibility in the 3D assets generation\ntask.",
+        "thumbnail": "https://cdn-thumbnails.hf-mirror.com/social-thumbnails/papers/2405.08054.png",
+        "numComments": 0,
+        "submittedBy": {
+            "_id": "60f1abe7544c2adfd699860c",
+            "avatarUrl": "https://cdn-avatars.hf-mirror.com/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+            "fullname": "AK",
+            "name": "akhaliq",
+            "type": "user",
+            "isPro": true,
+            "isHf": true,
+            "isHfAdmin": false,
+            "isMod": false,
+            "followerCount": 7528
+        },
+        "isAuthorParticipating": false
+    },
+    {
+        "paper": {
+            "id": "2405.08748",
+            "authors": [
+                {
+                    "_id": "6644709bbc86c9465b8ec37f",
+                    "name": "Zhimin Li",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec380",
+                    "name": "Jianwei Zhang",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec381",
+                    "name": "Qin Lin",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec382",
+                    "name": "Jiangfeng Xiong",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec383",
+                    "user": {
+                        "_id": "64dd8a1e22f93c32882eb2fe",
+                        "avatarUrl": "/avatars/a5e84a5c5a14058d91c342f8c89a36a2.svg",
+                        "isPro": false,
+                        "fullname": "yanxin long",
+                        "user": "yestinl",
+                        "type": "user"
+                    },
+                    "name": "Yanxin Long",
+                    "status": "claimed_verified",
+                    "statusLastChangedAt": "2024-05-17T07:15:43.339Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec384",
+                    "name": "Xinchi Deng",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec385",
+                    "name": "Yingfang Zhang",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec386",
+                    "user": {
+                        "_id": "646b0bbdec9a61e871799339",
+                        "avatarUrl": "https://cdn-avatars.hf-mirror.com/v1/production/uploads/646b0bbdec9a61e871799339/Xippv-ajkHkrGGAA7caLn.jpeg",
+                        "isPro": false,
+                        "fullname": "Xingchao Liu",
+                        "user": "XCLiu",
+                        "type": "user"
+                    },
+                    "name": "Xingchao Liu",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T19:44:07.916Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec387",
+                    "user": {
+                        "_id": "6507f434dacc94cd6c2a8700",
+                        "avatarUrl": "/avatars/71bf2dff7119f9fd2c01ddf925229239.svg",
+                        "isPro": false,
+                        "fullname": "Minbin Huang",
+                        "user": "centaurus-alpha",
+                        "type": "user"
+                    },
+                    "name": "Minbin Huang",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T19:44:17.994Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec388",
+                    "name": "Zedong Xiao",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec389",
+                    "user": {
+                        "_id": "6420ff4369a2c293388241ec",
+                        "avatarUrl": "/avatars/20f50f10902496df2cfbadbfafba9cf7.svg",
+                        "isPro": false,
+                        "fullname": "Dayou Chen",
+                        "user": "dayoucdy",
+                        "type": "user"
+                    },
+                    "name": "Dayou Chen",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T19:44:36.061Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec38a",
+                    "user": {
+                        "_id": "63ecb9bb54bba678151727b2",
+                        "avatarUrl": "/avatars/3712d765452b3ea7234a3211cafc7008.svg",
+                        "isPro": false,
+                        "fullname": "Jiajun He",
+                        "user": "JJHE",
+                        "type": "user"
+                    },
+                    "name": "Jiajun He",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T19:44:44.346Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec38b",
+                    "name": "Jiahao Li",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec38c",
+                    "name": "Wenyue Li",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec38d",
+                    "name": "Chen Zhang",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec38e",
+                    "user": {
+                        "_id": "630848b76bf7bb2fee642d6b",
+                        "avatarUrl": "/avatars/5c1c3c9ade13e748fb37e687d92e0c3c.svg",
+                        "isPro": false,
+                        "fullname": "Rongwei Quan",
+                        "user": "Authority",
+                        "type": "user"
+                    },
+                    "name": "Rongwei Quan",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T19:45:28.686Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec38f",
+                    "name": "Jianxiang Lu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec390",
+                    "user": {
+                        "_id": "641c139b73296f7ee256970c",
+                        "avatarUrl": "/avatars/5a2550d95e686640242840ad3bd0e680.svg",
+                        "isPro": false,
+                        "fullname": "Jiabin Huang",
+                        "user": "YellowAddice",
+                        "type": "user"
+                    },
+                    "name": "Jiabin Huang",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T19:45:44.632Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec391",
+                    "name": "Xiaoyan Yuan",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec392",
+                    "name": "Xiaoxiao Zheng",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec393",
+                    "name": "Yixuan Li",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec394",
+                    "user": {
+                        "_id": "6467254376bb704aa13fb86f",
+                        "avatarUrl": "/avatars/2c13f9184e782de7d9513171584935df.svg",
+                        "isPro": false,
+                        "fullname": "zhangjihong",
+                        "user": "zhangjh666",
+                        "type": "user"
+                    },
+                    "name": "Jihong Zhang",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T19:46:34.429Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec395",
+                    "name": "Chao Zhang",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec396",
+                    "name": "Meng Chen",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec397",
+                    "name": "Jie Liu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec398",
+                    "name": "Zheng Fang",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec399",
+                    "user": {
+                        "_id": "65796876d54197901f9003ce",
+                        "avatarUrl": "/avatars/ed06d346beca637a24bf4d51ac2ad56b.svg",
+                        "isPro": false,
+                        "fullname": "Weiyan Wang",
+                        "user": "outstander",
+                        "type": "user"
+                    },
+                    "name": "Weiyan Wang",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T19:51:19.270Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec39a",
+                    "name": "Jinbao Xue",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec39b",
+                    "name": "Yangyu Tao",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec39c",
+                    "name": "Jianchen Zhu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec39d",
+                    "name": "Kai Liu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec39e",
+                    "name": "Sihuan Lin",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec39f",
+                    "user": {
+                        "_id": "650278893c7d1b2e5bb059b4",
+                        "avatarUrl": "/avatars/b0ac7213b4610a01dfef4cbfedd29740.svg",
+                        "isPro": false,
+                        "fullname": "Yifu Sun",
+                        "user": "tomsunyifu",
+                        "type": "user"
+                    },
+                    "name": "Yifu Sun",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T19:52:33.954Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec3a0",
+                    "name": "Yun Li",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec3a1",
+                    "user": {
+                        "_id": "65f7f7dbd348df41c96af9bd",
+                        "avatarUrl": "/avatars/1077ec83ac0b0335939166f635c5d9b9.svg",
+                        "isPro": false,
+                        "fullname": "Dongdong Wang",
+                        "user": "Dongdawn1120",
+                        "type": "user"
+                    },
+                    "name": "Dongdong Wang",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T19:52:43.962Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec3a2",
+                    "user": {
+                        "_id": "6448e0ebe87a77e872e4b852",
+                        "avatarUrl": "https://cdn-avatars.hf-mirror.com/v1/production/uploads/6448e0ebe87a77e872e4b852/yJ65YXdnfJSZx16PZxhJA.png",
+                        "isPro": false,
+                        "fullname": "Mingtao Chen",
+                        "user": "meton",
+                        "type": "user"
+                    },
+                    "name": "Mingtao Chen",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T19:52:54.069Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec3a3",
+                    "name": "Zhichao Hu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec3a4",
+                    "name": "Xiao Xiao",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec3a5",
+                    "name": "Yan Chen",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec3a6",
+                    "name": "Yuhong Liu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec3a7",
+                    "name": "Wei Liu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec3a8",
+                    "name": "Di Wang",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec3a9",
+                    "name": "Yong Yang",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec3aa",
+                    "name": "Jie Jiang",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644709bbc86c9465b8ec3ab",
+                    "user": {
+                        "_id": "64c13276b4fd9b97756b1783",
+                        "avatarUrl": "/avatars/a1d0480fa94f59ed5db3a1bba09bd660.svg",
+                        "isPro": false,
+                        "fullname": "lu",
+                        "user": "qinglin3",
+                        "type": "user"
+                    },
+                    "name": "Qinglin Lu",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T19:53:18.379Z",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-05-14T16:33:25.000Z",
+            "submittedOnDailyAt": "2024-05-15T14:33:05.969Z",
+            "title": "Hunyuan-DiT: A Powerful Multi-Resolution Diffusion Transformer with\n  Fine-Grained Chinese Understanding",
+            "submittedOnDailyBy": {
+                "_id": "60f1abe7544c2adfd699860c",
+                "avatarUrl": "https://cdn-avatars.hf-mirror.com/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+                "isPro": true,
+                "fullname": "AK",
+                "user": "akhaliq",
+                "type": "user"
+            },
+            "summary": "We present Hunyuan-DiT, a text-to-image diffusion transformer with\nfine-grained understanding of both English and Chinese. To construct\nHunyuan-DiT, we carefully design the transformer structure, text encoder, and\npositional encoding. We also build from scratch a whole data pipeline to update\nand evaluate data for iterative model optimization. For fine-grained language\nunderstanding, we train a Multimodal Large Language Model to refine the\ncaptions of the images. Finally, Hunyuan-DiT can perform multi-turn multimodal\ndialogue with users, generating and refining images according to the context.\nThrough our holistic human evaluation protocol with more than 50 professional\nhuman evaluators, Hunyuan-DiT sets a new state-of-the-art in Chinese-to-image\ngeneration compared with other open-source models. Code and pretrained models\nare publicly available at github.com/Tencent/HunyuanDiT",
+            "upvotes": 25,
+            "discussionId": "664470a1bc86c9465b8ec5c7",
+            "ai_summary": "Hunyuan-DiT, a text-to-image diffusion transformer, achieves state-of-the-art in Chinese-to-image generation by incorporating fine-grained language understanding and multi-turn dialogue capabilities.",
+            "ai_keywords": [
+                "text-to-image diffusion transformer",
+                "multimodal large language model",
+                "transformer structure",
+                "text encoder",
+                "positional encoding",
+                "multi-turn multimodal dialogue"
+            ]
+        },
+        "publishedAt": "2024-05-14T12:33:25.000Z",
+        "title": "Hunyuan-DiT: A Powerful Multi-Resolution Diffusion Transformer with\n  Fine-Grained Chinese Understanding",
+        "summary": "We present Hunyuan-DiT, a text-to-image diffusion transformer with\nfine-grained understanding of both English and Chinese. To construct\nHunyuan-DiT, we carefully design the transformer structure, text encoder, and\npositional encoding. We also build from scratch a whole data pipeline to update\nand evaluate data for iterative model optimization. For fine-grained language\nunderstanding, we train a Multimodal Large Language Model to refine the\ncaptions of the images. Finally, Hunyuan-DiT can perform multi-turn multimodal\ndialogue with users, generating and refining images according to the context.\nThrough our holistic human evaluation protocol with more than 50 professional\nhuman evaluators, Hunyuan-DiT sets a new state-of-the-art in Chinese-to-image\ngeneration compared with other open-source models. Code and pretrained models\nare publicly available at github.com/Tencent/HunyuanDiT",
+        "thumbnail": "https://cdn-thumbnails.hf-mirror.com/social-thumbnails/papers/2405.08748.png",
+        "numComments": 2,
+        "submittedBy": {
+            "_id": "60f1abe7544c2adfd699860c",
+            "avatarUrl": "https://cdn-avatars.hf-mirror.com/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+            "fullname": "AK",
+            "name": "akhaliq",
+            "type": "user",
+            "isPro": true,
+            "isHf": true,
+            "isHfAdmin": false,
+            "isMod": false,
+            "followerCount": 7528
+        },
+        "isAuthorParticipating": false
+    },
+    {
+        "paper": {
+            "id": "2405.08448",
+            "authors": [
+                {
+                    "_id": "6644fa49123d31ba5b288503",
+                    "user": {
+                        "_id": "62ac59847bd21e09d0053375",
+                        "avatarUrl": "https://cdn-avatars.hf-mirror.com/v1/production/uploads/1655462260649-noauth.jpeg",
+                        "isPro": false,
+                        "fullname": "Robin Tang",
+                        "user": "LemonPlay",
+                        "type": "user"
+                    },
+                    "name": "Yunhao Tang",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T20:15:43.375Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644fa49123d31ba5b288504",
+                    "name": "Daniel Zhaohan Guo",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644fa49123d31ba5b288505",
+                    "name": "Zeyu Zheng",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644fa49123d31ba5b288506",
+                    "name": "Daniele Calandriello",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644fa49123d31ba5b288507",
+                    "user": {
+                        "_id": "6433a8c37b8247480105cf7f",
+                        "avatarUrl": "/avatars/a19536f3f3b8eae3609648bea112b381.svg",
+                        "isPro": false,
+                        "fullname": "Yuan Cao",
+                        "user": "caoyuan33",
+                        "type": "user"
+                    },
+                    "name": "Yuan Cao",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T20:14:18.573Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644fa49123d31ba5b288508",
+                    "user": {
+                        "_id": "63280235bfc72a1d59d029c3",
+                        "avatarUrl": "/avatars/85be03ddbe48a0d7a12f8fd95eeb00a1.svg",
+                        "isPro": false,
+                        "fullname": "Eugene Tarassov",
+                        "user": "etarassov",
+                        "type": "user"
+                    },
+                    "name": "Eugene Tarassov",
+                    "status": "claimed_verified",
+                    "statusLastChangedAt": "2024-05-31T14:24:09.016Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644fa49123d31ba5b288509",
+                    "name": "Rémi Munos",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644fa49123d31ba5b28850a",
+                    "name": "Bernardo Ávila Pires",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644fa49123d31ba5b28850b",
+                    "user": {
+                        "_id": "651e97156d92456bdf5ace6b",
+                        "avatarUrl": "https://cdn-avatars.hf-mirror.com/v1/production/uploads/651e97156d92456bdf5ace6b/KKfdZGPAcWPdqycp9SulH.jpeg",
+                        "isPro": false,
+                        "fullname": "Michal Valko",
+                        "user": "misovalko",
+                        "type": "user"
+                    },
+                    "name": "Michal Valko",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T20:14:50.193Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644fa49123d31ba5b28850c",
+                    "name": "Yong Cheng",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644fa49123d31ba5b28850d",
+                    "name": "Will Dabney",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-05-14T09:12:30.000Z",
+            "submittedOnDailyAt": "2024-05-15T16:39:14.411Z",
+            "title": "Understanding the performance gap between online and offline alignment\n  algorithms",
+            "submittedOnDailyBy": {
+                "_id": "60f1abe7544c2adfd699860c",
+                "avatarUrl": "https://cdn-avatars.hf-mirror.com/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+                "isPro": true,
+                "fullname": "AK",
+                "user": "akhaliq",
+                "type": "user"
+            },
+            "summary": "Reinforcement learning from human feedback (RLHF) is the canonical framework\nfor large language model alignment. However, rising popularity in offline\nalignment algorithms challenge the need for on-policy sampling in RLHF. Within\nthe context of reward over-optimization, we start with an opening set of\nexperiments that demonstrate the clear advantage of online methods over offline\nmethods. This prompts us to investigate the causes to the performance\ndiscrepancy through a series of carefully designed experimental ablations. We\nshow empirically that hypotheses such as offline data coverage and data quality\nby itself cannot convincingly explain the performance difference. We also find\nthat while offline algorithms train policy to become good at pairwise\nclassification, it is worse at generations; in the meantime the policies\ntrained by online algorithms are good at generations while worse at pairwise\nclassification. This hints at a unique interplay between discriminative and\ngenerative capabilities, which is greatly impacted by the sampling process.\nLastly, we observe that the performance discrepancy persists for both\ncontrastive and non-contrastive loss functions, and appears not to be addressed\nby simply scaling up policy networks. Taken together, our study sheds light on\nthe pivotal role of on-policy sampling in AI alignment, and hints at certain\nfundamental challenges of offline alignment algorithms.",
+            "upvotes": 20,
+            "discussionId": "6644fa4a123d31ba5b28852d",
+            "ai_summary": "Offline reinforcement learning from human feedback underperforms online methods in large language model alignment, suggesting that on-policy sampling is crucial and highlighting challenges in offline alignment.",
+            "ai_keywords": [
+                "reinforcement learning from human feedback",
+                "RLHF",
+                "offline alignment",
+                "online methods",
+                "reward over-optimization",
+                "experimental ablations",
+                "offline data coverage",
+                "data quality",
+                "pairwise classification",
+                "generative capabilities",
+                "contrastive loss",
+                "non-contrastive loss",
+                "policy networks",
+                "AI alignment"
+            ]
+        },
+        "publishedAt": "2024-05-14T05:12:30.000Z",
+        "title": "Understanding the performance gap between online and offline alignment\n  algorithms",
+        "summary": "Reinforcement learning from human feedback (RLHF) is the canonical framework\nfor large language model alignment. However, rising popularity in offline\nalignment algorithms challenge the need for on-policy sampling in RLHF. Within\nthe context of reward over-optimization, we start with an opening set of\nexperiments that demonstrate the clear advantage of online methods over offline\nmethods. This prompts us to investigate the causes to the performance\ndiscrepancy through a series of carefully designed experimental ablations. We\nshow empirically that hypotheses such as offline data coverage and data quality\nby itself cannot convincingly explain the performance difference. We also find\nthat while offline algorithms train policy to become good at pairwise\nclassification, it is worse at generations; in the meantime the policies\ntrained by online algorithms are good at generations while worse at pairwise\nclassification. This hints at a unique interplay between discriminative and\ngenerative capabilities, which is greatly impacted by the sampling process.\nLastly, we observe that the performance discrepancy persists for both\ncontrastive and non-contrastive loss functions, and appears not to be addressed\nby simply scaling up policy networks. Taken together, our study sheds light on\nthe pivotal role of on-policy sampling in AI alignment, and hints at certain\nfundamental challenges of offline alignment algorithms.",
+        "thumbnail": "https://cdn-thumbnails.hf-mirror.com/social-thumbnails/papers/2405.08448.png",
+        "numComments": 0,
+        "submittedBy": {
+            "_id": "60f1abe7544c2adfd699860c",
+            "avatarUrl": "https://cdn-avatars.hf-mirror.com/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+            "fullname": "AK",
+            "name": "akhaliq",
+            "type": "user",
+            "isPro": true,
+            "isHf": true,
+            "isHfAdmin": false,
+            "isMod": false,
+            "followerCount": 7528
+        },
+        "isAuthorParticipating": false
+    },
+    {
+        "paper": {
+            "id": "2405.08295",
+            "authors": [
+                {
+                    "_id": "6644f82fb037ed8abd89b72a",
+                    "name": "Nilaksh Das",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f82fb037ed8abd89b72b",
+                    "name": "Saket Dingliwal",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f82fb037ed8abd89b72c",
+                    "user": {
+                        "_id": "66467366a6d12d11aa1907b7",
+                        "avatarUrl": "/avatars/58e8cfc785e94ea415575408a2e78f24.svg",
+                        "isPro": false,
+                        "fullname": "Srikanth Ronanki",
+                        "user": "ronanki123",
+                        "type": "user"
+                    },
+                    "name": "Srikanth Ronanki",
+                    "status": "claimed_verified",
+                    "statusLastChangedAt": "2024-05-17T06:53:32.267Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f82fb037ed8abd89b72d",
+                    "user": {
+                        "_id": "649d336965b8e583e1ba7b8e",
+                        "avatarUrl": "/avatars/7e3850f98c07b081902ee84d73141aec.svg",
+                        "isPro": false,
+                        "fullname": "Rohit Paturi",
+                        "user": "roitpaturi",
+                        "type": "user"
+                    },
+                    "name": "Rohit Paturi",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T20:29:57.732Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f82fb037ed8abd89b72e",
+                    "name": "David Huang",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f82fb037ed8abd89b72f",
+                    "user": {
+                        "_id": "64b559445154d0a506acab69",
+                        "avatarUrl": "/avatars/502590d6ea2ae56f7dd43505914560a0.svg",
+                        "isPro": false,
+                        "fullname": "Prashant",
+                        "user": "prashantmathur",
+                        "type": "user"
+                    },
+                    "name": "Prashant Mathur",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T20:30:46.235Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f82fb037ed8abd89b730",
+                    "name": "Jie Yuan",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f82fb037ed8abd89b731",
+                    "user": {
+                        "_id": "63d22014b30415240fdcc74c",
+                        "avatarUrl": "/avatars/82160f411ac320149dbab97489246737.svg",
+                        "isPro": false,
+                        "fullname": "Dhanush Bekal",
+                        "user": "Ddhdddh",
+                        "type": "user"
+                    },
+                    "name": "Dhanush Bekal",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T20:31:18.256Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f82fb037ed8abd89b732",
+                    "user": {
+                        "_id": "63dbf06306e5ca38798438ed",
+                        "avatarUrl": "/avatars/a2c608e4e7ded6d4a2fca9f7d4750ab7.svg",
+                        "isPro": false,
+                        "fullname": "Xing Niu",
+                        "user": "xingniu",
+                        "type": "user"
+                    },
+                    "name": "Xing Niu",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T20:31:27.154Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f82fb037ed8abd89b733",
+                    "user": {
+                        "_id": "5faf4c4984389b139cf3b4e0",
+                        "avatarUrl": "/avatars/0fa06885e2999fcab8bc833e2211779f.svg",
+                        "isPro": false,
+                        "fullname": "Sai Muralidhar Jayanthi",
+                        "user": "murali1996",
+                        "type": "user"
+                    },
+                    "name": "Sai Muralidhar Jayanthi",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T20:31:34.639Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f82fb037ed8abd89b734",
+                    "user": {
+                        "_id": "64a7971b1e4dd9f35498426d",
+                        "avatarUrl": "/avatars/c6fd98cabb6b60a66fec436008c49f00.svg",
+                        "isPro": false,
+                        "fullname": "Xilai Li",
+                        "user": "YuzakiKokuban",
+                        "type": "user"
+                    },
+                    "name": "Xilai Li",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T20:31:42.147Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f82fb037ed8abd89b735",
+                    "user": {
+                        "_id": "65b03e4dbf7d3327d066e7af",
+                        "avatarUrl": "/avatars/ad60d2f207e80f742e5aaed93281b8a8.svg",
+                        "isPro": false,
+                        "fullname": "Karel Mundnich",
+                        "user": "kmundnic",
+                        "type": "user"
+                    },
+                    "name": "Karel Mundnich",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T20:31:49.418Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f82fb037ed8abd89b736",
+                    "name": "Monica Sunkara",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f82fb037ed8abd89b737",
+                    "name": "Sundararajan Srinivasan",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f82fb037ed8abd89b738",
+                    "name": "Kyu J Han",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f82fb037ed8abd89b739",
+                    "name": "Katrin Kirchhoff",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-05-14T03:33:31.000Z",
+            "submittedOnDailyAt": "2024-05-15T16:30:15.878Z",
+            "title": "SpeechVerse: A Large-scale Generalizable Audio Language Model",
+            "submittedOnDailyBy": {
+                "_id": "60f1abe7544c2adfd699860c",
+                "avatarUrl": "https://cdn-avatars.hf-mirror.com/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+                "isPro": true,
+                "fullname": "AK",
+                "user": "akhaliq",
+                "type": "user"
+            },
+            "summary": "Large language models (LLMs) have shown incredible proficiency in performing\ntasks that require semantic understanding of natural language instructions.\nRecently, many works have further expanded this capability to perceive\nmultimodal audio and text inputs, but their capabilities are often limited to\nspecific fine-tuned tasks such as automatic speech recognition and translation.\nWe therefore develop SpeechVerse, a robust multi-task training and curriculum\nlearning framework that combines pre-trained speech and text foundation models\nvia a small set of learnable parameters, while keeping the pre-trained models\nfrozen during training. The models are instruction finetuned using continuous\nlatent representations extracted from the speech foundation model to achieve\noptimal zero-shot performance on a diverse range of speech processing tasks\nusing natural language instructions. We perform extensive benchmarking that\nincludes comparing our model performance against traditional baselines across\nseveral datasets and tasks. Furthermore, we evaluate the model's capability for\ngeneralized instruction following by testing on out-of-domain datasets, novel\nprompts, and unseen tasks. Our empirical experiments reveal that our multi-task\nSpeechVerse model is even superior to conventional task-specific baselines on 9\nout of the 11 tasks.",
+            "upvotes": 20,
+            "discussionId": "6644f82fb037ed8abd89b76a",
+            "ai_summary": "SpeechVerse, a multi-task training framework, enhances performance on diverse speech processing tasks with natural language instructions by combining pre-trained speech and text models.",
+            "ai_keywords": [
+                "SpeechVerse",
+                "multi-task training",
+                "curriculum learning",
+                "pre-trained speech models",
+                "pre-trained text models",
+                "learnable parameters",
+                "instruction finetuning",
+                "continuous latent representations",
+                "zero-shot performance",
+                "out-of-domain datasets",
+                "generalized instruction following"
+            ]
+        },
+        "publishedAt": "2024-05-13T23:33:31.000Z",
+        "title": "SpeechVerse: A Large-scale Generalizable Audio Language Model",
+        "summary": "Large language models (LLMs) have shown incredible proficiency in performing\ntasks that require semantic understanding of natural language instructions.\nRecently, many works have further expanded this capability to perceive\nmultimodal audio and text inputs, but their capabilities are often limited to\nspecific fine-tuned tasks such as automatic speech recognition and translation.\nWe therefore develop SpeechVerse, a robust multi-task training and curriculum\nlearning framework that combines pre-trained speech and text foundation models\nvia a small set of learnable parameters, while keeping the pre-trained models\nfrozen during training. The models are instruction finetuned using continuous\nlatent representations extracted from the speech foundation model to achieve\noptimal zero-shot performance on a diverse range of speech processing tasks\nusing natural language instructions. We perform extensive benchmarking that\nincludes comparing our model performance against traditional baselines across\nseveral datasets and tasks. Furthermore, we evaluate the model's capability for\ngeneralized instruction following by testing on out-of-domain datasets, novel\nprompts, and unseen tasks. Our empirical experiments reveal that our multi-task\nSpeechVerse model is even superior to conventional task-specific baselines on 9\nout of the 11 tasks.",
+        "thumbnail": "https://cdn-thumbnails.hf-mirror.com/social-thumbnails/papers/2405.08295.png",
+        "numComments": 0,
+        "submittedBy": {
+            "_id": "60f1abe7544c2adfd699860c",
+            "avatarUrl": "https://cdn-avatars.hf-mirror.com/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+            "fullname": "AK",
+            "name": "akhaliq",
+            "type": "user",
+            "isPro": true,
+            "isHf": true,
+            "isHfAdmin": false,
+            "isMod": false,
+            "followerCount": 7528
+        },
+        "isAuthorParticipating": false
+    },
+    {
+        "paper": {
+            "id": "2405.08246",
+            "authors": [
+                {
+                    "_id": "6644c6eb3744e4bcd5b7a53b",
+                    "user": {
+                        "_id": "64c1a69e226e016da8450ae2",
+                        "avatarUrl": "/avatars/54c161e8b8543244ed13cbe47017624e.svg",
+                        "isPro": false,
+                        "fullname": "Weili Nie",
+                        "user": "xiaoli08",
+                        "type": "user"
+                    },
+                    "name": "Weili Nie",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T17:16:21.819Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644c6eb3744e4bcd5b7a53c",
+                    "user": {
+                        "_id": "62fab69f8cd542e895bafd6e",
+                        "avatarUrl": "/avatars/c553bff4bd52b9a4f79e9c76fa22e27e.svg",
+                        "isPro": false,
+                        "fullname": "Sifei Liu",
+                        "user": "zwrq",
+                        "type": "user"
+                    },
+                    "name": "Sifei Liu",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T17:22:29.311Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644c6eb3744e4bcd5b7a53d",
+                    "user": {
+                        "_id": "6350842a0f376d3c482bc04a",
+                        "avatarUrl": "/avatars/dca5f6b3e867ed28f80882ea2b32c2c8.svg",
+                        "isPro": false,
+                        "fullname": "morteza mardani",
+                        "user": "mortezamardani",
+                        "type": "user"
+                    },
+                    "name": "Morteza Mardani",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T17:22:36.597Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644c6eb3744e4bcd5b7a53e",
+                    "name": "Chao Liu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644c6eb3744e4bcd5b7a53f",
+                    "name": "Benjamin Eckart",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644c6eb3744e4bcd5b7a540",
+                    "user": {
+                        "_id": "62f6956cd3bdacb7eec02920",
+                        "avatarUrl": "/avatars/b22db0823311f866c00db2efc4b9f814.svg",
+                        "isPro": false,
+                        "fullname": "Arash Vahdat",
+                        "user": "avahdat",
+                        "type": "user"
+                    },
+                    "name": "Arash Vahdat",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T17:23:02.125Z",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-05-14T00:22:06.000Z",
+            "submittedOnDailyAt": "2024-05-15T13:00:07.362Z",
+            "title": "Compositional Text-to-Image Generation with Dense Blob Representations",
+            "submittedOnDailyBy": {
+                "_id": "60f1abe7544c2adfd699860c",
+                "avatarUrl": "https://cdn-avatars.hf-mirror.com/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+                "isPro": true,
+                "fullname": "AK",
+                "user": "akhaliq",
+                "type": "user"
+            },
+            "summary": "Existing text-to-image models struggle to follow complex text prompts,\nraising the need for extra grounding inputs for better controllability. In this\nwork, we propose to decompose a scene into visual primitives - denoted as dense\nblob representations - that contain fine-grained details of the scene while\nbeing modular, human-interpretable, and easy-to-construct. Based on blob\nrepresentations, we develop a blob-grounded text-to-image diffusion model,\ntermed BlobGEN, for compositional generation. Particularly, we introduce a new\nmasked cross-attention module to disentangle the fusion between blob\nrepresentations and visual features. To leverage the compositionality of large\nlanguage models (LLMs), we introduce a new in-context learning approach to\ngenerate blob representations from text prompts. Our extensive experiments show\nthat BlobGEN achieves superior zero-shot generation quality and better\nlayout-guided controllability on MS-COCO. When augmented by LLMs, our method\nexhibits superior numerical and spatial correctness on compositional image\ngeneration benchmarks. Project page: https://blobgen-2d.github.io.",
+            "upvotes": 18,
+            "discussionId": "6644c6ef3744e4bcd5b7a713",
+            "ai_summary": "BlobGEN, a blob-grounded text-to-image diffusion model with masked cross-attention and in-context learning from LLMs, excels in zero-shot generation and layout control, outperforming benchmarks in numerical and spatial correctness.",
+            "ai_keywords": [
+                "denoising autoencoders",
+                "diffusion models",
+                "blob representations",
+                "masked cross-attention",
+                "large language models",
+                "in-context learning",
+                "MS-COCO",
+                "compositional image generation"
+            ]
+        },
+        "publishedAt": "2024-05-13T20:22:06.000Z",
+        "title": "Compositional Text-to-Image Generation with Dense Blob Representations",
+        "summary": "Existing text-to-image models struggle to follow complex text prompts,\nraising the need for extra grounding inputs for better controllability. In this\nwork, we propose to decompose a scene into visual primitives - denoted as dense\nblob representations - that contain fine-grained details of the scene while\nbeing modular, human-interpretable, and easy-to-construct. Based on blob\nrepresentations, we develop a blob-grounded text-to-image diffusion model,\ntermed BlobGEN, for compositional generation. Particularly, we introduce a new\nmasked cross-attention module to disentangle the fusion between blob\nrepresentations and visual features. To leverage the compositionality of large\nlanguage models (LLMs), we introduce a new in-context learning approach to\ngenerate blob representations from text prompts. Our extensive experiments show\nthat BlobGEN achieves superior zero-shot generation quality and better\nlayout-guided controllability on MS-COCO. When augmented by LLMs, our method\nexhibits superior numerical and spatial correctness on compositional image\ngeneration benchmarks. Project page: https://blobgen-2d.github.io.",
+        "thumbnail": "https://cdn-thumbnails.hf-mirror.com/social-thumbnails/papers/2405.08246.png",
+        "numComments": 1,
+        "submittedBy": {
+            "_id": "60f1abe7544c2adfd699860c",
+            "avatarUrl": "https://cdn-avatars.hf-mirror.com/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+            "fullname": "AK",
+            "name": "akhaliq",
+            "type": "user",
+            "isPro": true,
+            "isHf": true,
+            "isHfAdmin": false,
+            "isMod": false,
+            "followerCount": 7528
+        },
+        "isAuthorParticipating": false
+    },
+    {
+        "paper": {
+            "id": "2405.08344",
+            "authors": [
+                {
+                    "_id": "6644fc9e8264e57bf9445843",
+                    "name": "Yingjie Zhai",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644fc9e8264e57bf9445844",
+                    "user": {
+                        "_id": "65f9312ac1d406d7161d6141",
+                        "avatarUrl": "/avatars/b249df8e7e9fb1133365db2ce5bc3f03.svg",
+                        "isPro": false,
+                        "fullname": "LiWenshuo",
+                        "user": "meteorh",
+                        "type": "user"
+                    },
+                    "name": "Wenshuo Li",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T20:11:12.734Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644fc9e8264e57bf9445845",
+                    "user": {
+                        "_id": "64d5deb154bb9eb704f83122",
+                        "avatarUrl": "/avatars/86ce09bcca903319051e2307581a43f4.svg",
+                        "isPro": false,
+                        "fullname": "Yehui Tang",
+                        "user": "tangyehui",
+                        "type": "user"
+                    },
+                    "name": "Yehui Tang",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T20:11:20.999Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644fc9e8264e57bf9445846",
+                    "user": {
+                        "_id": "65878c774f9d2b955e025019",
+                        "avatarUrl": "/avatars/c039c29e131a8cba96b38048da94971b.svg",
+                        "isPro": false,
+                        "fullname": "Xinghao Chen",
+                        "user": "xinghaochen",
+                        "type": "user"
+                    },
+                    "name": "Xinghao Chen",
+                    "status": "claimed_verified",
+                    "statusLastChangedAt": "2024-05-16T10:43:02.545Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644fc9e8264e57bf9445847",
+                    "user": {
+                        "_id": "658bdf7b925aadd43304f05c",
+                        "avatarUrl": "/avatars/64d9e9dea27c376c3bc7b2a54efc2a46.svg",
+                        "isPro": false,
+                        "fullname": "Yunhe Wang",
+                        "user": "MightyCrane",
+                        "type": "user"
+                    },
+                    "name": "Yunhe Wang",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T20:12:06.407Z",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-05-14T06:32:40.000Z",
+            "submittedOnDailyAt": "2024-05-15T16:49:10.787Z",
+            "title": "No Time to Waste: Squeeze Time into Channel for Mobile Video\n  Understanding",
+            "submittedOnDailyBy": {
+                "_id": "60f1abe7544c2adfd699860c",
+                "avatarUrl": "https://cdn-avatars.hf-mirror.com/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+                "isPro": true,
+                "fullname": "AK",
+                "user": "akhaliq",
+                "type": "user"
+            },
+            "summary": "Current architectures for video understanding mainly build upon 3D\nconvolutional blocks or 2D convolutions with additional operations for temporal\nmodeling. However, these methods all regard the temporal axis as a separate\ndimension of the video sequence, which requires large computation and memory\nbudgets and thus limits their usage on mobile devices. In this paper, we\npropose to squeeze the time axis of a video sequence into the channel dimension\nand present a lightweight video recognition network, term as\nSqueezeTime, for mobile video understanding. To enhance the temporal\nmodeling capability of the proposed network, we design a Channel-Time Learning\n(CTL) Block to capture temporal dynamics of the sequence. This module has two\ncomplementary branches, in which one branch is for temporal importance learning\nand another branch with temporal position restoring capability is to enhance\ninter-temporal object modeling ability. The proposed SqueezeTime is much\nlightweight and fast with high accuracies for mobile video understanding.\nExtensive experiments on various video recognition and action detection\nbenchmarks, i.e., Kinetics400, Kinetics600, HMDB51, AVA2.1 and THUMOS14,\ndemonstrate the superiority of our model. For example, our SqueezeTime achieves\n+1.2% accuracy and +80% GPU throughput gain on Kinetics400 than prior\nmethods. Codes are publicly available at\nhttps://github.com/xinghaochen/SqueezeTime and\nhttps://github.com/mindspore-lab/models/tree/master/research/huawei-noah/SqueezeTime.",
+            "upvotes": 16,
+            "discussionId": "6644fc9e8264e57bf9445871",
+            "ai_summary": "The proposed SqueezeTime network enhances video understanding on mobile devices by integrating the temporal axis into the channel dimension, improving accuracy and GPU throughput.",
+            "ai_keywords": [
+                "3D convolutions",
+                "2D convolutions",
+                "temporal modeling",
+                "SqueezeTime",
+                "Channel-Time Learning (CTL) Block",
+                "temporal importance learning",
+                "inter-temporal object modeling",
+                "Kinetics400",
+                "Kinetics600",
+                "HMDB51",
+                "AVA2.1",
+                "THUMOS14"
+            ]
+        },
+        "publishedAt": "2024-05-14T02:32:40.000Z",
+        "title": "No Time to Waste: Squeeze Time into Channel for Mobile Video\n  Understanding",
+        "summary": "Current architectures for video understanding mainly build upon 3D\nconvolutional blocks or 2D convolutions with additional operations for temporal\nmodeling. However, these methods all regard the temporal axis as a separate\ndimension of the video sequence, which requires large computation and memory\nbudgets and thus limits their usage on mobile devices. In this paper, we\npropose to squeeze the time axis of a video sequence into the channel dimension\nand present a lightweight video recognition network, term as\nSqueezeTime, for mobile video understanding. To enhance the temporal\nmodeling capability of the proposed network, we design a Channel-Time Learning\n(CTL) Block to capture temporal dynamics of the sequence. This module has two\ncomplementary branches, in which one branch is for temporal importance learning\nand another branch with temporal position restoring capability is to enhance\ninter-temporal object modeling ability. The proposed SqueezeTime is much\nlightweight and fast with high accuracies for mobile video understanding.\nExtensive experiments on various video recognition and action detection\nbenchmarks, i.e., Kinetics400, Kinetics600, HMDB51, AVA2.1 and THUMOS14,\ndemonstrate the superiority of our model. For example, our SqueezeTime achieves\n+1.2% accuracy and +80% GPU throughput gain on Kinetics400 than prior\nmethods. Codes are publicly available at\nhttps://github.com/xinghaochen/SqueezeTime and\nhttps://github.com/mindspore-lab/models/tree/master/research/huawei-noah/SqueezeTime.",
+        "thumbnail": "https://cdn-thumbnails.hf-mirror.com/social-thumbnails/papers/2405.08344.png",
+        "numComments": 0,
+        "submittedBy": {
+            "_id": "60f1abe7544c2adfd699860c",
+            "avatarUrl": "https://cdn-avatars.hf-mirror.com/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+            "fullname": "AK",
+            "name": "akhaliq",
+            "type": "user",
+            "isPro": true,
+            "isHf": true,
+            "isHfAdmin": false,
+            "isMod": false,
+            "followerCount": 7528
+        },
+        "isAuthorParticipating": false
+    },
+    {
+        "paper": {
+            "id": "2405.08317",
+            "authors": [
+                {
+                    "_id": "6644f96cbb4e1cdd58cf5589",
+                    "user": {
+                        "_id": "6645eafac2e5c9986a694cc8",
+                        "avatarUrl": "/avatars/bf3defa8a9cf5cbcd2a71386deb142eb.svg",
+                        "isPro": false,
+                        "fullname": "Raghuveer Peri",
+                        "user": "rperi12",
+                        "type": "user"
+                    },
+                    "name": "Raghuveer Peri",
+                    "status": "claimed_verified",
+                    "statusLastChangedAt": "2024-05-16T12:33:34.909Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f96cbb4e1cdd58cf558a",
+                    "user": {
+                        "_id": "5faf4c4984389b139cf3b4e0",
+                        "avatarUrl": "/avatars/0fa06885e2999fcab8bc833e2211779f.svg",
+                        "isPro": false,
+                        "fullname": "Sai Muralidhar Jayanthi",
+                        "user": "murali1996",
+                        "type": "user"
+                    },
+                    "name": "Sai Muralidhar Jayanthi",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T20:21:07.538Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f96cbb4e1cdd58cf558b",
+                    "user": {
+                        "_id": "66467366a6d12d11aa1907b7",
+                        "avatarUrl": "/avatars/58e8cfc785e94ea415575408a2e78f24.svg",
+                        "isPro": false,
+                        "fullname": "Srikanth Ronanki",
+                        "user": "ronanki123",
+                        "type": "user"
+                    },
+                    "name": "Srikanth Ronanki",
+                    "status": "claimed_verified",
+                    "statusLastChangedAt": "2024-05-17T06:53:30.174Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f96cbb4e1cdd58cf558c",
+                    "name": "Anshu Bhatia",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f96cbb4e1cdd58cf558d",
+                    "user": {
+                        "_id": "65b03e4dbf7d3327d066e7af",
+                        "avatarUrl": "/avatars/ad60d2f207e80f742e5aaed93281b8a8.svg",
+                        "isPro": false,
+                        "fullname": "Karel Mundnich",
+                        "user": "kmundnic",
+                        "type": "user"
+                    },
+                    "name": "Karel Mundnich",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T20:21:36.712Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f96cbb4e1cdd58cf558e",
+                    "user": {
+                        "_id": "60de4246264e80d074e52cd8",
+                        "avatarUrl": "/avatars/cee9c01a2456c5266cada342a98a7e03.svg",
+                        "isPro": false,
+                        "fullname": "Dingliwal",
+                        "user": "Saket",
+                        "type": "user"
+                    },
+                    "name": "Saket Dingliwal",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T20:21:54.140Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f96cbb4e1cdd58cf558f",
+                    "name": "Nilaksh Das",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f96cbb4e1cdd58cf5590",
+                    "name": "Zejiang Hou",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f96cbb4e1cdd58cf5591",
+                    "name": "Goeric Huybrechts",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f96cbb4e1cdd58cf5592",
+                    "name": "Srikanth Vishnubhotla",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f96cbb4e1cdd58cf5593",
+                    "user": {
+                        "_id": "63af027b5833626d76714bcd",
+                        "avatarUrl": "/avatars/ab8f4266f9efd5c257597738d6ddcc6d.svg",
+                        "isPro": false,
+                        "fullname": "Daniel Garcia-Romero",
+                        "user": "dgromero",
+                        "type": "user"
+                    },
+                    "name": "Daniel Garcia-Romero",
+                    "status": "admin_assigned",
+                    "statusLastChangedAt": "2024-05-15T20:22:34.461Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f96cbb4e1cdd58cf5594",
+                    "name": "Sundararajan Srinivasan",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f96cbb4e1cdd58cf5595",
+                    "name": "Kyu J Han",
+                    "hidden": false
+                },
+                {
+                    "_id": "6644f96cbb4e1cdd58cf5596",
+                    "name": "Katrin Kirchhoff",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-05-14T04:51:23.000Z",
+            "submittedOnDailyAt": "2024-05-15T16:35:32.478Z",
+            "title": "SpeechGuard: Exploring the Adversarial Robustness of Multimodal Large\n  Language Models",
+            "submittedOnDailyBy": {
+                "_id": "60f1abe7544c2adfd699860c",
+                "avatarUrl": "https://cdn-avatars.hf-mirror.com/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+                "isPro": true,
+                "fullname": "AK",
+                "user": "akhaliq",
+                "type": "user"
+            },
+            "summary": "Integrated Speech and Large Language Models (SLMs) that can follow speech\ninstructions and generate relevant text responses have gained popularity\nlately. However, the safety and robustness of these models remains largely\nunclear. In this work, we investigate the potential vulnerabilities of such\ninstruction-following speech-language models to adversarial attacks and\njailbreaking. Specifically, we design algorithms that can generate adversarial\nexamples to jailbreak SLMs in both white-box and black-box attack settings\nwithout human involvement. Additionally, we propose countermeasures to thwart\nsuch jailbreaking attacks. Our models, trained on dialog data with speech\ninstructions, achieve state-of-the-art performance on spoken question-answering\ntask, scoring over 80% on both safety and helpfulness metrics. Despite safety\nguardrails, experiments on jailbreaking demonstrate the vulnerability of SLMs\nto adversarial perturbations and transfer attacks, with average attack success\nrates of 90% and 10% respectively when evaluated on a dataset of carefully\ndesigned harmful questions spanning 12 different toxic categories. However, we\ndemonstrate that our proposed countermeasures reduce the attack success\nsignificantly.",
+            "upvotes": 13,
+            "discussionId": "6644f96cbb4e1cdd58cf55b6",
+            "ai_summary": "Research investigates adversarial vulnerabilities and proposes countermeasures for speech-language models that follow speech instructions and generate text responses.",
+            "ai_keywords": [
+                "adversarial attacks",
+                "jailbreaking",
+                "instruction-following speech-language models",
+                "white-box attacks",
+                "black-box attacks",
+                "countermeasures",
+                "spoken question-answering task",
+                "safety metrics",
+                "helpfulness metrics",
+                "harmful questions",
+                "toxic categories",
+                "transfer attacks"
+            ]
+        },
+        "publishedAt": "2024-05-14T00:51:23.000Z",
+        "title": "SpeechGuard: Exploring the Adversarial Robustness of Multimodal Large\n  Language Models",
+        "summary": "Integrated Speech and Large Language Models (SLMs) that can follow speech\ninstructions and generate relevant text responses have gained popularity\nlately. However, the safety and robustness of these models remains largely\nunclear. In this work, we investigate the potential vulnerabilities of such\ninstruction-following speech-language models to adversarial attacks and\njailbreaking. Specifically, we design algorithms that can generate adversarial\nexamples to jailbreak SLMs in both white-box and black-box attack settings\nwithout human involvement. Additionally, we propose countermeasures to thwart\nsuch jailbreaking attacks. Our models, trained on dialog data with speech\ninstructions, achieve state-of-the-art performance on spoken question-answering\ntask, scoring over 80% on both safety and helpfulness metrics. Despite safety\nguardrails, experiments on jailbreaking demonstrate the vulnerability of SLMs\nto adversarial perturbations and transfer attacks, with average attack success\nrates of 90% and 10% respectively when evaluated on a dataset of carefully\ndesigned harmful questions spanning 12 different toxic categories. However, we\ndemonstrate that our proposed countermeasures reduce the attack success\nsignificantly.",
+        "thumbnail": "https://cdn-thumbnails.hf-mirror.com/social-thumbnails/papers/2405.08317.png",
+        "numComments": 0,
+        "submittedBy": {
+            "_id": "60f1abe7544c2adfd699860c",
+            "avatarUrl": "https://cdn-avatars.hf-mirror.com/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+            "fullname": "AK",
+            "name": "akhaliq",
+            "type": "user",
+            "isPro": true,
+            "isHf": true,
+            "isHfAdmin": false,
+            "isMod": false,
+            "followerCount": 7528
+        },
+        "isAuthorParticipating": false
+    }
+]

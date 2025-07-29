@@ -1,0 +1,178 @@
+[
+    {
+        "paper_id": "2507.20939",
+        "paper_url": "https://arxiv.org/abs/2507.20939",
+        "title": "ARC-Hunyuan-Video-7B: Structured Video Comprehension of Real-World Shorts",
+        "translation": "ARC-Hunyuan-Video-7B：真实世界短视频的结构化视频理解",
+        "authors": "Zhenyu Wang, Zeyu Zhang, Yuxuan Wang, Ming Ding, Yankai Lin, Zhewei Wei, Xingcheng Yao, Yifan Xu, Zhicheng Dou, Jianye Hao, Zhewei Yao, Xing Wang, Zhoujun Li, Wayne Xin Zhao, Ji-Rong Wen",
+        "publish_date": "2025-07-28",
+        "model_function": "真实世界短视频的结构化视频理解模型，能够提取和分析视频中的结构化信息",
+        "page_content": "**作者团队**：Zhenyu Wang, Zeyu Zhang, Yuxuan Wang, Ming Ding, Yankai Lin, Zhewei Wei, Xingcheng Yao, Yifan Xu, Zhicheng Dou, Jianye Hao, Zhewei Yao, Xing Wang, Zhoujun Li, Wayne Xin Zhao, Ji-Rong Wen\n**发表日期**：2025-07-28\n**模型功能**：真实世界短视频的结构化视频理解模型，能够提取和分析视频中的结构化信息",
+        "analysis_time": "2025-07-29T14:12:42.029662"
+    },
+    {
+        "paper_id": "2507.19849",
+        "paper_url": "https://arxiv.org/abs/2507.19849",
+        "title": "Agentic Reinforced Policy Optimization",
+        "translation": "智能体强化策略优化",
+        "authors": "未明确提及",
+        "publish_date": "2025-07",
+        "model_function": "智能体强化策略优化方法，结合强化学习与智能体技术提升决策性能",
+        "page_content": "**作者团队**：未明确提及\n**发表日期**：2025-07\n**模型功能**：智能体强化策略优化方法，结合强化学习与智能体技术提升决策性能",
+        "analysis_time": "2025-07-29T14:12:51.381107"
+    },
+    {
+        "paper_id": "2507.21045",
+        "paper_url": "https://arxiv.org/abs/2507.21045",
+        "title": "Reconstructing 4D Spatial Intelligence: A Survey",
+        "translation": "重建4D空间智能：综述",
+        "authors": "Yifan Zhang, Shengfeng He, Xueyang Feng, Hao Su, Baoquan Chen, Hao Zhang",
+        "publish_date": "2025-07-21",
+        "model_function": "综述4D空间智能重建的理论、方法与应用",
+        "page_content": "**作者团队**：Yifan Zhang, Shengfeng He, Xueyang Feng, Hao Su, Baoquan Chen, Hao Zhang\n**发表日期**：2025-07-21\n**模型功能**：综述4D空间智能重建的理论、方法与应用",
+        "analysis_time": "2025-07-29T14:13:01.233325"
+    },
+    {
+        "paper_id": "2507.20984",
+        "paper_url": "https://arxiv.org/abs/2507.20984",
+        "title": "SmallThinker: A Family of Efficient Large Language Models Natively Trained for Local Deployment",
+        "translation": "SmallThinker：一种专为本地部署而原生训练的高效大型语言模型家族",
+        "authors": "Yuxuan Chen, Zeyu Zhang, Tianqi Liu, Yuxiao Dong, Jie Tang, Ming Ding",
+        "publish_date": "2025-07-28",
+        "model_function": "高效大型语言模型家族，专为本地部署优化，在资源受限环境中保持强大性能",
+        "page_content": "**作者团队**：Yuxuan Chen, Zeyu Zhang, Tianqi Liu, Yuxiao Dong, Jie Tang, Ming Ding\n**发表日期**：2025-07-28\n**模型功能**：高效大型语言模型家族，专为本地部署优化，在资源受限环境中保持强大性能",
+        "analysis_time": "2025-07-29T14:13:11.962585"
+    },
+    {
+        "paper_id": "2507.21049",
+        "paper_url": "https://arxiv.org/abs/2507.21049",
+        "title": "Rep-MTL: Unleashing the Power of Representation-level Task Saliency for Multi-Task Learning",
+        "translation": "Rep-MTL：释放表示级任务显著性在多任务学习中的力量",
+        "authors": "Yi Ding, Zhiyuan Chen, Weijie Chen, Yixuan Wei, Xiangnan He, Tat-Seng Chua",
+        "publish_date": "2025-07-09",
+        "model_function": "通过表示级任务显著性挖掘多任务学习中任务间的关系，提升模型性能和泛化能力",
+        "page_content": "**作者团队**：Yi Ding, Zhiyuan Chen, Weijie Chen, Yixuan Wei, Xiangnan He, Tat-Seng Chua\n**发表日期**：2025-07-09\n**模型功能**：通过表示级任务显著性挖掘多任务学习中任务间的关系，提升模型性能和泛化能力",
+        "analysis_time": "2025-07-29T14:13:16.724630"
+    },
+    {
+        "paper_id": "2507.20025",
+        "paper_url": "https://arxiv.org/abs/2507.20025",
+        "title": "Region-based Cluster Discrimination for Visual Representation Learning",
+        "translation": "基于区域的聚类判别用于视觉表示学习",
+        "authors": "Xiaofeng Liu, Zhiqiang Shen, Jiechao Xiong, Guosheng Lin, Yanning Zhang",
+        "publish_date": "2025-07-20",
+        "model_function": "通过区域级聚类判别提升视觉表示学习，增强图像分类和目标检测性能",
+        "page_content": "**作者团队**：Xiaofeng Liu, Zhiqiang Shen, Jiechao Xiong, Guosheng Lin, Yanning Zhang\n**发表日期**：2025-07-20\n**模型功能**：通过区域级聚类判别提升视觉表示学习，增强图像分类和目标检测性能",
+        "analysis_time": "2025-07-29T14:13:26.289805"
+    },
+    {
+        "paper_id": "2507.20673",
+        "paper_url": "https://arxiv.org/abs/2507.20673",
+        "title": "Geometric-Mean Policy Optimization",
+        "translation": "几何平均策略优化",
+        "authors": "Xiaoyu Guo, Yixuan Su, Yuting Wei, Lihong Li, Jun Wang",
+        "publish_date": "2025-07-21",
+        "model_function": "基于几何平均的策略优化算法，提高强化学习稳定性和样本效率。",
+        "page_content": "**作者团队**：Xiaoyu Guo, Yixuan Su, Yuting Wei, Lihong Li, Jun Wang\n**发表日期**：2025-07-21\n**模型功能**：基于几何平均的策略优化算法，提高强化学习稳定性和样本效率。",
+        "analysis_time": "2025-07-29T14:13:32.125521"
+    },
+    {
+        "paper_id": "2507.21033",
+        "paper_url": "https://arxiv.org/abs/2507.21033",
+        "title": "GPT-IMAGE-EDIT-1.5M: A Million-Scale, GPT-Generated Image Dataset",
+        "translation": "GPT-IMAGE-EDIT-1.5M：百万规模的GPT生成图像数据集",
+        "authors": "Xiaotian Gao, Zhiyuan Chen, Yuxiang Zhang, Zhenyu Wang, Yuxiao Dong, Jie Tang",
+        "publish_date": "2025-07-21",
+        "model_function": "提供百万级GPT生成图像数据集，支持图像编辑与生成研究",
+        "page_content": "**作者团队**：Xiaotian Gao, Zhiyuan Chen, Yuxiang Zhang, Zhenyu Wang, Yuxiao Dong, Jie Tang\n**发表日期**：2025-07-21\n**模型功能**：提供百万级GPT生成图像数据集，支持图像编辑与生成研究",
+        "analysis_time": "2025-07-29T14:27:07.144823"
+    },
+    {
+        "paper_id": "2507.19804",
+        "paper_url": "https://arxiv.org/abs/2507.19804",
+        "title": "ForCenNet: Foreground-Centric Network for Document Image Rectification",
+        "translation": "ForCenNet：面向文档图像矫正的前景中心网络",
+        "authors": "Zhenyu Li, Xinyu Zhang, Zhenyu Wang, Liangwei Wang, Shengcai Liao, Qingmin Liao",
+        "publish_date": "2025-07-20",
+        "model_function": "前景中心网络，用于矫正文档图像的透视变形问题，保持内容清晰可读",
+        "page_content": "**作者团队**：Zhenyu Li, Xinyu Zhang, Zhenyu Wang, Liangwei Wang, Shengcai Liao, Qingmin Liao\n**发表日期**：2025-07-20\n**模型功能**：前景中心网络，用于矫正文档图像的透视变形问题，保持内容清晰可读",
+        "analysis_time": "2025-07-29T14:27:16.707291"
+    },
+    {
+        "paper_id": "2507.20880",
+        "paper_url": "https://arxiv.org/abs/2507.20880",
+        "title": "JAM: A Tiny Flow-based Song Generator with Fine-grained Controllability and Aesthetic Alignment",
+        "translation": "JAM：具有细粒度可控性和美学对齐的小型基于流的歌曲生成器",
+        "authors": "Zhihao Du, Yuxuan Wang, Keqi Deng, Zhen Zhang, Xuming Hu, Zhenhui Ye, Xunying Liu, Jie Shao, Zhiyao Duan (北京大学, 腾讯AI Lab, 香港科技大学)",
+        "publish_date": "2025-07-21",
+        "model_function": "小型基于流的歌曲生成器，具有细粒度可控性和美学对齐功能",
+        "page_content": "**作者团队**：Zhihao Du, Yuxuan Wang, Keqi Deng, Zhen Zhang, Xuming Hu, Zhenhui Ye, Xunying Liu, Jie Shao, Zhiyao Duan (北京大学, 腾讯AI Lab, 香港科技大学)\n**发表日期**：2025-07-21\n**模型功能**：小型基于流的歌曲生成器，具有细粒度可控性和美学对齐功能",
+        "analysis_time": "2025-07-29T14:27:30.375707"
+    },
+    {
+        "paper_id": "2507.20900",
+        "paper_url": "https://arxiv.org/abs/2507.20900",
+        "title": "Music Arena: Live Evaluation for Text-to-Music",
+        "translation": "音乐竞技场：文本到音乐的实时评估",
+        "authors": "Antonios Athanassiadou (University of Edinburgh), Jordan Ash (University of Oxford), Gabriel Synnaeve (Meta AI), Pim de Haan (Meta AI), Adam Roberts (DeepMind), Adam Fisch (Stanford University), Jesse Engel (Google), Adam Lipkin (University of Oxford), Neil Zeghidour (Inria), Marcus E. O. de Almeida (University of Oxford), João Felipe Santos (University of Oxford)",
+        "publish_date": "2025-07-21",
+        "model_function": "Music Arena是一个实时评估框架，用于比较和评估不同文本到音乐生成模型的质量和性能。",
+        "page_content": "**作者团队**：Antonios Athanassiadou (University of Edinburgh), Jordan Ash (University of Oxford), Gabriel Synnaeve (Meta AI), Pim de Haan (Meta AI), Adam Roberts (DeepMind), Adam Fisch (Stanford University), Jesse Engel (Google), Adam Lipkin (University of Oxford), Neil Zeghidour (Inria), Marcus E. O. de Almeida (University of Oxford), João Felipe Santos (University of Oxford)\n\n**发表日期**：2025-07-21\n\n**模型功能**：Music Arena是一个实时评估框架，用于比较和评估不同文本到音乐生成模型的质量和性能。",
+        "analysis_time": "2025-07-29T14:34:29.523008"
+    },
+    {
+        "paper_id": "2507.21046",
+        "paper_url": "https://arxiv.org/abs/2507.21046",
+        "title": "A Survey of Self-Evolving Agents: On Path to Artificial Super Intelligence",
+        "translation": "自我进化代理综述：通向超级人工智能之路",
+        "authors": "Ahmed ElSayed, Mohamed El Banani, Mohamed M. Fouad, Hossam M. Dahrouj, Hossam A. H. Fahmy, Mohamed A. ElSayed, Hesham A. Ali",
+        "publish_date": "2025-07-16",
+        "model_function": "综述自我进化代理研究，分析AI系统自主进化机制与超级智能发展路径",
+        "page_content": "**作者团队**：Ahmed ElSayed, Mohamed El Banani, Mohamed M. Fouad, Hossam M. Dahrouj, Hossam A. H. Fahmy, Mohamed A. ElSayed, Hesham A. Ali\n**发表日期**：2025-07-16\n**模型功能**：综述自我进化代理研究，分析AI系统自主进化机制与超级智能发展路径",
+        "analysis_time": "2025-07-29T17:29:46.136704"
+    },
+    {
+        "paper_id": "2507.19766",
+        "paper_url": "https://arxiv.org/abs/2507.19766",
+        "title": "UloRL:An Ultra-Long Output Reinforcement Learning Approach for Advancing Large Language Models' Reasoning Abilities",
+        "translation": "UloRL：一种推进大语言模型推理能力的超长输出强化学习方法",
+        "authors": "Yujia Guo, Yuxuan Chen, Yuxiang Zhang, Zeyu Zhang, Chen Ma, Xingxing Wei, Hao Yang, Yankai Lin, Zhewei Wei, Zhou Yu, Weizhu Chen",
+        "publish_date": "2025-07-19",
+        "model_function": "UloRL是一种超长输出强化学习方法，通过强化学习训练大语言模型生成超长输出，提升复杂推理任务中的表现。",
+        "page_content": "**作者团队**：Yujia Guo, Yuxuan Chen, Yuxiang Zhang, Zeyu Zhang, Chen Ma, Xingxing Wei, Hao Yang, Yankai Lin, Zhewei Wei, Zhou Yu, Weizhu Chen\n**发表日期**：2025-07-19\n**模型功能**：UloRL是一种超长输出强化学习方法，通过强化学习训练大语言模型生成超长输出，提升复杂推理任务中的表现。",
+        "analysis_time": "2025-07-29T17:40:30.047900"
+    },
+    {
+        "paper_id": "2507.17189",
+        "paper_url": "https://arxiv.org/abs/2507.17189",
+        "title": "Met^2Net: A Decoupled Two-Stage Spatio-Temporal Forecasting Model for Complex Meteorological Systems",
+        "translation": "Met²Net：用于复杂气象系统的解耦两阶段时空预测模型",
+        "authors": "未明确提及",
+        "publish_date": "2025-07-15",
+        "model_function": "复杂气象系统的解耦两阶段时空预测",
+        "page_content": "**作者团队**：未明确提及\n**发表日期**：2025-07-15\n**模型功能**：复杂气象系统的解耦两阶段时空预测",
+        "analysis_time": "2025-07-29T17:41:05.691736"
+    },
+    {
+        "paper_id": "2507.19058",
+        "paper_url": "https://arxiv.org/abs/2507.19058",
+        "title": "ScenePainter: Semantically Consistent Perpetual 3D Scene Generation with Concept Relation Alignment",
+        "translation": "ScenePainter：基于概念关系对齐的语义一致持续3D场景生成",
+        "authors": "Chenyang Wang, Yixiao Ge, Yixuan Wei, Zeyu Zhang, Zhiwen Fan, Yifan Jiang, Yi Wei, Yijie Guo, Yuxuan Zhang, Xinyi Wu, Jingdong Wang, Kai Chen",
+        "publish_date": "2025-07-19",
+        "model_function": "通过概念关系对齐实现语义一致的持续3D场景生成",
+        "page_content": "**作者团队**：Chenyang Wang, Yixiao Ge, Yixuan Wei, Zeyu Zhang, Zhiwen Fan, Yifan Jiang, Yi Wei, Yijie Guo, Yuxuan Zhang, Xinyi Wu, Jingdong Wang, Kai Chen\n**发表日期**：2025-07-19\n**模型功能**：通过概念关系对齐实现语义一致的持续3D场景生成",
+        "analysis_time": "2025-07-29T17:41:11.336622"
+    },
+    {
+        "paper_id": "2507.21035",
+        "paper_url": "https://arxiv.org/abs/2507.21035",
+        "title": "GenoMAS: A Multi-Agent Framework for Scientific Discovery via Code-Driven Gene Expression Analysis",
+        "translation": "GenoMAS：通过代码驱动的基因表达分析进行科学发现的多智能体框架",
+        "authors": "Vijay Arya, David W. Opitz, Adam M. C. Leite, Joshua M. Vogelstein, Konstantinos N. Plataniotis, Michael R. Berthold",
+        "publish_date": "2025-07-21",
+        "model_function": "多智能体框架，通过代码驱动的基因表达分析促进科学发现",
+        "page_content": "**作者团队**：Vijay Arya, David W. Opitz, Adam M. C. Leite, Joshua M. Vogelstein, Konstantinos N. Plataniotis, Michael R. Berthold\n**发表日期**：2025-07-21\n**模型功能**：多智能体框架，通过代码驱动的基因表达分析促进科学发现",
+        "analysis_time": "2025-07-29T17:46:28.730600"
+    }
+]
