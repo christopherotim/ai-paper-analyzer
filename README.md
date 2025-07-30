@@ -206,6 +206,7 @@ python run.py status
 
 <!-- 📸 需要截图：命令行执行示例 -->
 
+![命令行示例](screenshots/cli-examples0.png)
 ![命令行示例](screenshots/cli-examples1.png)
 ![命令行示例](screenshots/cli-examples2.png)
 ![命令行示例](screenshots/cli-examples3.png)

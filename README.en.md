@@ -206,6 +206,7 @@ python run.py status
 
 <!-- 📸 Screenshot needed: CLI execution examples -->
 
+![CLI Examples](screenshots/cli-examples0.png)
 ![CLI Examples](screenshots/cli-examples1.png)
 ![CLI Examples](screenshots/cli-examples2.png)
 ![CLI Examples](screenshots/cli-examples3.png)
