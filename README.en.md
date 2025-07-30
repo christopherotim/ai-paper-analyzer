@@ -22,14 +22,15 @@ Hundreds of AI papers are published daily - tired of manual screening? Let AI he
 
 ### 🛠️ One-Click Environment Setup (Zero Barrier)
 
-**Say goodbye to complex environment configuration, double-click to start your AI paper analysis journey!**
+**Say goodbye to complex environment configuration, one-click to start your AI paper analysis journey!**
 
 ```bash
-# Method 1: Double-click to run (Recommended for beginners)
+# Windows Users
 Double-click 安装环境.bat  # Windows one-click install all dependencies
+# Or command line: .\安装环境.bat
 
-# Method 2: Command line
-.\安装环境.bat     # Auto-detect Python, create virtual environment, install dependencies
+# macOS/Linux Users  
+chmod +x 安装环境.sh && ./安装环境.sh  # One-click install all dependencies
 ```
 
 **🎯 One-click script automatically completes**:
@@ -43,8 +44,14 @@ Double-click 安装环境.bat  # Windows one-click install all dependencies
 **🚀 Ready to use after installation**:
 
 ```bash
+# Windows Users
 Double-click 启动环境.bat    # Activate environment and start using
-python run_gui.py   # Or directly launch GUI
+
+# macOS/Linux Users
+chmod +x 启动环境.sh && ./启动环境.sh  # Activate environment and start using
+
+# Or directly launch GUI
+python run_gui.py
 ```
 
 <!-- 📸 Screenshot needed: One-click installation process -->
@@ -132,11 +139,13 @@ cd ai-paper-analyzer
 **🎯 Method 1: One-Click Auto Install (Highly Recommended)**
 
 ```bash
-# Windows users - Double-click to run
-Double-click 安装环境.bat
+# Windows Users
+Double-click 安装环境.bat        # Double-click to run
+# Or command line: .\安装环境.bat
 
-# Or run via command line
-.\安装环境.bat
+# macOS/Linux Users
+chmod +x 安装环境.sh     # Add execute permission
+./安装环境.sh            # Run installation script
 ```
 
 **✨ Auto Install Script Features**:
@@ -440,10 +449,12 @@ python 检查环境.py  # One-click comprehensive system status diagnosis
 
 ```bash
 # One-click environment issue fix
-Double-click 安装环境.bat        # Reinstall and configure environment
+# Windows: Double-click 安装环境.bat
+# macOS/Linux: ./安装环境.sh
 
-# Quick environment startup
-Double-click 启动环境.bat        # Activate virtual environment with usage guidance
+# Quick environment startup  
+# Windows: Double-click 启动环境.bat
+# macOS/Linux: ./启动环境.sh
 
 # View detailed usage guide
 虚拟环境使用指南.md      # Complete environment management documentation
@@ -579,14 +590,16 @@ PermissionError: [Errno 13] Permission denied
 
 | Tool                  | Function                                             | Use Case                                          |
 | --------------------- | ---------------------------------------------------- | ------------------------------------------------- |
-| `安装环境.bat`        | One-click install all dependencies and configuration | First installation or environment reconfiguration |
-| `启动环境.bat`        | Quick virtual environment activation                 | Daily environment activation before use           |
+| `安装环境.bat/.sh`    | One-click install all dependencies and configuration | First installation or environment reconfiguration |
+| `启动环境.bat/.sh`    | Quick virtual environment activation                 | Daily environment activation before use           |
 | `检查环境.py`         | Smart system status diagnosis                        | Troubleshooting or installation verification      |
 | `虚拟环境使用指南.md` | Detailed environment management documentation        | In-depth understanding of environment management  |
 
 **💡 Environment Management Best Practices**:
 
-- 🎯 **New Users**: Simply double-click `安装环境.bat` → `启动环境.bat` → Start using
+- 🎯 **New Users**: 
+  - Windows: Simply double-click `安装环境.bat` → `启动环境.bat` → Start using
+  - macOS/Linux: `./安装环境.sh` → `./启动环境.sh` → Start using
 - 🔧 **When Issues Arise**: Run `python 检查环境.py` for smart diagnostic suggestions
 - 📖 **Advanced Customization**: Refer to `虚拟环境使用指南.md` for advanced configuration
 
