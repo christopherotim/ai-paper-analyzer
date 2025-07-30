@@ -236,3 +236,10 @@
 2025-07-30 09:49:11 [WARNING] config_manager: AI提供商 qwen 的API密钥未设置
 2025-07-30 09:49:12 [WARNING] config_manager: AI提供商 ernie 的API密钥未设置
 2025-07-30 09:49:12 [WARNING] config_manager: AI提供商 hunyuan 的API密钥未设置
+2025-07-30 10:37:10 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-07-30 10:37:10 [INFO] config_manager: 配置文件加载完成
+2025-07-30 10:37:10 [INFO] main_app: 论文分析系统启动
+2025-07-30 10:37:10 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-07-30 10:37:10 [WARNING] config_manager: AI提供商 qwen 的API密钥未设置
+2025-07-30 10:37:11 [WARNING] config_manager: AI提供商 ernie 的API密钥未设置
+2025-07-30 10:37:11 [WARNING] config_manager: AI提供商 hunyuan 的API密钥未设置

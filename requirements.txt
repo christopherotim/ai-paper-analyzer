@@ -16,6 +16,9 @@ volcengine>=1.0.194
 # YAML配置文件解析
 PyYAML>=6.0
 
+# GUI界面依赖
+tkcalendar>=1.6.1       # 日历控件，用于GUI日期选择
+
 # 可选依赖
 # 如果需要处理特定文件格式，可能需要以下依赖
 beautifulsoup4>=4.12.0  # 用于HTML解析

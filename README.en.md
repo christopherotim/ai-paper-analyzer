@@ -20,6 +20,39 @@ Hundreds of AI papers are published daily - tired of manual screening? Let AI he
 
 ## ⚡ Get Started in 30 Seconds
 
+### 🛠️ One-Click Environment Setup (Zero Barrier)
+
+**Say goodbye to complex environment configuration, double-click to start your AI paper analysis journey!**
+
+```bash
+# Method 1: Double-click to run (Recommended for beginners)
+Double-click 安装环境.bat  # Windows one-click install all dependencies
+
+# Method 2: Command line
+.\安装环境.bat     # Auto-detect Python, create virtual environment, install dependencies
+```
+
+**🎯 One-click script automatically completes**:
+
+- ✅ **Python Environment Detection** - Auto-verify Python version and venv support
+- ✅ **Virtual Environment Creation** - Isolate project dependencies, avoid conflicts
+- ✅ **Dependency Installation** - Auto-install all required AI model SDKs
+- ✅ **Environment Verification** - Intelligently detect installation status, ensure availability
+- ✅ **Usage Guidance** - Provide detailed next-step instructions
+
+**🚀 Ready to use after installation**:
+
+```bash
+Double-click 启动环境.bat    # Activate environment and start using
+python run_gui.py   # Or directly launch GUI
+```
+
+<!-- 📸 Screenshot needed: One-click installation process -->
+
+![One-click Installation Process](screenshots/one-click-install1.png)
+![One-click Installation Process](screenshots/one-click-install2.png)
+![One-click Installation Process](screenshots/one-click-install3.png)
+
 ### 🎨 GUI Version (Recommended for Beginners)
 
 ```bash
@@ -48,14 +81,15 @@ python run.py basic 2025-07-29
 
 ## 🎯 Core Features
 
-| Feature                     | Description                                  | Value                                          |
-| --------------------------- | -------------------------------------------- | ---------------------------------------------- |
-| 📡 **Auto Fetch**           | Get latest paper data from HuggingFace       | No manual search, ensure nothing is missed     |
-| 🤖 **AI Analysis**          | Support Zhipu AI, Doubao, OpenAI, Qwen, etc. | Multi-model cross-validation, improve accuracy |
-| 📊 **Smart Classification** | Automatic tagging and topic categorization   | Quickly locate research areas of interest      |
-| 📈 **Visual Reports**       | Generate structured analysis reports         | Clear research trends and hotspots at a glance |
-| ⚡ **Batch Processing**     | Support multi-date batch analysis            | Efficiently process large amounts of data      |
-| 🔄 **Incremental Updates**  | Intelligently detect processed content       | Avoid duplicate work, save time                |
+| Feature                             | Description                                                           | Value                                                 |
+| ----------------------------------- | --------------------------------------------------------------------- | ----------------------------------------------------- |
+| 🛠️ **Smart Environment Management** | One-click install, intelligent diagnosis, auto-fix environment issues | Zero barrier entry, goodbye to configuration troubles |
+| 📡 **Auto Fetch**                   | Get latest paper data from HuggingFace                                | No manual search, ensure nothing is missed            |
+| 🤖 **AI Analysis**                  | Support Zhipu AI, Doubao, OpenAI, Qwen, etc.                          | Multi-model cross-validation, improve accuracy        |
+| 📊 **Smart Classification**         | Automatic tagging and topic categorization                            | Quickly locate research areas of interest             |
+| 📈 **Visual Reports**               | Generate structured analysis reports                                  | Clear research trends and hotspots at a glance        |
+| ⚡ **Batch Processing**             | Support multi-date batch analysis                                     | Efficiently process large amounts of data             |
+| 🔄 **Incremental Updates**          | Intelligently detect processed content                                | Avoid duplicate work, save time                       |
 
 ## 🚀 Use Cases
 
@@ -85,16 +119,62 @@ python run.py basic 2025-07-29
 
 ## 🛠️ Installation & Configuration
 
-### 1. Environment Setup
+### 1. Get Project
 
 ```bash
 # Clone project
 git clone https://github.com/ZsTs119/ai-paper-analyzer.git
 cd ai-paper-analyzer
+```
+
+### 2. Smart Environment Configuration
+
+**🎯 Method 1: One-Click Auto Install (Highly Recommended)**
+
+```bash
+# Windows users - Double-click to run
+Double-click 安装环境.bat
+
+# Or run via command line
+.\安装环境.bat
+```
+
+**✨ Auto Install Script Features**:
+
+- 🔍 **Smart Detection** - Auto-check Python version and environment support
+- 🏗️ **Virtual Environment** - Auto-create isolated Python virtual environment
+- 📦 **Dependency Management** - Auto-install all required AI model SDKs and toolkits
+- ✅ **Installation Verification** - Intelligently verify installation status of each dependency
+- 📖 **Usage Guidance** - Provide detailed usage instructions after installation
+
+**🛠️ Method 2: Manual Installation (Advanced Users)**
+
+```bash
+# Create virtual environment
+python -m venv hf-paper-env
+
+# Activate virtual environment
+# Windows PowerShell
+.\hf-paper-env\Scripts\Activate.ps1
+# Windows CMD
+hf-paper-env\Scripts\activate.bat
 
 # Install dependencies
 pip install -r requirements.txt
 ```
+
+**🔧 Smart Environment Diagnostic Tool**
+
+After installation, you can use the smart diagnostic tool to check environment status anytime:
+
+```bash
+python 检查环境.py  # Comprehensive detection of Python environment, dependencies, config files, etc.
+```
+
+<!-- 📸 Screenshot needed: Environment diagnostic tool interface -->
+
+![Environment Diagnostic Tool](screenshots/environment-check1.png)
+![Environment Diagnostic Tool](screenshots/environment-check2.png)
 
 ### 2. API Key Configuration
 
@@ -340,6 +420,53 @@ The system supports the following intelligent classifications:
 
 ## 🔍 Troubleshooting
 
+### 🛠️ Smart Diagnostic Tool
+
+**Encountering issues? Let the AI-era smart diagnostic tool help you quickly locate and solve problems!**
+
+```bash
+python 检查环境.py  # One-click comprehensive system status diagnosis
+```
+
+**🎯 Smart Diagnosis Coverage**:
+
+- ✅ **Python Environment Check** - Version compatibility, path configuration, venv support
+- ✅ **Virtual Environment Status** - Activation status, directory structure, dependency integrity
+- ✅ **Dependency Verification** - Installation status of all AI model SDKs and toolkits
+- ✅ **Project File Check** - Config files, script tools, directory structure integrity
+- ✅ **Smart Suggestions** - Provide specific solutions for discovered issues
+
+**🚀 Quick Fix Tools**:
+
+```bash
+# One-click environment issue fix
+Double-click 安装环境.bat        # Reinstall and configure environment
+
+# Quick environment startup
+Double-click 启动环境.bat        # Activate virtual environment with usage guidance
+
+# View detailed usage guide
+虚拟环境使用指南.md      # Complete environment management documentation
+```
+
+**💡 Diagnostic Result Example**:
+
+```
+🔍 HF Paper Analysis System - Environment Diagnostic Tool
+==================================================
+✅ Python Version: Python 3.11.9 (Requirements met)
+✅ Virtual Environment: Currently in virtual environment
+✅ Dependency Check: All 9 packages installed successfully
+✅ Project Files: All required files exist
+==================================================
+💡 System status is good, ready to use!
+```
+
+<!-- 📸 Screenshot needed: Smart diagnostic tool results -->
+
+![Smart Diagnosis Results](screenshots/environment-check1.png)
+![Smart Diagnosis Results](screenshots/environment-check2.png)
+
 ### Common Issues & Solutions
 
 #### 1. API Key Related Issues
@@ -434,17 +561,34 @@ PermissionError: [Errno 13] Permission denied
 
 #### Minimum Requirements
 
-- **Python**: 3.8+
+- **Python**: 3.8+ (System will auto-detect version compatibility)
 - **Memory**: 4GB RAM
 - **Storage**: 2GB available space
 - **Network**: Stable internet connection
 
 #### Recommended Configuration
 
-- **Python**: 3.10+
+- **Python**: 3.10+ (Recommend 3.11.9 for optimal performance)
 - **Memory**: 8GB+ RAM
 - **Storage**: 10GB+ available space (for storing analysis results)
 - **Network**: High-speed stable network connection
+
+#### 🛠️ Environment Management Tools
+
+**No need to worry about complex environment configuration! The system provides a complete environment management toolchain:**
+
+| Tool                  | Function                                             | Use Case                                          |
+| --------------------- | ---------------------------------------------------- | ------------------------------------------------- |
+| `安装环境.bat`        | One-click install all dependencies and configuration | First installation or environment reconfiguration |
+| `启动环境.bat`        | Quick virtual environment activation                 | Daily environment activation before use           |
+| `检查环境.py`         | Smart system status diagnosis                        | Troubleshooting or installation verification      |
+| `虚拟环境使用指南.md` | Detailed environment management documentation        | In-depth understanding of environment management  |
+
+**💡 Environment Management Best Practices**:
+
+- 🎯 **New Users**: Simply double-click `安装环境.bat` → `启动环境.bat` → Start using
+- 🔧 **When Issues Arise**: Run `python 检查环境.py` for smart diagnostic suggestions
+- 📖 **Advanced Customization**: Refer to `虚拟环境使用指南.md` for advanced configuration
 
 ### 🐛 Debug Mode
 
