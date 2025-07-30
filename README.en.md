@@ -29,7 +29,7 @@ Hundreds of AI papers are published daily - tired of manual screening? Let AI he
 Double-click 安装环境.bat  # Windows one-click install all dependencies
 # Or command line: .\安装环境.bat
 
-# macOS/Linux Users  
+# macOS/Linux Users
 chmod +x 安装环境.sh && ./安装环境.sh  # One-click install all dependencies
 ```
 
@@ -182,8 +182,7 @@ python 检查环境.py  # Comprehensive detection of Python environment, depende
 
 <!-- 📸 Screenshot needed: Environment diagnostic tool interface -->
 
-![Environment Diagnostic Tool](screenshots/environment-check1.png)
-![Environment Diagnostic Tool](screenshots/environment-check2.png)
+![Environment Diagnostic Tool](screenshots/environment-check.gif)
 
 ### 2. API Key Configuration
 
@@ -452,7 +451,7 @@ python 检查环境.py  # One-click comprehensive system status diagnosis
 # Windows: Double-click 安装环境.bat
 # macOS/Linux: ./安装环境.sh
 
-# Quick environment startup  
+# Quick environment startup
 # Windows: Double-click 启动环境.bat
 # macOS/Linux: ./启动环境.sh
 
@@ -475,8 +474,7 @@ python 检查环境.py  # One-click comprehensive system status diagnosis
 
 <!-- 📸 Screenshot needed: Smart diagnostic tool results -->
 
-![Smart Diagnosis Results](screenshots/environment-check1.png)
-![Smart Diagnosis Results](screenshots/environment-check2.png)
+![Smart Diagnosis Results](screenshots/environment-check.gif)
 
 ### Common Issues & Solutions
 
@@ -597,7 +595,7 @@ PermissionError: [Errno 13] Permission denied
 
 **💡 Environment Management Best Practices**:
 
-- 🎯 **New Users**: 
+- 🎯 **New Users**:
   - Windows: Simply double-click `安装环境.bat` → `启动环境.bat` → Start using
   - macOS/Linux: `./安装环境.sh` → `./启动环境.sh` → Start using
 - 🔧 **When Issues Arise**: Run `python 检查环境.py` for smart diagnostic suggestions

@@ -29,7 +29,7 @@
 双击 安装环境.bat  # Windows一键安装所有依赖
 # 或命令行运行: .\安装环境.bat
 
-# macOS/Linux 用户  
+# macOS/Linux 用户
 chmod +x 安装环境.sh && ./安装环境.sh  # 一键安装所有依赖
 ```
 
@@ -182,8 +182,7 @@ python 检查环境.py  # 全面检测Python环境、依赖包、配置文件等
 
 <!-- 📸 需要截图：环境诊断工具界面 -->
 
-![环境诊断工具](screenshots/environment-check1.png)
-![环境诊断工具](screenshots/environment-check2.png)
+![环境诊断工具](screenshots/environment-check.gif)
 
 ### 2. API 密钥配置
 
@@ -452,7 +451,7 @@ python 检查环境.py  # 一键全面诊断系统状态
 # Windows: 双击 安装环境.bat
 # macOS/Linux: ./安装环境.sh
 
-# 快速启动环境  
+# 快速启动环境
 # Windows: 双击 启动环境.bat
 # macOS/Linux: ./启动环境.sh
 
@@ -475,8 +474,7 @@ python 检查环境.py  # 一键全面诊断系统状态
 
 <!-- 📸 需要截图：智能诊断工具运行结果 -->
 
-![智能诊断结果](screenshots/environment-check1.png)
-![智能诊断结果](screenshots/environment-check2.png)
+![智能诊断结果](screenshots/environment-check.gif)
 
 ### 常见问题及解决方案
 
@@ -597,7 +595,7 @@ PermissionError: [Errno 13] Permission denied
 
 **💡 环境管理最佳实践**：
 
-- 🎯 **新手用户**: 
+- 🎯 **新手用户**:
   - Windows: 双击 `安装环境.bat` → `启动环境.bat` → 开始使用
   - macOS/Linux: `./安装环境.sh` → `./启动环境.sh` → 开始使用
 - 🔧 **遇到问题**: 运行 `python 检查环境.py` 获取智能诊断建议
