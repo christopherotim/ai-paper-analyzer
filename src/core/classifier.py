@@ -174,7 +174,7 @@ class PaperClassifier:
             return False
 
     def classify_papers(self, analysis_results: List[AnalysisResult],
-                       date: str = None, silent: bool = False) -> List[ClassificationResult]:
+                       date: str = None, silent: bool = False, rage_mode: bool = False) -> List[ClassificationResult]:
         """
         批量分类论文
 
@@ -182,6 +182,7 @@ class PaperClassifier:
             analysis_results: 分析结果列表
             date: 日期字符串
             silent: 是否静默模式
+            rage_mode: 是否启用狂暴模式（5并发分类）
 
         Returns:
             分类结果列表
@@ -196,6 +197,18 @@ class PaperClassifier:
         
         self.logger.info(f"开始批量分类 {len(analysis_results)} 篇论文")
         
+        # 根据模式选择处理方式
+        if rage_mode:
+            if not silent:
+                self.console.print_info("🔥 狂暴模式：启动5并发分类...")
+                self.console.print_warning("⚡ 注意：分类AI调用频率较高，请确保网络稳定")
+            return self._classify_papers_concurrent(analysis_results, date, silent)
+        else:
+            return self._classify_papers_sequential(analysis_results, date, silent)
+
+    def _classify_papers_sequential(self, analysis_results: List[AnalysisResult], 
+                                  date: str, silent: bool) -> List[ClassificationResult]:
+        """串行分类论文"""
         # 初始化进度管理器
         progress = ProgressManager(len(analysis_results), "智能分类论文") if not silent else None
         results = []
@@ -288,6 +301,127 @@ class PaperClassifier:
 
         self.logger.info(f"批量分类完成，成功: {success_count}/{actually_processed}，跳过: {skip_count}")
         return results
+
+    def _classify_papers_concurrent(self, analysis_results: List[AnalysisResult], 
+                                  date: str, silent: bool) -> List[ClassificationResult]:
+        """🔥 狂暴模式：并发分类论文"""
+        from concurrent.futures import ThreadPoolExecutor, as_completed
+        import threading
+        import time
+        
+        # 线程安全的统计计数器
+        stats_lock = threading.Lock()
+        stats = {
+            'success_count': 0,
+            'fail_count': 0,
+            'skip_count': 0,
+            'processed_count': 0,
+            'results': []
+        }
+        
+        def classify_single_threaded(analysis_result):
+            """线程安全的单篇论文分类"""
+            try:
+                if not silent:
+                    self.console.print_info(f"🔍 并发分类: {analysis_result.title_zh[:50]}...")
+                
+                # 分类单篇论文并立即保存MD文件（内部静默模式）
+                result = self.classify_and_save_single_paper(analysis_result, date, silent=True)
+                
+                with stats_lock:
+                    stats['processed_count'] += 1
+                    if result:
+                        # 检查是否是缓存命中
+                        if result.md_content == "CACHED":
+                            stats['skip_count'] += 1
+                            if not silent:
+                                current_processed = stats['processed_count']
+                                total_to_process = len(analysis_results)
+                                self.console.print_skip(f"⏭️ 跳过已分类: {result.category} - {analysis_result.id} ({current_processed}/{total_to_process})")
+                        else:
+                            stats['success_count'] += 1
+                            stats['results'].append(result)
+                            if not silent:
+                                current_processed = stats['processed_count']
+                                total_to_process = len(analysis_results)
+                                self.console.print_success(f"✅ 分类完成: {result.category} - {analysis_result.id} ({current_processed}/{total_to_process})")
+                    else:
+                        stats['fail_count'] += 1
+                        if not silent:
+                            self.console.print_error(f"❌ 分类失败: {analysis_result.id}")
+                
+                return result
+                
+            except Exception as e:
+                with stats_lock:
+                    stats['processed_count'] += 1
+                    stats['fail_count'] += 1
+                if not silent:
+                    self.console.print_error(f"❌ 异常: {analysis_result.id} - {e}")
+                self.logger.error(f"并发分类异常: {analysis_result.id} - {e}")
+                return None
+        
+        # 使用线程池执行并发分类
+        start_time = time.time()
+        max_workers = 5  # 智谱AI的并发限制
+        
+        # 创建进度条显示线程
+        progress_stop = threading.Event()
+        if not silent:
+            progress_thread = threading.Thread(
+                target=self._show_rage_mode_progress,
+                args=(progress_stop, stats, stats_lock, len(analysis_results), start_time)
+            )
+            progress_thread.daemon = True
+            progress_thread.start()
+        
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            # 提交所有任务
+            future_to_result = {
+                executor.submit(classify_single_threaded, analysis_result): analysis_result 
+                for analysis_result in analysis_results
+            }
+            
+            if not silent:
+                self.console.print_info(f"⚡ {max_workers} 个线程并发分类中...")
+            
+            # 等待所有任务完成
+            for future in as_completed(future_to_result):
+                analysis_result = future_to_result[future]
+                try:
+                    future.result()  # 获取结果，触发异常处理
+                except Exception as e:
+                    self.logger.error(f"线程执行异常: {analysis_result.id} - {e}")
+        
+        # 停止进度条显示
+        if not silent:
+            progress_stop.set()
+            progress_thread.join(timeout=1)
+            print()  # 换行
+        
+        end_time = time.time()
+        total_time = end_time - start_time
+        
+        # 显示最终统计
+        if not silent:
+            actually_processed = stats['processed_count'] - stats['skip_count']
+            success_rate = f"{stats['success_count']/max(actually_processed, 1)*100:.1f}%" if actually_processed > 0 else "0.0%"
+            avg_time_per_paper = total_time / max(actually_processed, 1)
+            
+            self.console.print_summary("🔥 狂暴模式分类完成统计", {
+                "总论文数": len(analysis_results),
+                "跳过论文": stats['skip_count'],
+                "并发处理": actually_processed,
+                "成功分类": stats['success_count'],
+                "分类失败": stats['fail_count'],
+                "成功率": success_rate,
+                "总耗时": f"{total_time:.1f}秒",
+                "平均耗时": f"{avg_time_per_paper:.1f}秒/篇",
+                "并发效率": f"{max_workers}x 加速"
+            })
+        
+        self.logger.info(f"🔥 狂暴模式分类完成，成功: {stats['success_count']}/{stats['processed_count']}，跳过: {stats['skip_count']}，耗时: {total_time:.1f}秒")
+        return stats['results']
     
     def classify_single_paper(self, analysis_result: AnalysisResult, 
                              silent: bool = False) -> Optional[ClassificationResult]:
@@ -328,10 +462,10 @@ class PaperClassifier:
             ]
 
             # AI调用（带实时进度显示）
+            import threading
+            import time
+            
             if not silent:
-                import threading
-                import time
-
                 # 创建进度显示线程
                 progress_stop = threading.Event()
                 progress_thread = threading.Thread(
@@ -419,12 +553,12 @@ class PaperClassifier:
                         if not silent:
                             self.console.print_skip(f"已处理的论文: {analysis_result.paper_id}")
 
-                        # 返回已存在的分类结果
+                        # 返回已存在的分类结果，标记为缓存命中
                         return ClassificationResult(
                             paper_id=analysis_result.id,
                             category=category_dir.name,
                             confidence=1.0,
-                            md_content=""
+                            md_content="CACHED"  # 标记为缓存命中
                         )
 
         # 执行分类
@@ -593,6 +727,47 @@ class PaperClassifier:
 
             time.sleep(0.1)
             i += 1
+
+    def _show_rage_mode_progress(self, stop_event, stats, stats_lock, total_papers, start_time):
+        """
+        显示狂暴模式实时进度条和计时
+        
+        Args:
+            stop_event: 停止事件
+            stats: 统计数据字典
+            stats_lock: 统计数据锁
+            total_papers: 总论文数
+            start_time: 开始时间
+        """
+        import sys
+        import time
+        
+        while not stop_event.is_set():
+            with stats_lock:
+                processed = stats['processed_count']
+                success = stats['success_count']
+                skip = stats['skip_count']
+                fail = stats['fail_count']
+            
+            # 计算进度
+            progress = processed / max(total_papers, 1)
+            percentage = progress * 100
+            
+            # 创建进度条
+            bar_width = 30
+            filled = int(bar_width * progress)
+            bar = "█" * filled + "░" * (bar_width - filled)
+            
+            # 计算耗时
+            elapsed = time.time() - start_time
+            minutes, seconds = divmod(int(elapsed), 60)
+            time_str = f"{minutes:02d}:{seconds:02d}"
+            
+            # 显示进度条
+            sys.stdout.write(f'\r🔥 狂暴模式进度: [{bar}] {processed}/{total_papers} ({percentage:.1f}%) | 成功:{success} 跳过:{skip} 失败:{fail} | 耗时:{time_str}')
+            sys.stdout.flush()
+            
+            time.sleep(0.5)  # 每0.5秒更新一次
 
 
 

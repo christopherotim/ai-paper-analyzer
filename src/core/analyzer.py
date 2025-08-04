@@ -4,6 +4,7 @@ AI分析器模块
 """
 import asyncio
 import time
+import threading
 from concurrent.futures import ThreadPoolExecutor
 from typing import List, Dict, Any, Optional
 from pathlib import Path
@@ -16,6 +17,70 @@ from ..utils.ai_client import create_retryable_client
 from ..models.paper import Paper
 from ..models.report import AnalysisResult, DailyReport
 from .parser import ContentParser
+from .cache_manager import PaperCacheManager
+
+
+class RageProgressTracker:
+    """
+    🔥 狂暴模式实时进度跟踪器
+    """
+    def __init__(self, total_papers: int, silent: bool = False):
+        self.total = total_papers
+        self.completed = 0
+        self.success_count = 0
+        self.fail_count = 0
+        self.start_time = time.time()
+        self.silent = silent
+        self.lock = threading.Lock()
+        self.stop_event = threading.Event()
+        
+        # 启动进度显示线程
+        if not silent:
+            self.progress_thread = threading.Thread(target=self._show_progress)
+            self.progress_thread.daemon = True
+            self.progress_thread.start()
+    
+    def update_progress(self, success: bool = True):
+        """更新进度"""
+        with self.lock:
+            self.completed += 1
+            if success:
+                self.success_count += 1
+            else:
+                self.fail_count += 1
+    
+    def stop(self):
+        """停止进度显示"""
+        self.stop_event.set()
+        if not self.silent and hasattr(self, 'progress_thread'):
+            self.progress_thread.join(timeout=1)
+            print()  # 换行，清除进度条
+    
+    def _show_progress(self):
+        """实时显示进度条和计时 - 固定位置显示"""
+        import sys
+        
+        while not self.stop_event.is_set():
+            with self.lock:
+                # 计算进度
+                progress = self.completed / max(self.total, 1)
+                percentage = progress * 100
+                
+                # 创建进度条
+                bar_width = 30
+                filled = int(bar_width * progress)
+                bar = "█" * filled + "░" * (bar_width - filled)
+                
+                # 计算耗时
+                elapsed = time.time() - self.start_time
+                minutes, seconds = divmod(int(elapsed), 60)
+                time_str = f"{minutes:02d}:{seconds:02d}"
+                
+                # 显示进度条
+                sys.stdout.write(f'\r🔥 狂暴模式进度: [{bar}] {self.completed}/{self.total} ({percentage:.1f}%) | 成功:{self.success_count} 失败:{self.fail_count} | 耗时:{time_str}')
+                sys.stdout.flush()
+            
+            time.sleep(0.5)  # 每0.5秒更新一次
 
 
 class PaperAnalyzer:
@@ -44,6 +109,14 @@ class PaperAnalyzer:
         self.use_ai = config.get('use_ai', True)
         self.max_retries = config.get('max_retries', 3)
         self.retry_delay = config.get('retry_delay', 2)
+        
+        # 初始化缓存系统
+        self.enable_cache = config.get('enable_cache', True)
+        if self.enable_cache:
+            cache_dir = str(Path(self.output_dir) / 'cache')
+            self.cache_manager = PaperCacheManager(cache_dir)
+        else:
+            self.cache_manager = None
         
         # 初始化AI客户端
         self.ai_client = None
@@ -188,9 +261,165 @@ class PaperAnalyzer:
         self.logger.info(f"批量分析完成，成功: {success_count}/{actually_processed}，跳过: {skip_count}")
         return results
     
+    def analyze_batch_concurrent(self, papers: List[Paper], date: str = None, 
+                                silent: bool = False, max_workers: int = 5) -> List[AnalysisResult]:
+        """
+        🔥 狂暴模式：并发批量分析论文
+        
+        Args:
+            papers: 论文列表
+            date: 日期字符串（用于保存结果）
+            silent: 是否静默模式
+            max_workers: 最大并发数（默认5，智谱AI的并发限制）
+            
+        Returns:
+            分析结果列表
+        """
+        if not papers:
+            if not silent:
+                self.console.print_warning("没有论文需要分析")
+            return []
+        
+        if not silent:
+            self.console.print_header("🔥 狂暴模式 AI分析生成摘要", 3)
+            self.console.print_info(f"🚀 启动 {max_workers} 并发处理 {len(papers)} 篇论文")
+        
+        self.logger.info(f"🔥 狂暴模式：开始并发分析 {len(papers)} 篇论文，并发数: {max_workers}")
+        
+        # 准备输出文件（如果提供了日期）
+        final_file = None
+        existing_ids = set()
+        if date:
+            final_dir = Path(self.output_dir) / 'reports'
+            self.file_manager.ensure_dir(final_dir)
+            final_file = final_dir / f"{date}_report.json"
+            
+            # 加载已存在的结果
+            existing_results = self._load_existing_results(final_file)
+            existing_ids = {self._extract_paper_id_from_result(r) for r in existing_results}
+        
+        # 过滤已处理的论文
+        papers_to_process = [p for p in papers if p.id not in existing_ids]
+        skip_count = len(papers) - len(papers_to_process)
+        
+        if not papers_to_process:
+            if not silent:
+                self.console.print_info("所有论文都已处理，跳过分析")
+            return []
+        
+        if not silent and skip_count > 0:
+            self.console.print_info(f"跳过已处理的 {skip_count} 篇论文")
+        
+        # 初始化实时进度跟踪器
+        progress_tracker = RageProgressTracker(len(papers_to_process), silent)
+        
+        # 线程安全的统计计数器
+        import threading
+        stats_lock = threading.Lock()
+        stats = {
+            'success_count': 0,
+            'fail_count': 0,
+            'processed_count': 0,
+            'results': []
+        }
+        
+        def analyze_single_threaded(paper):
+            """线程安全的单篇论文分析"""
+            try:
+                if not silent:
+                    self.console.print_info(f"🔍 并发处理: {paper.translation[:50]}...")
+                
+                # 分析单篇论文（内部静默模式，减少日志输出）
+                result = self.analyze_single(paper, silent=True)
+                
+                with stats_lock:
+                    stats['processed_count'] += 1
+                    # 更新进度跟踪器
+                    progress_tracker.update_progress(result is not None)
+                    
+                    if result:
+                        stats['success_count'] += 1
+                        stats['results'].append(result)
+                        
+                        # 立即保存结果（如果提供了文件路径）
+                        if final_file:
+                            self._save_single_result(result, final_file)
+                        
+                        if not silent:
+                            current_processed = stats['processed_count']
+                            total_to_process = len(papers_to_process)
+                            self.console.print_success(f"✅ 完成: {paper.id} ({current_processed}/{total_to_process})")
+                    else:
+                        stats['fail_count'] += 1
+                        if not silent:
+                            self.console.print_error(f"❌ 失败: {paper.id}")
+                
+                return result
+                
+            except Exception as e:
+                with stats_lock:
+                    stats['processed_count'] += 1
+                    stats['fail_count'] += 1
+                
+                if not silent:
+                    self.console.print_error(f"❌ 异常: {paper.id} - {e}")
+                
+                self.logger.error(f"并发分析异常: {paper.id} - {e}")
+                return None
+        
+        # 使用线程池执行并发分析
+        start_time = time.time()
+        
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            # 提交所有任务
+            future_to_paper = {
+                executor.submit(analyze_single_threaded, paper): paper 
+                for paper in papers_to_process
+            }
+            
+            # 等待所有任务完成
+            from concurrent.futures import as_completed
+            
+            if not silent:
+                self.console.print_info(f"⚡ {max_workers} 个线程并发处理中...")
+            
+            for future in as_completed(future_to_paper):
+                paper = future_to_paper[future]
+                try:
+                    future.result()  # 获取结果，触发异常处理
+                except Exception as e:
+                    self.logger.error(f"线程执行异常: {paper.id} - {e}")
+        
+        end_time = time.time()
+        total_time = end_time - start_time
+        
+        # 停止进度跟踪器
+        progress_tracker.stop()
+        
+        # 显示最终统计
+        if not silent:
+            actually_processed = stats['processed_count']
+            success_rate = f"{stats['success_count']/max(actually_processed, 1)*100:.1f}%" if actually_processed > 0 else "0.0%"
+            avg_time_per_paper = total_time / max(actually_processed, 1)
+            
+            self.console.print_summary("🔥 狂暴模式分析完成统计", {
+                "总论文数": len(papers),
+                "跳过论文": skip_count,
+                "并发处理": actually_processed,
+                "成功分析": stats['success_count'],
+                "分析失败": stats['fail_count'],
+                "成功率": success_rate,
+                "总耗时": f"{total_time:.1f}秒",
+                "平均耗时": f"{avg_time_per_paper:.1f}秒/篇",
+                "并发效率": f"{max_workers}x 加速"
+            })
+
+        self.logger.info(f"🔥 狂暴模式分析完成，成功: {stats['success_count']}/{stats['processed_count']}，跳过: {skip_count}，耗时: {total_time:.1f}秒")
+        return stats['results']
+    
     def analyze_single(self, paper: Paper, silent: bool = False) -> Optional[AnalysisResult]:
         """
-        分析单篇论文
+        分析单篇论文 - 支持缓存机制
         
         Args:
             paper: 论文对象
@@ -199,6 +428,14 @@ class PaperAnalyzer:
         Returns:
             分析结果，失败返回None
         """
+        # 🎯 步骤1: 检查缓存
+        if self.enable_cache and self.cache_manager:
+            cached_result = self.cache_manager.get_cached_result(paper)
+            if cached_result:
+                if not silent:
+                    self.console.print_info(f"🎯 使用缓存结果: {paper.id}")
+                return cached_result
+        
         if not self.use_ai or not self.ai_client:
             if not silent:
                 self.console.print_warning("AI分析未启用，返回基础结果")
@@ -348,6 +585,10 @@ class PaperAnalyzer:
                 project_page=paper.project_page,
                 model_function=parsed_fields.get('model_function', '暂无')
             )
+
+            # 💾 步骤2: 保存到缓存
+            if self.enable_cache and self.cache_manager:
+                self.cache_manager.save_to_cache(paper, result)
 
             return result
 

@@ -37,6 +37,29 @@ Hundreds of AI papers are published daily - tired of manual screening? Let AI he
 - Data Completeness: Basic fields → Including GitHub, project pages, bilingual abstracts
 - AI Efficiency: Duplicate generation → Focus on translation and core analysis
 
+### 🔥 v2.1 Rage Mode Updates
+
+**⚡ Brand new Rage Mode with 5x speed improvement!**
+
+- ✅ **🔥 Rage Mode** - 5-concurrent AI processing, Basic analysis from 3 minutes to 34 seconds
+- ✅ **📊 Real-time Progress Bar** - Fixed position display with progress and timing, more intuitive experience
+- ✅ **🧠 Smart Caching** - Auto-skip processed papers, avoid duplicate work
+- ✅ **⚡ Lightning Classification** - Advanced classification from 2 minutes to 45 seconds
+
+**🎯 Rage Mode Usage**:
+```bash
+# Basic Rage Mode - 5-concurrent AI analysis
+python run.py basic 2025-07-29 --rageMode
+
+# Advanced Rage Mode - 5-concurrent smart classification
+python run.py advanced 2025-07-29 --rageMode
+```
+
+**📊 Rage Mode Real-time Progress**:
+```
+🔥 狂暴模式进度: [███████████████████████████░░░] 10/11 (90.9%) | 成功:10 失败:0 | 耗时:00:34
+```
+
 ### 🛠️ One-Click Environment Setup (Zero Barrier)
 
 **Say goodbye to complex environment configuration, one-click to start your AI paper analysis journey!**
@@ -114,6 +137,7 @@ python run.py basic 2025-07-29
 | 📈 **Visual Reports**               | Generate structured analysis reports                                  | Clear research trends and hotspots at a glance        |
 | ⚡ **Batch Processing**             | Support multi-date batch analysis                                     | Efficiently process large amounts of data             |
 | 🔄 **Incremental Updates**          | Intelligently detect processed content                                | Avoid duplicate work, save time                       |
+| 🔥 **Rage Mode**                    | 5-concurrent processing, real-time progress bar, smart caching        | Lightning speed, 3-5x performance boost              |
 
 ## 🚀 Use Cases
 
@@ -282,6 +306,25 @@ python run.py basic 2025-07-29
 # Silent mode
 python run.py basic 2025-07-29 --silent
 ```
+
+#### 🔥 Rage Mode (Lightning Speed Processing)
+
+```bash
+# Basic Rage Mode - 5-concurrent AI analysis
+python run.py basic 2025-07-29 --rageMode
+
+# Advanced Rage Mode - 5-concurrent smart classification  
+python run.py advanced 2025-07-29 --rageMode
+
+# Rage Mode + Silent operation
+python run.py basic 2025-07-29 --rageMode --silent
+```
+
+**⚡ Rage Mode Features**:
+- 🚀 **Lightning Processing** - 5x performance boost, from minutes to seconds
+- 📊 **Real-time Feedback** - Dynamic progress bar showing processing status and timing
+- 🧠 **Smart Optimization** - Auto-skip processed content, save time
+- ⚠️ **Requirements** - Stable network and sufficient API balance needed
 
 #### Advanced Analysis
 
@@ -846,6 +889,19 @@ python tools/batch_processor.py daily --start 2025-02-01 --end 2025-02-28
 | **Paper Analysis**       | 60-90s/paper           | 5-10s/paper          | **10x faster**    |
 | **MD Splitting**         | Basic info             | Rich info, seconds   | **3x more info**  |
 | **Smart Classification** | Regenerate all content | Only add core fields | **2x efficiency** |
+
+### 🔥 v2.1 Rage Mode Performance Boost
+
+| Processing Mode | Basic Analysis Time | Advanced Classification Time | Improvement     | Key Features              |
+| --------------- | ------------------- | ---------------------------- | --------------- | ------------------------- |
+| **Normal Mode** | ~3 minutes          | ~2 minutes                   | Baseline        | Serial processing, stable |
+| **🔥Rage Mode** | ~34 seconds         | ~45 seconds                  | **5x faster**   | 5-concurrent, progress bar |
+
+**🎯 Rage Mode Features**:
+- **5-Concurrent Processing** - Process 5 papers simultaneously, fully utilize API concurrency
+- **Real-time Progress Bar** - Fixed position display of processing progress and timing statistics
+- **Smart Caching Mechanism** - Auto-detect processed content, avoid duplicate work
+- **Thread-Safe Design** - Stable concurrent processing, ensure data consistency
 
 ### Processing Speed Reference (v2.0)
 

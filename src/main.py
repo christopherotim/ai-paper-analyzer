@@ -68,7 +68,7 @@ class PaperAnalysisApp:
         
         self.logger.info(f"应用配置: {self.app_config}")
     
-    def run_daily_analysis(self, date: str, silent: bool = False) -> bool:
+    def run_daily_analysis(self, date: str, silent: bool = False, rage_mode: bool = False) -> bool:
         """
         运行日常分析流程
         
@@ -99,7 +99,7 @@ class PaperAnalysisApp:
                 return False
             
             # 步骤3: AI分析
-            if not self._analyze_papers(date, silent):
+            if not self._analyze_papers(date, silent, rage_mode):
                 return False
             
             if not silent:
@@ -115,7 +115,7 @@ class PaperAnalysisApp:
             return False
     
     def run_advanced_analysis(self, date: str, analysis_results: List[AnalysisResult] = None, 
-                            silent: bool = False) -> bool:
+                            silent: bool = False, rage_mode: bool = False) -> bool:
         """
         运行高级分析流程（分类和汇总）
         
@@ -158,10 +158,13 @@ class PaperAnalysisApp:
             # 步骤2: 智能分类
             if not silent:
                 self.console.print_separator()
-                self.console.print_header("🏷️ 步骤2：智能分类与总结", 1)
+                if rage_mode:
+                    self.console.print_header("🏷️ 步骤2：🔥 狂暴模式智能分类与总结", 1)
+                else:
+                    self.console.print_header("🏷️ 步骤2：智能分类与总结", 1)
                 self.console.print_separator()
 
-            if not self._classify_papers(date, analysis_results, silent):
+            if not self._classify_papers(date, analysis_results, silent, rage_mode):
                 return False
 
             # 步骤3: 生成汇总报告
@@ -199,7 +202,7 @@ class PaperAnalysisApp:
         cleaner = DataCleaner(clean_config)
         return cleaner.clean(date, silent)
     
-    def _analyze_papers(self, date: str, silent: bool) -> bool:
+    def _analyze_papers(self, date: str, silent: bool, rage_mode: bool = False) -> bool:
         """分析论文"""
         # 加载清洗后的数据
         cleaner = DataCleaner(self.app_config)
@@ -241,11 +244,26 @@ class PaperAnalysisApp:
                 self.console.print_warning(f"{date} 没有有效的论文数据")
             return True  # 空数据不算失败
         
-        # AI分析
+        # AI分析 - 根据模式选择处理方式
         analyzer = PaperAnalyzer(self.app_config)
         
+        if rage_mode:
+            if not silent:
+                self.console.print_info("🔥 狂暴模式已启用！5并发极速分析中...")
+                self.console.print_warning("⚡ 狂暴模式注意事项：")
+                self.console.print_info("  • 网络流量会显著增加")
+                self.console.print_info("  • 请确保网络连接稳定") 
+                self.console.print_info("  • API调用频率较高，注意余额")
+                self.console.print_info("  • 预计处理速度提升3-5倍")
+        
         try:
-            results = analyzer.analyze_batch(papers, date, silent)
+            if rage_mode:
+                # 狂暴模式：使用并发分析
+                results = analyzer.analyze_batch_concurrent(papers, date, silent, max_workers=5)
+            else:
+                # 普通模式：使用原有的串行分析
+                results = analyzer.analyze_batch(papers, date, silent)
+            
             return len(results) > 0 or len(papers) == 0
         except Exception as e:
             if not silent:
@@ -254,7 +272,7 @@ class PaperAnalysisApp:
             return False
     
     def _classify_papers(self, date: str, analysis_results: List[AnalysisResult], 
-                        silent: bool) -> bool:
+                        silent: bool, rage_mode: bool = False) -> bool:
         """分类论文"""
         if not analysis_results:
             if not silent:
@@ -266,8 +284,15 @@ class PaperAnalysisApp:
             'output_dir': self.app_config['analysis_dir']
         })
         
-        # 分类论文
-        classification_results = classifier.classify_papers(analysis_results, date, silent)
+        # 分类论文 - 支持狂暴模式
+        if rage_mode:
+            if not silent:
+                self.console.print_info("🔥 狂暴模式已启用！5并发极速分类中...")
+                self.console.print_warning("⚡ 狂暴模式注意事项：")
+                self.console.print_info("  • 分类AI调用频率较高")
+                self.console.print_info("  • 请确保网络连接稳定") 
+                self.console.print_info("  • 预计分类速度提升3-5倍")
+        classification_results = classifier.classify_papers(analysis_results, date, silent, rage_mode)
         
         # 保存分类结果
         if classification_results:
@@ -452,6 +477,13 @@ def create_argument_parser() -> argparse.ArgumentParser:
   python run.py advanced 2024-05-15      # 分析指定日期的论文
   python run.py advanced --silent        # 静默模式运行
 
+🔥 狂暴模式 (RageMode):
+  python run.py basic 2024-05-15 --rageMode     # 5并发极速基础分析
+  python run.py advanced 2024-05-15 --rageMode  # 5并发极速高级分析
+  
+  ⚡ 性能提升: 3-5倍处理速度，适合批量处理
+  ⚠️ 注意事项: 需要稳定网络，API调用频率较高，注意余额
+
 🔹 系统状态:
   python run.py status                   # 查看系统配置和状态
 
@@ -526,6 +558,11 @@ def create_argument_parser() -> argparse.ArgumentParser:
         action='store_true',
         help='静默模式，减少输出信息'
     )
+    basic_parser.add_argument(
+        '--rageMode',
+        action='store_true',
+        help='🔥 狂暴模式：启用5并发AI分析，处理速度提升5倍，带实时进度条（需要稳定网络和充足API余额）'
+    )
 
     # 高级分析命令
     advanced_parser = subparsers.add_parser(
@@ -564,6 +601,11 @@ def create_argument_parser() -> argparse.ArgumentParser:
         '--silent',
         action='store_true',
         help='静默模式，减少输出信息'
+    )
+    advanced_parser.add_argument(
+        '--rageMode',
+        action='store_true',
+        help='🔥 狂暴模式：启用5并发智能分类，处理速度提升5倍，带实时进度条（需要稳定网络和充足API余额）'
     )
 
     # 状态查看命令
@@ -633,7 +675,7 @@ def main() -> int:
         if args.command == 'basic':
             # 如果没有提供日期，使用今天的日期
             date = args.date or datetime.now().strftime('%Y-%m-%d')
-            success = app.run_daily_analysis(date, args.silent)
+            success = app.run_daily_analysis(date, args.silent, args.rageMode)
             return 0 if success else 1
 
         elif args.command == 'advanced':
@@ -641,7 +683,7 @@ def main() -> int:
             date = args.date or datetime.now().strftime('%Y-%m-%d')
             # 先加载分析结果
             analysis_results = app.load_analysis_results(date)
-            success = app.run_advanced_analysis(date, analysis_results, args.silent)
+            success = app.run_advanced_analysis(date, analysis_results, args.silent, args.rageMode)
             return 0 if success else 1
             
         elif args.command == 'status':

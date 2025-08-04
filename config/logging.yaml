@@ -100,13 +100,7 @@ loggers:
     handlers: [console, file_info, file_error]
     propagate: false
 
-# 根日志器
-root:
-  level: INFO
-  handlers: [console, file_info, file_error]
-
-# 第三方库日志级别
-loggers:
+  # 第三方库日志级别
   requests:
     level: WARNING
     propagate: true
@@ -122,3 +116,8 @@ loggers:
   openai:
     level: INFO
     propagate: true
+
+# 根日志器
+root:
+  level: INFO
+  handlers: [console, file_info, file_error]

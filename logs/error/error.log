@@ -1,0 +1,36 @@
+2025-08-04 18:58:34 [ERROR] analyzer [logger.py:87]: 并发分析异常: 2507.22827 - 'Paper' object has no attribute 'title_zh'
+2025-08-04 18:58:34 [ERROR] analyzer [logger.py:87]: 并发分析异常: 2507.22448 - 'Paper' object has no attribute 'title_zh'
+2025-08-04 18:58:34 [ERROR] analyzer [logger.py:87]: 并发分析异常: 2507.21493 - 'Paper' object has no attribute 'title_zh'
+2025-08-04 18:58:34 [ERROR] analyzer [logger.py:87]: 并发分析异常: 2507.22607 - 'Paper' object has no attribute 'title_zh'
+2025-08-04 18:58:34 [ERROR] analyzer [logger.py:87]: 并发分析异常: 2507.22062 - 'Paper' object has no attribute 'title_zh'
+2025-08-04 18:58:34 [ERROR] analyzer [logger.py:87]: 并发分析异常: 2507.19427 - 'Paper' object has no attribute 'title_zh'
+2025-08-04 18:58:34 [ERROR] analyzer [logger.py:87]: 并发分析异常: 2507.21802 - 'Paper' object has no attribute 'title_zh'
+2025-08-04 18:58:34 [ERROR] analyzer [logger.py:87]: 并发分析异常: 2507.20976 - 'Paper' object has no attribute 'title_zh'
+2025-08-04 18:58:34 [ERROR] analyzer [logger.py:87]: 并发分析异常: 2507.22886 - 'Paper' object has no attribute 'title_zh'
+2025-08-04 18:58:34 [ERROR] analyzer [logger.py:87]: 并发分析异常: 2507.22853 - 'Paper' object has no attribute 'title_zh'
+2025-08-04 18:58:34 [ERROR] analyzer [logger.py:87]: 并发分析异常: 2507.22565 - 'Paper' object has no attribute 'title_zh'
+2025-08-04 18:58:34 [ERROR] analyzer [logger.py:87]: 并发分析异常: 2507.13985 - 'Paper' object has no attribute 'title_zh'
+2025-08-04 19:32:36 [ERROR] classifier [logger.py:87]: AI分类异常: 2507.21493 - cannot access local variable 'time' where it is not associated with a value
+2025-08-04 19:32:36 [ERROR] classifier [logger.py:87]: AI分类异常: 2507.22827 - cannot access local variable 'time' where it is not associated with a value
+2025-08-04 19:32:36 [ERROR] classifier [logger.py:87]: AI分类异常: 2507.22607 - cannot access local variable 'time' where it is not associated with a value
+2025-08-04 19:32:36 [ERROR] classifier [logger.py:87]: AI分类异常: 2507.22062 - cannot access local variable 'time' where it is not associated with a value
+2025-08-04 19:32:36 [ERROR] classifier [logger.py:87]: AI分类异常: 2507.22448 - cannot access local variable 'time' where it is not associated with a value
+2025-08-04 19:32:36 [ERROR] classifier [logger.py:87]: AI分类异常: 2507.20976 - cannot access local variable 'time' where it is not associated with a value
+2025-08-04 19:32:36 [ERROR] classifier [logger.py:87]: AI分类异常: 2507.19427 - cannot access local variable 'time' where it is not associated with a value
+2025-08-04 19:32:36 [ERROR] classifier [logger.py:87]: AI分类异常: 2507.21802 - cannot access local variable 'time' where it is not associated with a value
+2025-08-04 19:32:36 [ERROR] classifier [logger.py:87]: AI分类异常: 2507.22886 - cannot access local variable 'time' where it is not associated with a value
+2025-08-04 19:32:36 [ERROR] classifier [logger.py:87]: AI分类异常: 2507.22853 - cannot access local variable 'time' where it is not associated with a value
+2025-08-04 19:32:36 [ERROR] classifier [logger.py:87]: AI分类异常: 2507.22565 - cannot access local variable 'time' where it is not associated with a value
+2025-08-04 19:32:36 [ERROR] classifier [logger.py:87]: AI分类异常: 2507.13985 - cannot access local variable 'time' where it is not associated with a value
+2025-08-04 19:43:58 [ERROR] classifier [logger.py:87]: AI分类异常: 2507.22607 - cannot access local variable 'time' where it is not associated with a value
+2025-08-04 19:43:58 [ERROR] classifier [logger.py:87]: AI分类异常: 2507.21493 - cannot access local variable 'time' where it is not associated with a value
+2025-08-04 19:43:58 [ERROR] classifier [logger.py:87]: AI分类异常: 2507.22827 - cannot access local variable 'time' where it is not associated with a value
+2025-08-04 19:43:58 [ERROR] classifier [logger.py:87]: AI分类异常: 2507.22448 - cannot access local variable 'time' where it is not associated with a value
+2025-08-04 19:43:58 [ERROR] classifier [logger.py:87]: AI分类异常: 2507.22062 - cannot access local variable 'time' where it is not associated with a value
+2025-08-04 19:43:58 [ERROR] classifier [logger.py:87]: AI分类异常: 2507.20976 - cannot access local variable 'time' where it is not associated with a value
+2025-08-04 19:43:58 [ERROR] classifier [logger.py:87]: AI分类异常: 2507.19427 - cannot access local variable 'time' where it is not associated with a value
+2025-08-04 19:43:58 [ERROR] classifier [logger.py:87]: AI分类异常: 2507.21802 - cannot access local variable 'time' where it is not associated with a value
+2025-08-04 19:43:58 [ERROR] classifier [logger.py:87]: AI分类异常: 2507.22886 - cannot access local variable 'time' where it is not associated with a value
+2025-08-04 19:43:58 [ERROR] classifier [logger.py:87]: AI分类异常: 2507.22853 - cannot access local variable 'time' where it is not associated with a value
+2025-08-04 19:43:58 [ERROR] classifier [logger.py:87]: AI分类异常: 2507.22565 - cannot access local variable 'time' where it is not associated with a value
+2025-08-04 19:43:58 [ERROR] classifier [logger.py:87]: AI分类异常: 2507.13985 - cannot access local variable 'time' where it is not associated with a value
