@@ -34,9 +34,9 @@ class DataCleaner:
         # 设置默认配置
         self.output_dir = config.get('output_dir', 'data/daily_reports')
         self.ai_model = config.get('ai_model', 'zhipu')
-        self.use_ai = config.get('use_ai', True)
+        self.use_ai = config.get('use_ai', False)  # 默认不使用AI
         
-        # 初始化AI客户端
+        # 初始化AI客户端（仅在需要时）
         self.ai_client = None
         if self.use_ai:
             try:
@@ -155,7 +155,7 @@ class DataCleaner:
         self.logger.info(f"数据清洗完成，原始数据: {len(raw_data)} 条，清洗后: {len(cleaned_data)} 条")
         return cleaned_data
     
-    def _clean_with_ai(self, raw_data: List[Dict[str, Any]], silent: bool = False) -> List[str]:
+    def _clean_with_ai(self, raw_data: List[Dict[str, Any]], silent: bool = False) -> List[Dict[str, Any]]:
         """
         使用AI清洗数据
         
@@ -227,7 +227,7 @@ class DataCleaner:
                 self.console.print_warning("AI清洗失败，使用规则清洗")
             return self._clean_with_rules(raw_data, silent)
     
-    def _clean_with_rules(self, raw_data: List[Dict[str, Any]], silent: bool = False) -> List[str]:
+    def _clean_with_rules(self, raw_data: List[Dict[str, Any]], silent: bool = False) -> List[Dict[str, Any]]:
         """
         使用规则清洗数据
         
@@ -241,24 +241,18 @@ class DataCleaner:
         if not silent:
             self.console.print_info("使用规则进行数据清洗...")
         
-        cleaned_strings = []
+        cleaned_data = []
 
         for i, item in enumerate(raw_data, 1):
             try:
                 cleaned_item = self._extract_paper_info(item)
                 if cleaned_item:
-                    # 转换为字符串格式，兼容原有解析器
-                    paper_string = f"""{i}. 论文题目：{cleaned_item['title']}
-   中文翻译：{cleaned_item['translation']}
-   论文ID：{cleaned_item['id']}
-   作者：{cleaned_item['authors']}
-   发表日期：{cleaned_item['publish_date']}"""
-                    cleaned_strings.append(paper_string)
+                    cleaned_data.append(cleaned_item)
             except Exception as e:
                 self.logger.warning(f"清洗单条数据失败: {e}")
                 continue
 
-        return cleaned_strings
+        return cleaned_data
     
     def _extract_paper_info(self, item: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         """
@@ -271,25 +265,50 @@ class DataCleaner:
             提取的论文信息，失败返回None
         """
         try:
-            # 处理不同的数据结构
+            # 处理不同的数据结构 - 兼容HuggingFace API格式
             paper_data = item.get('paper', item)
             
             # 提取基本信息
             paper_id = paper_data.get('id', '')
-            title = paper_data.get('title', '')
+            title = paper_data.get('title', '').strip().replace('\n', ' ')
             
             # 如果缺少关键信息，跳过
             if not paper_id or not title:
                 return None
             
+            # 处理作者信息 - 支持多种格式
+            authors_raw = paper_data.get('authors', [])
+            authors_list = []
+            
+            if isinstance(authors_raw, list):
+                for author in authors_raw:
+                    if isinstance(author, dict):
+                        name = author.get('name', '')
+                        if name:
+                            authors_list.append(name)
+                    elif isinstance(author, str):
+                        authors_list.append(author)
+            elif isinstance(authors_raw, str):
+                authors_list = [authors_raw]
+            
+            authors_str = ', '.join(authors_list) if authors_list else '未知作者'
+            
+            # 处理发表日期
+            publish_date = (paper_data.get('publishedAt') or 
+                          paper_data.get('publishedDate') or 
+                          paper_data.get('published') or '')
+            
             # 构建清洗后的数据
             cleaned_item = {
                 'id': paper_id,
                 'title': title,
-                'translation': title,  # 默认使用英文标题，后续可以翻译
-                'url': f"https://arxiv.org/abs/{paper_id}",
-                'authors': paper_data.get('authors', ''),
-                'publish_date': paper_data.get('publishedDate', ''),
+                'translation': title,  # 默认使用英文标题，不调用翻译API
+                'url': paper_data.get('url', f"https://arxiv.org/abs/{paper_id}"),
+                'authors': authors_str,
+                'publish_date': publish_date,
+                'summary': paper_data.get('summary', ''),
+                'github_repo': paper_data.get('githubRepo', ''),
+                'project_page': paper_data.get('projectPage', ''),
                 'model_function': ''  # 需要后续分析填充
             }
             
@@ -418,24 +437,22 @@ class DataCleaner:
             time.sleep(0.1)
             i += 1
     
-    def _parse_ai_response(self, response: str) -> List[str]:
+    def _parse_ai_response(self, response: str) -> List[Dict[str, Any]]:
         """
-        解析AI响应，返回字符串列表（兼容原有解析器）
+        解析AI响应，返回结构化数据列表
 
         Args:
             response: AI响应文本
 
         Returns:
-            解析后的字符串列表
+            解析后的结构化数据列表
         """
-        # 直接返回AI响应作为单个字符串，让解析器处理
-        # 这样保持与原有系统的兼容性
-        if response and response.strip():
-            return [response.strip()]
-        else:
-            return []
+        # TODO: 这里可以实现更复杂的AI响应解析逻辑
+        # 目前先返回空列表，如果需要AI功能，可以后续完善
+        self.logger.warning("AI响应解析功能待完善，返回空列表")
+        return []
     
-    def _save_cleaned_data(self, date: str, data: List[str]) -> bool:
+    def _save_cleaned_data(self, date: str, data: List[Dict[str, Any]]) -> bool:
         """
         保存清洗后的数据
         
@@ -537,6 +554,26 @@ def clean_data(date: str, output_dir: str = 'data/daily_reports',
     config = {
         'output_dir': output_dir,
         'ai_model': ai_model
+    }
+    cleaner = DataCleaner(config)
+    return cleaner.clean(date, silent)
+
+def clean_data_no_ai(date: str, output_dir: str = 'data/daily_reports', 
+                     silent: bool = False) -> bool:
+    """
+    便捷函数：仅使用规则清洗数据（不调用AI）
+    
+    Args:
+        date: 日期字符串
+        output_dir: 输出目录
+        silent: 是否静默模式
+        
+    Returns:
+        bool: 是否成功
+    """
+    config = {
+        'output_dir': output_dir,
+        'use_ai': False  # 明确禁用AI
     }
     cleaner = DataCleaner(config)
     return cleaner.clean(date, silent)

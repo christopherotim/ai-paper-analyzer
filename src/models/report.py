@@ -11,37 +11,79 @@ import json
 @dataclass
 class AnalysisResult:
     """
-    论文分析结果模型
+    论文分析结果模型 - 新的中英文分离格式
     
     Attributes:
-        paper_id: 论文ID
-        paper_url: 论文链接
-        title: 英文标题
-        translation: 中文标题
+        id: 论文ID
+        title_en: 英文标题
+        title_zh: 中文标题
+        url: 论文链接
         authors: 作者团队
-        publish_date: 发表日期
+        publish_date: 发表日期 (YYYY-MM-DD格式)
+        summary_en: 英文摘要
+        summary_zh: 中文摘要
+        github_repo: GitHub仓库链接
+        project_page: 项目页面链接
         model_function: 模型功能
-        page_content: 原始分析内容
         analysis_time: 分析时间
     """
-    paper_id: str
-    paper_url: str
-    title: str
-    translation: str
+    id: str
+    title_en: str
+    title_zh: str
+    url: str
     authors: str
     publish_date: str
+    summary_en: str
+    summary_zh: str
+    github_repo: str
+    project_page: str
     model_function: str
-    page_content: str = ""
     analysis_time: str = field(default_factory=lambda: datetime.now().isoformat())
+    
+    # 保持向后兼容的属性
+    @property
+    def paper_id(self) -> str:
+        """向后兼容：paper_id"""
+        return self.id
+    
+    @property
+    def paper_url(self) -> str:
+        """向后兼容：paper_url"""
+        return self.url
+    
+    @property
+    def title(self) -> str:
+        """向后兼容：title"""
+        return self.title_en
+    
+    @property
+    def translation(self) -> str:
+        """向后兼容：translation"""
+        return self.title_zh
     
     def __post_init__(self):
         """初始化后处理"""
         # 清理字段中的多余空白
-        self.title = self.title.strip()
-        self.translation = self.translation.strip()
+        self.title_en = self.title_en.strip()
+        self.title_zh = self.title_zh.strip()
         self.authors = self.authors.strip()
         self.model_function = self.model_function.strip()
-        self.page_content = self.page_content.strip()
+        self.summary_en = self.summary_en.strip()
+        self.summary_zh = self.summary_zh.strip()
+        
+        # 处理空值，设置默认值
+        if not self.authors:
+            self.authors = "暂无"
+        if not self.github_repo:
+            self.github_repo = "暂无"
+        if not self.project_page:
+            self.project_page = "暂无"
+        if not self.summary_en:
+            self.summary_en = "暂无"
+        if not self.summary_zh:
+            self.summary_zh = "暂无"
+        if not self.model_function:
+            self.model_function = "暂无"
     
     def to_dict(self) -> Dict[str, Any]:
         """转换为字典格式"""
@@ -51,14 +93,17 @@ class AnalysisResult:
     def from_dict(cls, data: Dict[str, Any]) -> 'AnalysisResult':
         """从字典创建AnalysisResult实例"""
         return cls(
-            paper_id=data.get('paper_id', ''),
-            paper_url=data.get('paper_url', ''),
-            title=data.get('title', ''),
-            translation=data.get('translation', ''),
+            id=data.get('id', data.get('paper_id', '')),
+            title_en=data.get('title_en', data.get('title', '')),
+            title_zh=data.get('title_zh', data.get('translation', '')),
+            url=data.get('url', data.get('paper_url', '')),
             authors=data.get('authors', ''),
             publish_date=data.get('publish_date', ''),
+            summary_en=data.get('summary_en', data.get('summary', '')),
+            summary_zh=data.get('summary_zh', ''),
+            github_repo=data.get('github_repo', ''),
+            project_page=data.get('project_page', ''),
             model_function=data.get('model_function', ''),
-            page_content=data.get('page_content', ''),
             analysis_time=data.get('analysis_time', datetime.now().isoformat())
         )
     
@@ -74,14 +119,17 @@ class AnalysisResult:
             paper_url = f"https://arxiv.org/abs/{paper_id}"
         
         return cls(
-            paper_id=paper_id,
-            paper_url=paper_url,
-            title=data.get('title', ''),
-            translation=data.get('translation', ''),
+            id=paper_id,
+            title_en=data.get('title', ''),
+            title_zh=data.get('translation', ''),
+            url=paper_url,
             authors=data.get('authors', ''),
             publish_date=data.get('publish_date', ''),
+            summary_en=data.get('summary', ''),
+            summary_zh='',
+            github_repo=data.get('github_repo', ''),
+            project_page=data.get('project_page', ''),
             model_function=data.get('model_function', ''),
-            page_content=data.get('page_content', ''),
             analysis_time=data.get('analysis_time', datetime.now().isoformat())
         )
     
@@ -93,12 +141,12 @@ class AnalysisResult:
     
     def is_valid(self) -> bool:
         """检查数据是否有效"""
-        required_fields = [self.paper_id, self.title, self.translation]
+        required_fields = [self.id, self.title_en, self.title_zh]
         return all(field.strip() for field in required_fields)
     
     def __str__(self) -> str:
         """字符串表示"""
-        return f"AnalysisResult({self.paper_id}: {self.translation[:30]}...)"
+        return f"AnalysisResult({self.id}: {self.title_zh[:30]}...)"
 
 
 @dataclass
@@ -311,14 +359,20 @@ class AnalysisSummary:
 
 
 # 便捷函数
-def create_analysis_result(paper_id: str, title: str, translation: str, **kwargs) -> AnalysisResult:
+def create_analysis_result(paper_id: str, title_en: str, title_zh: str, **kwargs) -> AnalysisResult:
     """便捷函数：创建分析结果"""
     return AnalysisResult(
-        paper_id=paper_id,
-        paper_url=f"https://arxiv.org/abs/{paper_id}",
-        title=title,
-        translation=translation,
-        **kwargs
+        id=paper_id,
+        title_en=title_en,
+        title_zh=title_zh,
+        url=f"https://arxiv.org/abs/{paper_id}",
+        authors=kwargs.get('authors', '暂无'),
+        publish_date=kwargs.get('publish_date', '暂无'),
+        summary_en=kwargs.get('summary_en', '暂无'),
+        summary_zh=kwargs.get('summary_zh', '暂无'),
+        github_repo=kwargs.get('github_repo', '暂无'),
+        project_page=kwargs.get('project_page', '暂无'),
+        model_function=kwargs.get('model_function', '暂无')
     )
 
 def create_daily_report(date: str, analysis_results: List[AnalysisResult] = None) -> DailyReport:

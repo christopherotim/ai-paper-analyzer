@@ -192,13 +192,16 @@ class PaperAnalysisApp:
     
     def _clean_data(self, date: str, silent: bool) -> bool:
         """清洗数据"""
-        cleaner = DataCleaner(self.app_config)
+        # 创建专门用于清洗的配置，禁用AI
+        clean_config = self.app_config.copy()
+        clean_config['use_ai'] = False  # 明确禁用AI，使用规则清洗
+        
+        cleaner = DataCleaner(clean_config)
         return cleaner.clean(date, silent)
     
     def _analyze_papers(self, date: str, silent: bool) -> bool:
         """分析论文"""
         # 加载清洗后的数据
-        parser = ContentParser()
         cleaner = DataCleaner(self.app_config)
         
         cleaned_data = cleaner.load_cleaned_data(date)
@@ -207,8 +210,32 @@ class PaperAnalysisApp:
                 self.console.print_error(f"未找到 {date} 的清洗数据")
             return False
         
-        # 解析为论文对象
-        papers = parser.parse_cleaned_data(cleaned_data)
+        # 现在cleaned_data已经是结构化的字典列表
+        if not cleaned_data:
+            if not silent:
+                self.console.print_warning(f"{date} 没有有效的论文数据")
+            return True  # 空数据不算失败
+        
+        # 将字典数据转换为Paper对象
+        from .models.paper import Paper
+        papers = []
+        
+        for data in cleaned_data:
+            try:
+                # 使用Paper.from_dict方法转换
+                paper = Paper.from_dict(data)
+                papers.append(paper)
+            except Exception as e:
+                # 如果from_dict失败，尝试from_legacy_format
+                try:
+                    paper = Paper.from_legacy_format(data)
+                    papers.append(paper)
+                except Exception as e2:
+                    if not silent:
+                        self.console.print_warning(f"跳过无效论文数据: {e2}")
+                    self.logger.warning(f"转换论文数据失败: {e2}")
+                    continue
+        
         if not papers:
             if not silent:
                 self.console.print_warning(f"{date} 没有有效的论文数据")
@@ -216,9 +243,15 @@ class PaperAnalysisApp:
         
         # AI分析
         analyzer = PaperAnalyzer(self.app_config)
-        results = analyzer.analyze_batch(papers, date, silent)
         
-        return len(results) > 0 or len(papers) == 0
+        try:
+            results = analyzer.analyze_batch(papers, date, silent)
+            return len(results) > 0 or len(papers) == 0
+        except Exception as e:
+            if not silent:
+                self.console.print_error(f"论文分析失败: {e}")
+            self.logger.error(f"论文分析异常: {e}")
+            return False
     
     def _classify_papers(self, date: str, analysis_results: List[AnalysisResult], 
                         silent: bool) -> bool:
@@ -331,27 +364,15 @@ class PaperAnalysisApp:
             AnalysisResult对象或None
         """
         try:
-            # 提取必需字段
-            paper_id = item.get('paper_id', item.get('id', ''))
-            if not paper_id:
-                # 尝试从URL中提取ID
-                paper_url = item.get('paper_url', '')
-                if 'arxiv.org/abs/' in paper_url:
-                    paper_id = paper_url.split('/')[-1]
-
-            return AnalysisResult(
-                paper_id=paper_id,
-                paper_url=item.get('paper_url', ''),
-                title=item.get('title', ''),
-                translation=item.get('translation', ''),
-                authors=item.get('authors', ''),
-                publish_date=item.get('publish_date', ''),
-                model_function=item.get('model_function', ''),
-                page_content=item.get('page_content', '')
-            )
+            # 使用AnalysisResult的from_dict方法，它已经支持新旧格式
+            return AnalysisResult.from_dict(item)
         except Exception as e:
-            self.logger.warning(f"转换分析结果失败: {e}")
-            return None
+            # 如果from_dict失败，尝试from_legacy_format
+            try:
+                return AnalysisResult.from_legacy_format(item)
+            except Exception as e2:
+                self.logger.warning(f"转换分析结果失败: {e2}")
+                return None
 
     def _split_to_md(self, date: str, analysis_results: List[AnalysisResult], silent: bool) -> bool:
         """MD切分步骤"""

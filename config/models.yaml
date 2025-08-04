@@ -22,8 +22,8 @@ ai_models:
         max_tokens: 8192
         temperature: 0.7
         description: "智谱AI最新一代大模型"
-      GLM-4-Flash:
-        name: "GLM-4-Flash"
+      GLM-4-Air:
+        name: "GLM-4-Air"
         max_tokens: 8192
         temperature: 0.7
         description: "智谱AI快速响应模型"

@@ -20,6 +20,9 @@ class Paper:
         authors: 作者团队信息
         publish_date: 发表日期
         model_function: 模型功能描述
+        summary: 英文摘要
+        github_repo: GitHub仓库链接
+        project_page: 项目页面链接
     """
     id: str
     title: str
@@ -28,6 +31,9 @@ class Paper:
     authors: str = ""
     publish_date: str = ""
     model_function: str = ""
+    summary: str = ""
+    github_repo: str = ""
+    project_page: str = ""
     
     def __post_init__(self):
         """初始化后处理"""
@@ -74,7 +80,10 @@ class Paper:
             url=data['url'],
             authors=data.get('authors', ''),
             publish_date=data.get('publish_date', ''),
-            model_function=data.get('model_function', '')
+            model_function=data.get('model_function', ''),
+            summary=data.get('summary', ''),
+            github_repo=data.get('github_repo', ''),
+            project_page=data.get('project_page', '')
         )
     
     @classmethod

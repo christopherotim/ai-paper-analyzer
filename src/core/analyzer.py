@@ -121,7 +121,7 @@ class PaperAnalyzer:
                 # 显示整体进度条
                 progress_bar = self._create_progress_bar(i, len(papers))
                 remaining_papers = len(papers) - i - 1
-                estimated_remaining = remaining_papers * 15  # 假设每篇15秒
+                estimated_remaining = remaining_papers * 5  # 调整为5秒预估（简化提示词后应该更快）
                 print(f"📊 进度: {progress_bar} {i}/{len(papers)} (成功:{success_count}, 失败:{fail_count}, 跳过:{skip_count}) 预计剩余: {estimated_remaining}秒")
             
             self.logger.info(f"开始分析论文: {paper.id} - {paper.title}")
@@ -144,6 +144,7 @@ class PaperAnalyzer:
                     if not silent:
                         self.console.print_success(f"✅ 完成: {paper.id} ({i+1}/{len(papers)})")
 
+                    # 只记录日志，不重复显示
                     self.logger.info(f"论文分析完成: {paper.id}")
                 else:
                     fail_count += 1
@@ -202,16 +203,24 @@ class PaperAnalyzer:
             if not silent:
                 self.console.print_warning("AI分析未启用，返回基础结果")
             
-            # 返回基础结果
+            # 返回基础结果 - 使用新的数据结构
+            # 对于基础结果，如果没有AI翻译，使用英文原文
+            summary_zh = paper.summary[:200] + "..." if len(paper.summary) > 200 else paper.summary
+            if not summary_zh or summary_zh == "暂无":
+                summary_zh = "无摘要信息"
+            
             return AnalysisResult(
-                paper_id=paper.id,
-                paper_url=paper.url,
-                title=paper.title,
-                translation=paper.translation,
-                authors="",
-                publish_date="",
-                model_function="",
-                page_content=""
+                id=paper.id,
+                title_en=paper.title,
+                title_zh=paper.translation,  # 这里使用清洗时的translation字段
+                url=paper.url,
+                authors=paper.authors,
+                publish_date=self._format_publish_date(paper.publish_date),
+                summary_en=paper.summary,
+                summary_zh=summary_zh,
+                github_repo=paper.github_repo,
+                project_page=paper.project_page,
+                model_function="暂无"
             )
         
         # 添加重试机制
@@ -306,18 +315,38 @@ class PaperAnalyzer:
         # 处理AI响应
         try:
             # 解析AI响应
-            parsed_fields = self.parser.parse_analysis_content(response)
+            parsed_fields = self._parse_ai_response(response)
 
-            # 创建分析结果
+            # 格式化发表日期为YYYY-MM-DD格式
+            publish_date = self._format_publish_date(paper.publish_date)
+
+            # 处理翻译字段，确保不为空
+            title_zh = parsed_fields.get('title_zh', '').strip()
+            if not title_zh:
+                title_zh = paper.title  # 如果AI没有提供翻译，使用英文原文
+                self.logger.warning(f"使用英文标题作为中文翻译: {paper.id}")
+            
+            summary_zh = parsed_fields.get('summary_zh', '').strip()
+            if not summary_zh:
+                # 如果AI没有提供摘要翻译，使用英文摘要（截取前200字符）
+                summary_zh = paper.summary[:200] + "..." if len(paper.summary) > 200 else paper.summary
+                if not summary_zh or summary_zh == "暂无":
+                    summary_zh = "无摘要信息"
+                self.logger.warning(f"使用英文摘要作为中文翻译: {paper.id}")
+
+            # 创建分析结果 - 使用新的数据结构
             result = AnalysisResult(
-                paper_id=paper.id,
-                paper_url=paper.url,
-                title=paper.title,
-                translation=paper.translation,
-                authors=parsed_fields['authors'],
-                publish_date=parsed_fields['publish_date'],
-                model_function=parsed_fields['model_function'],
-                page_content=response
+                id=paper.id,
+                title_en=paper.title,
+                title_zh=title_zh,
+                url=paper.url,
+                authors=paper.authors,
+                publish_date=publish_date,
+                summary_en=paper.summary,
+                summary_zh=summary_zh,
+                github_repo=paper.github_repo,
+                project_page=paper.project_page,
+                model_function=parsed_fields.get('model_function', '暂无')
             )
 
             return result
@@ -336,31 +365,37 @@ class PaperAnalyzer:
         Returns:
             提示词字符串
         """
-        prompt = f"""你是一个AI论文分析专家。请访问以下arXiv论文链接，仔细阅读论文内容，然后严格按照指定格式输出分析结果。
-
-## 信息获取策略：
-1. 必须访问arXiv链接获取完整论文信息
-2. 基于论文实际内容进行分析，不使用占位符
-3. 确保所有字段都有准确、完整的内容
+        # 从paper对象中获取更多信息
+        authors = getattr(paper, 'authors', '暂无')
+        summary = getattr(paper, 'summary', '暂无')
+        github_repo = getattr(paper, 'github_repo', '暂无')
+        project_page = getattr(paper, 'project_page', '暂无')
+        
+        prompt = f"""你是一个AI论文翻译和分析专家。请基于提供的论文信息进行翻译和分析，严格按照指定格式输出结果。
 
 ## 输出格式要求：
-**作者团队**：[论文作者姓名或所属机构团队]
-**发表日期**：[论文的发表日期，格式：YYYY-MM-DD]
-**模型功能**：[模型的主要功能和用途，50字以内]
+**标题中文翻译**：[必须将英文标题翻译成准确的中文，保持技术术语的专业性]
+**摘要中文翻译**：[必须将英文摘要翻译成中文，即使摘要很长也要完整翻译]
+**模型功能**：[基于标题和摘要分析的主要功能和用途，50字以内]
 
-## 注意事项：
+## 重要注意事项：
 - 必须严格按照上述格式输出，每行以对应标签开头
 - 每个字段后面直接跟具体内容，不要使用方括号
-- 基于论文实际内容填写，不要使用占位符或模板
-- 如果某项信息在论文中未明确提及，写"未明确提及"
-- 所有字段都必须填写完整，不能留空
+- 标题中文翻译和摘要中文翻译是必填项，绝对不能写"暂无"或留空
+- 翻译要准确专业，保持技术术语的准确性
+- 模型功能要简洁明了，突出核心价值
+- 如果摘要过长，请提取核心内容进行翻译，但不能省略
 
-【待分析的论文信息】：
-论文链接：{paper.url}
-论文标题：{paper.title}
-中文标题：{paper.translation}
+【待翻译和分析的论文信息】：
+论文ID：{paper.id}
+英文标题：{paper.title}
+作者：{authors}
+发表日期：{paper.publish_date}
+英文摘要：{summary if summary != '暂无' else '无摘要信息'}
+GitHub仓库：{github_repo}
+项目页面：{project_page}
 
-请严格按照上述要求，访问论文链接并确保输出的所有字段都有完整、准确的内容。"""
+请务必完成标题和摘要的中文翻译，这是必须的任务。"""
         
         return prompt
 
@@ -416,6 +451,91 @@ class PaperAnalyzer:
         filled = int(width * progress)
         bar = "█" * filled + "░" * (width - filled)
         return f"[{bar}]"
+    
+    def _parse_ai_response(self, response: str) -> Dict[str, str]:
+        """
+        解析AI响应，提取翻译和分析结果
+        
+        Args:
+            response: AI响应文本
+            
+        Returns:
+            解析后的字段字典
+        """
+        parsed_fields = {
+            'title_zh': '',
+            'summary_zh': '',
+            'model_function': '暂无'
+        }
+        
+        try:
+            lines = response.strip().split('\n')
+            
+            for line in lines:
+                line = line.strip()
+                if line.startswith('**标题中文翻译**：'):
+                    parsed_fields['title_zh'] = line.replace('**标题中文翻译**：', '').strip()
+                elif line.startswith('**摘要中文翻译**：'):
+                    parsed_fields['summary_zh'] = line.replace('**摘要中文翻译**：', '').strip()
+                elif line.startswith('**模型功能**：'):
+                    parsed_fields['model_function'] = line.replace('**模型功能**：', '').strip()
+            
+            # 特殊处理：title_zh 和 summary_zh 不能为空，如果为空则使用英文原文
+            if not parsed_fields['title_zh'] or parsed_fields['title_zh'].strip() == '':
+                self.logger.warning("AI未提供标题翻译，使用英文原文")
+                # 这里会在调用处使用英文标题作为备选
+            
+            if not parsed_fields['summary_zh'] or parsed_fields['summary_zh'].strip() == '':
+                self.logger.warning("AI未提供摘要翻译，使用英文原文")
+                # 这里会在调用处使用英文摘要作为备选
+            
+            # model_function 可以为暂无
+            if not parsed_fields['model_function'] or parsed_fields['model_function'].strip() == '':
+                parsed_fields['model_function'] = '暂无'
+                    
+        except Exception as e:
+            self.logger.warning(f"解析AI响应失败: {e}")
+        
+        return parsed_fields
+    
+    def _format_publish_date(self, date_str: str) -> str:
+        """
+        格式化发表日期为YYYY-MM-DD格式
+        
+        Args:
+            date_str: 原始日期字符串
+            
+        Returns:
+            格式化后的日期字符串
+        """
+        if not date_str or date_str == '暂无':
+            return '暂无'
+        
+        try:
+            # 处理ISO格式日期 (2025-07-31T17:00:30.000Z)
+            if 'T' in date_str:
+                date_part = date_str.split('T')[0]
+                return date_part
+            
+            # 如果已经是YYYY-MM-DD格式
+            if len(date_str) == 10 and date_str.count('-') == 2:
+                return date_str
+            
+            # 其他格式尝试解析
+            import re
+            from datetime import datetime
+            
+            # 尝试匹配YYYY-MM-DD格式
+            match = re.search(r'(\d{4}-\d{2}-\d{2})', date_str)
+            if match:
+                return match.group(1)
+            
+            # 如果无法解析，返回原始字符串
+            return date_str
+            
+        except Exception as e:
+            self.logger.warning(f"日期格式化失败: {e}")
+            return date_str
     
     def _load_existing_results(self, file_path: Path) -> List[Dict[str, Any]]:
         """

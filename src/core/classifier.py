@@ -109,31 +109,43 @@ class PaperClassifier:
             for i, analysis_result in enumerate(analysis_results):
                 if not silent:
                     # 显示当前处理的论文信息（类似cleaner的体验）
-                    self.console.print_info(f"🔍 切分第 {i+1}/{len(analysis_results)} 篇: {analysis_result.translation[:50]}...")
+                    self.console.print_info(f"🔍 切分第 {i+1}/{len(analysis_results)} 篇: {analysis_result.title_zh[:50]}...")
 
                     # 显示整体进度条
                     progress_bar = self._create_progress_bar(i, len(analysis_results))
                     print(f"✂️ MD切分进度: {progress_bar} {i}/{len(analysis_results)}")
 
-                # 生成安全的文件名
-                safe_title = "".join(c for c in analysis_result.translation if c.isalnum() or c in (' ', '-', '_')).rstrip()
+                # 生成安全的文件名 - 使用新的数据结构
+                safe_title = "".join(c for c in analysis_result.title_zh if c.isalnum() or c in (' ', '-', '_')).rstrip()
                 safe_title = safe_title[:50]  # 限制长度
                 if not safe_title:
-                    safe_title = f"paper_{analysis_result.paper_id}"
+                    safe_title = f"paper_{analysis_result.id}"
 
                 md_filename = f"{safe_title}.md"
                 md_path = date_dir / md_filename
 
-                # 生成MD内容
-                content = f"""# {analysis_result.translation}
+                # 生成MD内容 - 使用新的数据结构
+                content = f"""# {analysis_result.title_zh}
 
-**论文标题**：{analysis_result.title}
-**中文标题**：{analysis_result.translation}
-**论文地址**：{analysis_result.paper_url}
+**论文ID**：{analysis_result.id}
+**英文标题**：{analysis_result.title_en}
+**中文标题**：{analysis_result.title_zh}
+**论文地址**：{analysis_result.url}
 
 **作者团队**：{analysis_result.authors}
 **发表日期**：{analysis_result.publish_date}
+
+**英文摘要**：
+{analysis_result.summary_en}
+
+**中文摘要**：
+{analysis_result.summary_zh}
+
+**GitHub仓库**：{analysis_result.github_repo}
+**项目页面**：{analysis_result.project_page}
 **模型功能**：{analysis_result.model_function}
+
+**分析时间**：{analysis_result.analysis_time}
 """
 
                 # 写入MD文件
@@ -198,7 +210,7 @@ class PaperClassifier:
         for i, analysis_result in enumerate(analysis_results):
             if not silent:
                 # 显示当前处理的论文信息（类似基础脚本）
-                self.console.print_info(f"🔍 处理第 {i+1}/{len(analysis_results)} 篇: {analysis_result.translation[:50]}...")
+                self.console.print_info(f"🔍 处理第 {i+1}/{len(analysis_results)} 篇: {analysis_result.title_zh[:50]}...")
 
                 # 显示整体进度条（类似基础脚本）
                 progress_bar = self._create_progress_bar(i, len(analysis_results))
@@ -206,7 +218,7 @@ class PaperClassifier:
                 estimated_remaining = remaining_papers * 20  # 假设每篇20秒
                 print(f"📊 进度: {progress_bar} {i}/{len(analysis_results)} (成功:{success_count}, 失败:{fail_count}, 跳过:{skip_count}) 预计剩余: {estimated_remaining}秒")
 
-            self.logger.info(f"开始分类论文: {analysis_result.paper_id}")
+            self.logger.info(f"开始分类论文: {analysis_result.id}")
 
             try:
                 # 分类单篇论文并立即保存MD文件（类似旧脚本）
@@ -222,24 +234,24 @@ class PaperClassifier:
                         processed_count += 1
 
                         if progress:
-                            progress.update(True, f"{analysis_result.paper_id}")
+                            progress.update(True, f"{analysis_result.id}")
 
                         if not silent:
                             # 显示成功信息（类似旧脚本）
-                            self.console.print_success(f"✅ 分类完成: {result.category} - {analysis_result.paper_id}")
+                            self.console.print_success(f"✅ 分类完成: {result.category} - {analysis_result.id}")
 
-                        self.logger.info(f"论文分类完成: {analysis_result.paper_id} -> {result.category}")
+                        self.logger.info(f"论文分类完成: {analysis_result.id} -> {result.category}")
                 else:
                     fail_count += 1
                     processed_count += 1
 
                     if progress:
-                        progress.update(False, f"{analysis_result.paper_id}")
+                        progress.update(False, f"{analysis_result.id}")
 
                     if not silent:
-                        self.console.print_error(f"❌ 分类失败: {analysis_result.paper_id}")
+                        self.console.print_error(f"❌ 分类失败: {analysis_result.id}")
 
-                    self.logger.error(f"论文分类失败: {analysis_result.paper_id}")
+                    self.logger.error(f"论文分类失败: {analysis_result.id}")
 
                 # 添加延迟避免API限制（与旧脚本一致）
                 import time
@@ -250,12 +262,12 @@ class PaperClassifier:
                 processed_count += 1
 
                 if progress:
-                    progress.update(False, f"{analysis_result.paper_id} - {e}")
+                    progress.update(False, f"{analysis_result.id} - {e}")
 
                 if not silent:
-                    self.console.print_error(f"❌ 异常: {analysis_result.paper_id} - {e}")
+                    self.console.print_error(f"❌ 异常: {analysis_result.id} - {e}")
 
-                self.logger.error(f"论文分类异常: {analysis_result.paper_id} - {e}")
+                self.logger.error(f"论文分类异常: {analysis_result.id} - {e}")
         
         # 显示最终统计
         if progress:
@@ -295,7 +307,7 @@ class PaperClassifier:
             
             # 返回默认分类结果
             return ClassificationResult(
-                paper_id=analysis_result.paper_id,
+                paper_id=analysis_result.id,
                 category="多模态生成",
                 confidence=0.5,
                 md_content=self._generate_default_md_content(analysis_result)
@@ -324,7 +336,7 @@ class PaperClassifier:
                 progress_stop = threading.Event()
                 progress_thread = threading.Thread(
                     target=self._show_classification_progress,
-                    args=(progress_stop, f"分类论文: {analysis_result.translation[:30]}...")
+                    args=(progress_stop, f"分类论文: {analysis_result.title_zh[:30]}...")
                 )
                 progress_thread.daemon = True
                 progress_thread.start()
@@ -345,11 +357,11 @@ class PaperClassifier:
                 self.console.print_info(f"AI响应耗时: {end_time - start_time:.2f}秒")
 
             if not response:
-                self.logger.error(f"AI分类失败，响应为空: {analysis_result.paper_id}")
+                self.logger.error(f"AI分类失败，响应为空: {analysis_result.id}")
                 return None
 
         except Exception as e:
-            self.logger.error(f"AI分类异常: {analysis_result.paper_id} - {e}")
+            self.logger.error(f"AI分类异常: {analysis_result.id} - {e}")
             return None
 
         # 处理AI响应
@@ -361,7 +373,7 @@ class PaperClassifier:
                 
                 # 创建分类结果
                 result = ClassificationResult(
-                    paper_id=analysis_result.paper_id,
+                    paper_id=analysis_result.id,
                     category=category,
                     confidence=confidence,
                     md_content=md_content
@@ -369,11 +381,11 @@ class PaperClassifier:
                 
                 return result
             else:
-                self.logger.error(f"AI分类返回空结果: {analysis_result.paper_id}")
+                self.logger.error(f"AI分类返回空结果: {analysis_result.id}")
                 return None
                 
         except Exception as e:
-            self.logger.error(f"分类论文异常: {analysis_result.paper_id} - {e}")
+            self.logger.error(f"分类论文异常: {analysis_result.id} - {e}")
             return None
 
     def classify_and_save_single_paper(self, analysis_result: AnalysisResult,
@@ -390,10 +402,10 @@ class PaperClassifier:
             分类结果，失败返回None
         """
         # 生成原始MD文件名（与步骤1切分时一致）
-        safe_title = "".join(c for c in analysis_result.translation if c.isalnum() or c in (' ', '-', '_')).rstrip()
+        safe_title = "".join(c for c in analysis_result.title_zh if c.isalnum() or c in (' ', '-', '_')).rstrip()
         safe_title = safe_title[:50]  # 限制长度
         if not safe_title:
-            safe_title = f"paper_{analysis_result.paper_id}"
+            safe_title = f"paper_{analysis_result.id}"
 
         original_md_filename = f"{safe_title}.md"
 
@@ -409,7 +421,7 @@ class PaperClassifier:
 
                         # 返回已存在的分类结果
                         return ClassificationResult(
-                            paper_id=analysis_result.paper_id,
+                            paper_id=analysis_result.id,
                             category=category_dir.name,
                             confidence=1.0,
                             md_content=""
@@ -447,7 +459,7 @@ class PaperClassifier:
 
     def _build_classification_prompt(self, analysis_result: AnalysisResult) -> str:
         """
-        构建分类提示词
+        构建分类提示词 - 在原有MD基础上增加技术特点和应用场景
         
         Args:
             analysis_result: 分析结果
@@ -455,67 +467,77 @@ class PaperClassifier:
         Returns:
             提示词字符串
         """
-        # 生成MD内容用于分类
-        md_content = f"""# {analysis_result.translation}
+        # 生成基础MD内容
+        base_md_content = f"""# {analysis_result.title_zh}
 
-**论文标题**：{analysis_result.title}
-**中文标题**：{analysis_result.translation}
-**论文地址**：{analysis_result.paper_url}
+**论文ID**：{analysis_result.id}
+**英文标题**：{analysis_result.title_en}
+**中文标题**：{analysis_result.title_zh}
+**论文地址**：{analysis_result.url}
 
 **作者团队**：{analysis_result.authors}
 **发表日期**：{analysis_result.publish_date}
+
+**英文摘要**：
+{analysis_result.summary_en}
+
+**中文摘要**：
+{analysis_result.summary_zh}
+
+**GitHub仓库**：{analysis_result.github_repo}
+**项目页面**：{analysis_result.project_page}
 **模型功能**：{analysis_result.model_function}
+
+**分析时间**：{analysis_result.analysis_time}
 """
         
-        prompt = f"""你是一个AI模型分类与总结专家。请根据下面的"模型分类知识库"，判断md文件描述的模型属于哪个分类，并按指定格式输出。
+        prompt = f"""你是一个AI模型分类与总结专家。请基于提供的论文信息进行分类和总结，在原有MD内容基础上增加"技术特点"和"应用场景"两个字段。
 
-信息获取策略：
-1. 优先使用md文件中已有的信息
-2. 如果md文件中某些字段缺失或标注为"[未在md文件中提供]"、"[未提及]"等，请访问md文件中的arXiv链接获取完整信息
-3. 确保所有字段都有准确、完整的内容
-
-输出格式：
+## 输出格式要求：
 # [分类名称]
 
-# [模型名称] - [论文标题]
+# [中文标题]
 
-**arXiv 文章链接**：[论文链接，格式：https://arxiv.org/abs/XXXX.XXXXX]
+**论文ID**：{analysis_result.id}
+**英文标题**：{analysis_result.title_en}
+**中文标题**：{analysis_result.title_zh}
+**论文地址**：{analysis_result.url}
 
-**作者/团队**：[作者姓名或机构名称。如果md文件中未提供，请访问arXiv链接获取作者信息]
+**作者团队**：{analysis_result.authors}
+**发表日期**：{analysis_result.publish_date}
 
-**发表日期**：[YYYY-MM-DD格式。如果md文件中未提供，请访问arXiv链接获取论文提交日期]
+**英文摘要**：
+{analysis_result.summary_en}
 
-**模型功能**：[基于论文内容，用1-2句话简洁描述模型的核心功能。如果md文件描述不够详细，请访问arXiv链接获取准确信息直接使用md文件中的模型功能信息]
+**中文摘要**：
+{analysis_result.summary_zh}
 
-**技术特点**：[用2-3句话总结模型的主要技术创新点，50字以内]
+**GitHub仓库**：{analysis_result.github_repo}
+**项目页面**：{analysis_result.project_page}
+**模型功能**：{analysis_result.model_function}
 
-**应用场景**：[列举2-3个具体的应用场景。如果md文件信息不足，请访问arXiv链接获取更准确的应用场景]
+**技术特点**：[基于论文内容总结的主要技术创新点，2-3句话，突出与现有方法的区别]
 
-分类规则：
+**应用场景**：[基于论文内容列举的2-3个具体应用场景，要具体可行]
+
+**分析时间**：{analysis_result.analysis_time}
+
+## 分类规则：
 - 必须从以下分类中选择：文本生成、音频生成、图像生成、视频生成、多模态生成、3D生成、游戏与策略生成、科学计算与数据生成、代码生成与数据增强、跨模态生成
 - 如果不确定，选择"多模态生成"
 - 如果模型涉及多个领域，选择最主要的功能分类
 
-注意事项：
-- 分类名称必须完全匹配知识库中的分类
-- 所有字段都必须填写完整，不能留空或使用"[未提供]"等占位符
-- 如果md文件信息不完整，务必访问arXiv链接补充信息
-- 技术创新要突出与现有方法的区别
-- 应用场景要具体可行
+## 重要注意事项：
+- 分类名称必须完全匹配上述分类列表
+- 保持原有MD内容的完整性，只增加"技术特点"和"应用场景"两个字段
+- 技术特点要基于论文的实际技术创新，不要泛泛而谈
+- 应用场景要具体，避免"多种应用场景"这样的模糊描述
+- 所有字段都必须填写完整，不能留空
 
-信息补充要求：
-当遇到以下情况时，请访问arXiv链接获取信息：
-- 作者/团队字段为空或标注"[未在md文件中提供]"
-- 发表日期字段为空或标注"[未在md文件中提供]"
-- 模型功能描述过于简单（少于20字）
-- 技术创新内容重复或不够详细
-- 应用场景过于泛泛而谈
-
-模型分类知识库：
+## 模型分类知识库：
 {self.knowledge_base}
 
-md文件内容：
-{md_content}"""
+请基于以上信息进行分类和总结。"""
         
         return prompt
 
@@ -697,9 +719,9 @@ md文件内容：
         Returns:
             默认MD内容
         """
-        return f"""# {analysis_result.translation}
+        return f"""# {analysis_result.title_zh}
 
-**arXiv 文章链接**：{analysis_result.paper_url}
+**arXiv 文章链接**：{analysis_result.url}
 
 **作者/团队**：{analysis_result.authors or '未提供'}
 
