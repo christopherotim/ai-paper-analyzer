@@ -2,9 +2,14 @@
 
 <div align="center">
 
-[English](./ARCHITECTURE.en.md) | [简体中文](./ARCHITECTURE.md)
+[English](./ARCHITECTURE.en.md) | [简体中文](./ARCHITECTURE.v2.md) | [This page（old version）](./ARCHITECTURE.md)
 
 </div>
+
+> 提示：本页为旧版架构文档。若需与当前代码实现（v2.0/v2.1）完全对齐、包含模块-文件映射、Rage Mode 并发与缓存策略、最新数据模型等，请阅读新版文档：
+>
+> - 最新中文：docs/ARCHITECTURE.v2.md
+> - English（保持原链）：docs/ARCHITECTURE.en.md
 
 ## 📋 Table of Contents
 
