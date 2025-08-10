@@ -17,6 +17,30 @@ TO_EMAIL = os.getenv("TO_EMAIL")
 SMTP_HOST = "smtp.qq.com"
 SMTP_PORT = 587
 
+def check_data_availability():
+    """Check if there's data available for today by looking at cleaned data file"""
+    today_str = datetime.now().strftime('%Y-%m-%d')
+    cleaned_file = os.path.join("data", "daily_reports", "cleaned", f"{today_str}_clean.json")
+    
+    print(f"Checking for cleaned data file: {cleaned_file}")
+    
+    if not os.path.exists(cleaned_file):
+        print("Cleaned data file not found")
+        return False, "No cleaned data file found"
+    
+    try:
+        with open(cleaned_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            if isinstance(data, list) and len(data) > 0:
+                print(f"Found {len(data)} papers in cleaned data")
+                return True, len(data)
+            else:
+                print("Cleaned data file is empty or not a list")
+                return False, "Empty data"
+    except Exception as e:
+        print(f"Error reading cleaned data file: {e}")
+        return False, f"Error reading file: {e}"
+
 def send_notification(job_status):
     """Send email notification based on job status"""
     print(f"Starting email notification process, job status: {job_status}")
@@ -35,105 +59,140 @@ def send_notification(job_status):
     subject = ""
     body = ""
 
-    # Prepare email subject and body based on job status
+    # Check data availability first
+    has_data, data_info = check_data_availability()
+
+    # Prepare email content based on job status and data availability
     if job_status.lower() == 'success':
-        subject = f"Daily AI Paper Briefing Success - {today_str}"
-        
-        # Look for report file
-        report_filename = f"{today_str}_report.json"
-        report_filepath = os.path.join("data", "daily_reports", "reports", report_filename)
-        
-        print(f"Looking for report file: {report_filepath}")
-        
-        if os.path.exists(report_filepath):
-            print("Report file found, reading...")
-            try:
-                with open(report_filepath, 'r', encoding='utf-8') as f:
-                    report_data = json.load(f)
-                    paper_count = len(report_data) if isinstance(report_data, list) else "unknown"
-                    body = f"""Hello,
+        if has_data:
+            # Success with data - look for analysis report
+            subject = f"Daily AI Paper Briefing Success - {today_str}"
+            
+            report_filename = f"{today_str}_report.json"
+            report_filepath = os.path.join("data", "daily_reports", "reports", report_filename)
+            
+            print(f"Looking for analysis report: {report_filepath}")
+            
+            if os.path.exists(report_filepath):
+                print("Analysis report found, reading...")
+                try:
+                    with open(report_filepath, 'r', encoding='utf-8') as f:
+                        report_data = json.load(f)
+                        body = f"""Hello,
 
 Daily AI Paper Briefing generated successfully!
 
 Statistics:
 - Analysis Date: {today_str}
-- Paper Count: {paper_count}
+- Paper Count: {data_info}
 - Generated Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 
-Detailed Report:
-{json.dumps(report_data, indent=2, ensure_ascii=False)}
+Analysis Report Summary:
+{json.dumps(report_data, indent=2, ensure_ascii=False)[:2000]}...
+
+The complete analysis has been processed and saved.
 
 ---
 AI Briefing Bot"""
-                email_format = 'plain'
-                print(f"Report file read successfully, paper count: {paper_count}")
-            except Exception as e:
-                print(f"Failed to read report file: {e}")
-                body = f"Task completed successfully, but failed to read report file.\n\nError: {e}\nFile path: {report_filepath}"
-                email_format = 'plain'
-        else:
-            print("Report file not found")
-            # List existing files for debugging
-            reports_dir = os.path.join("data", "daily_reports", "reports")
-            if os.path.exists(reports_dir):
-                existing_files = os.listdir(reports_dir)
-                print(f"Files in reports directory: {existing_files}")
+                    print("Analysis report read successfully")
+                except Exception as e:
+                    print(f"Failed to read analysis report: {e}")
+                    body = f"""Hello,
+
+Daily AI Paper Briefing completed successfully!
+
+Statistics:
+- Analysis Date: {today_str}
+- Paper Count: {data_info}
+- Generated Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+
+The papers have been processed, but there was an issue reading the final analysis report.
+Error: {e}
+
+---
+AI Briefing Bot"""
             else:
-                print(f"Reports directory does not exist: {reports_dir}")
-            
-            body = f"""Task status shows success, but expected report file not found.
+                print("Analysis report not found, but data was processed")
+                body = f"""Hello,
 
-Expected file path: {report_filepath}
-Current working directory: {os.getcwd()}
+Daily AI Paper Briefing completed successfully!
 
-This might be because:
-1. No paper data available for analysis today
-2. File generation path differs from expected
-3. Issues occurred during task execution
+Statistics:
+- Analysis Date: {today_str}
+- Paper Count: {data_info}
+- Generated Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 
-Please check GitHub Actions detailed logs for specific reasons.
+The papers have been processed successfully. The analysis report may still be generating or saved in a different location.
 
 ---
 AI Briefing Bot"""
-            email_format = 'plain'
+        else:
+            # Success but no data available
+            subject = f"Daily AI Paper Briefing - No Data Available - {today_str}"
+            body = f"""Hello,
 
-    else:  # Job status is 'failure'
+Daily AI Paper Briefing task completed successfully.
+
+Status:
+- Analysis Date: {today_str}
+- Data Status: No papers available for analysis today
+- Reason: {data_info}
+- Completed Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+
+This is normal and can happen on weekends or when no new papers are published in the monitored categories.
+
+---
+AI Briefing Bot"""
+    else:
+        # Job failed
         subject = f"Daily AI Paper Briefing Failed - {today_str}"
-        body = """Hello,
+        body = f"""Hello,
 
 Daily AI Paper Briefing task execution failed.
-This might be because there's no data available for analysis today (e.g., weekends) or other errors occurred.
 
-Please check GitHub Actions backend for detailed execution logs to determine the cause.
+Status:
+- Analysis Date: {today_str}
+- Job Status: Failed
+- Data Available: {'Yes' if has_data else 'No'}
+- Failed Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+
+Please check GitHub Actions logs for detailed error information.
 
 ---
 AI Briefing Bot"""
-        email_format = 'plain'
 
-    # Create email message
-    msg = MIMEMultipart()
-    msg['From'] = Header(f"AI Briefing Bot <{SMTP_USER}>", 'utf-8')
-    msg['To'] = Header(TO_EMAIL, 'utf-8')
-    msg['Subject'] = Header(subject, 'utf-8')
-    msg.attach(MIMEText(body, email_format, 'utf-8'))
-
-    # Send email
+    # Create and send email - Following successful format from reference
     try:
         print(f"Connecting to email server {SMTP_HOST}:{SMTP_PORT}...")
+        
+        # Create email message
+        msg = MIMEMultipart()
+        msg['From'] = SMTP_USER
+        msg['To'] = TO_EMAIL
+        msg['Subject'] = Header(subject, 'utf-8')
+        msg.attach(MIMEText(body, 'plain', 'utf-8'))
+        
+        # Connect to SMTP server
         server = smtplib.SMTP(SMTP_HOST, SMTP_PORT)
         server.starttls()
         print("Logging in...")
         server.login(SMTP_USER, SMTP_PASSWORD)
         print("Sending email...")
-        server.sendmail(SMTP_USER, [TO_EMAIL], msg.as_string())
+        
+        # Send email using the format from successful example
+        text = msg.as_string()
+        server.sendmail(SMTP_USER, [TO_EMAIL], text)
         server.quit()
         print(f"Email sent successfully! Subject: {subject}")
+        
     except Exception as e:
         print(f"Email sending failed! Error: {e}")
+        # Print more detailed error information for debugging
+        import traceback
+        print(f"Detailed error: {traceback.format_exc()}")
         sys.exit(1)
 
 if __name__ == "__main__":
-    # This script accepts one parameter: job status ('success' or 'failure')
     if len(sys.argv) != 2:
         print("Usage: python send_email.py <job_status>")
         sys.exit(1)
