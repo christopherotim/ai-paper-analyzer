@@ -1,0 +1,50 @@
+# 工作流的名称，您可以自己定义
+name: Daily AI Paper Briefing
+
+# 工作流的触发条件
+on:
+  # 1. 允许您在 Actions 页面手动点击 "Run workflow" 按钮来触发，方便测试
+  workflow_dispatch:
+  
+  # 2. 定时触发
+  schedule:
+    # 这里的 '0 1 * * *' 是 UTC 时间的每天凌晨1点。
+    # 这通常对应北京时间的早上9点。您可以根据需要修改。
+    - cron: '0 1 * * *'
+
+# 定义一个任务
+jobs:
+  run-daily-briefing:
+    # 关键：我们选择在最新的 Windows 虚拟电脑上运行这个任务
+    runs-on: windows-latest
+
+    # 定义这个任务中需要用到的环境变量
+    env:
+      # 从我们第一步设置的 Secrets 中读取 API Key，并赋值给环境变量
+      ZHIPUAI_API_KEY: ${{ secrets.ZHIPUAI_API_KEY }}
+
+    # 任务执行的具体步骤
+    steps:
+      # 步骤0: 先把您的仓库代码下载到虚拟电脑里
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+
+      # 步骤1: 设置我们需要的 Python 版本
+      - name: Set up Python 3.11.9
+        uses: actions/setup-python@v5
+        with:
+          # 精确指定您需要的版本号
+          python-version: '3.11.9'
+
+      # 步骤2: 执行安装环境的批处理文件
+      - name: Install dependencies via BAT file
+        # 我们使用 cmd 作为 shell 来确保 .bat 文件完美运行
+        shell: cmd
+        run: .\安装环境.bat
+
+      # 步骤3: 执行启动脚本和主程序 (关键步骤)
+      - name: Activate environment and run main script
+        shell: cmd
+        run: |
+          call .\启动环境.bat
+          python run_pipeline.py --rageMode
