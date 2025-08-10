@@ -43,5 +43,7 @@ jobs:
         if: always()
         shell: cmd
         # --- 这是唯一的、关键的改动 ---
-        # 我们将多行命令合并为单行，以确保它被正确执行
-        run: python send_email.py ${{ job.status }}
+        # 我们必须在这一步中，也先激活虚拟环境
+        run: |
+          call .\启动环境.bat
+          python send_email.py ${{ job.status }}
