@@ -34,18 +34,16 @@ jobs:
       - name: 4. Run main pipeline script
         id: run_script
         shell: cmd
-        # --- 关键改动：动态创建并执行一个临时的批处理文件 ---
         run: |
           echo "call .\\启动环境.bat" > temp_run_main.bat
           echo "python run_pipeline.py --rageMode" >> temp_run_main.bat
           call temp_run_main.bat
       
-      # 发送邮件通知的步骤 (最终修正版)
+      # 发送邮件通知的步骤 (已修正复制粘贴错误)
       - name: 5. Send email notification
         if: always()
         shell: cmd
-        # --- 关键改动：对邮件步骤也采用同样的最稳妥方案 ---
         run: |
           echo "call .\\启动环境.bat" > temp_run_email.bat
           echo "python send_email.py ${{ job.status }}" >> temp_run_email.bat
-          call temp_run_email.bat```
+          call temp_run_email.bat
