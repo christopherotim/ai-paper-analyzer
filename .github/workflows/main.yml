@@ -12,6 +12,11 @@ jobs:
   run-daily-briefing:
     runs-on: windows-latest
 
+    # --- 关键改动：将所有步骤的默认 shell 设置为 powershell ---
+    defaults:
+      run:
+        shell: powershell
+
     env:
       ZHIPUAI_API_KEY: ${{ secrets.ZHIPUAI_API_KEY }}
       SMTP_USER: ${{ secrets.SMTP_USER }}
@@ -19,30 +24,26 @@ jobs:
       TO_EMAIL: ${{ secrets.TO_EMAIL }}
 
     steps:
-      - name: Checkout repository code
+      - name: 1. Checkout repository code
         uses: actions/checkout@v4
 
-      - name: Set up Python 3.11.9
+      - name: 2. Set up Python 3.11.9
         uses: actions/setup-python@v5
         with:
           python-version: '3.11.9'
 
-      - name: Install dependencies via BAT file
-        shell: cmd
+      - name: 3. Install dependencies via BAT file
+        # Install-step 仍然可以调用 .bat 文件
         run: .\安装环境.bat
-
-      - name: Activate environment and run main script
-        id: run_script
-        shell: cmd
-        run: |
-          call .\启动环境.bat
-          python run_pipeline.py --rageMode
       
-      # 发送邮件通知的步骤 (已更新)
-      - name: Send email notification
-        if: always() # 无论成功失败，总是执行
-        shell: cmd
-        run: |
-          echo "Preparing to send email notification for job status: ${{ job.status }}"
-          # 以新的方式调用邮件脚本，只传递任务状态
-          python send_email.py ${{ job.status }}
+      - name: 4. Run main pipeline script
+        id: run_script
+        # --- 关键改动：使用 PowerShell 的语句分隔符 ; ---
+        # 这会确保两个命令在同一个环境中按顺序执行
+        run: call .\启动环境.bat; python run_pipeline.py --rageMode
+      
+      # 发送邮件通知的步骤 (最终修正版)
+      - name: 5. Send email notification
+        if: always()
+        # --- 关键改动：同样使用 PowerShell 和 ; 分隔符 ---
+        run: call .\启动环境.bat; python send_email.py ${{ job.status }}
