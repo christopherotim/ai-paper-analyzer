@@ -1189,3 +1189,110 @@
 2025-08-10 20:56:56 [INFO] classifier: 成功加载知识库: 模型分类.md
 2025-08-10 20:56:56 [INFO] classifier: 汇总报告生成成功: data\analysis_results\2025-07-29\模型分类汇总.md
 2025-08-10 20:56:56 [INFO] main_app: 高级分析完成: 2025-07-29
+2025-08-10 22:24:15 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-08-10 22:24:15 [INFO] config_manager: 配置文件加载完成
+2025-08-10 22:24:15 [INFO] main_app: 论文分析系统启动
+2025-08-10 22:24:15 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-08-10 22:24:15 [INFO] main_app: 开始日常分析: 2025-08-10
+2025-08-10 22:24:15 [INFO] downloader: 开始下载 2025-08-10 的论文元数据
+2025-08-10 22:24:16 [INFO] downloader: API请求成功，状态码: 200
+2025-08-10 22:24:16 [INFO] downloader: JSON文件保存成功: data\daily_reports\metadata\2025-08-10.json
+2025-08-10 22:24:16 [INFO] downloader: 元数据保存成功: data\daily_reports\metadata\2025-08-10.json
+2025-08-10 22:24:16 [INFO] downloader: 成功下载并保存元数据到: data\daily_reports\metadata\2025-08-10.json
+2025-08-10 22:24:16 [INFO] cleaner: 开始清洗 2025-08-10 的论文数据
+2025-08-10 22:24:16 [INFO] cleaner: 原始数据为空，返回空列表
+2025-08-10 22:24:16 [INFO] cleaner: JSON文件保存成功: data\daily_reports\cleaned\2025-08-10_clean.json
+2025-08-10 22:24:16 [INFO] cleaner: 清洗数据保存成功: data\daily_reports\cleaned\2025-08-10_clean.json
+2025-08-10 22:24:16 [INFO] cleaner: 数据清洗完成: data\daily_reports\cleaned\2025-08-10_clean.json
+2025-08-10 22:24:16 [INFO] main_app: 数据清洗完成，但 2025-08-10 没有论文数据，提前结束流程
+2025-08-10 22:24:16 [INFO] main_app: 日常分析完成: 2025-08-10 (无数据)
+2025-08-10 22:24:16 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-08-10 22:24:16 [INFO] config_manager: 配置文件加载完成
+2025-08-10 22:24:16 [INFO] main_app: 论文分析系统启动
+2025-08-10 22:24:16 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-08-10 22:24:16 [WARNING] main_app: 未找到 2025-08-10 的分析结果文件: data\daily_reports\reports\2025-08-10_report.json
+2025-08-10 22:24:16 [INFO] main_app: 开始高级分析: 2025-08-10
+2025-08-10 22:24:17 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-08-10 22:25:14 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-08-10 22:25:14 [INFO] config_manager: 配置文件加载完成
+2025-08-10 22:25:14 [INFO] main_app: 论文分析系统启动
+2025-08-10 22:25:14 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-08-10 22:25:14 [INFO] main_app: 开始日常分析: 2025-08-10
+2025-08-10 22:25:14 [INFO] downloader: 开始下载 2025-08-10 的论文元数据
+2025-08-10 22:25:14 [INFO] downloader: API请求成功，状态码: 200
+2025-08-10 22:25:14 [INFO] downloader: JSON文件保存成功: data\daily_reports\metadata\2025-08-10.json
+2025-08-10 22:25:14 [INFO] downloader: 元数据保存成功: data\daily_reports\metadata\2025-08-10.json
+2025-08-10 22:25:14 [INFO] downloader: 成功下载并保存元数据到: data\daily_reports\metadata\2025-08-10.json
+2025-08-10 22:25:14 [INFO] cleaner: 开始清洗 2025-08-10 的论文数据
+2025-08-10 22:25:14 [INFO] cleaner: 原始数据为空，返回空列表
+2025-08-10 22:25:14 [INFO] cleaner: JSON文件保存成功: data\daily_reports\cleaned\2025-08-10_clean.json
+2025-08-10 22:25:14 [INFO] cleaner: 清洗数据保存成功: data\daily_reports\cleaned\2025-08-10_clean.json
+2025-08-10 22:25:14 [INFO] cleaner: 数据清洗完成: data\daily_reports\cleaned\2025-08-10_clean.json
+2025-08-10 22:25:14 [INFO] main_app: 数据清洗完成，但 2025-08-10 没有论文数据，提前结束流程
+2025-08-10 22:25:14 [INFO] main_app: 日常分析完成: 2025-08-10 (无数据)
+2025-08-10 22:25:15 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-08-10 22:25:15 [INFO] config_manager: 配置文件加载完成
+2025-08-10 22:25:15 [INFO] main_app: 论文分析系统启动
+2025-08-10 22:25:15 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-08-10 22:25:15 [WARNING] main_app: 未找到 2025-08-10 的分析结果文件: data\daily_reports\reports\2025-08-10_report.json
+2025-08-10 22:25:15 [INFO] main_app: 开始高级分析: 2025-08-10
+2025-08-10 22:25:15 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-08-10 22:25:34 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-08-10 22:25:34 [INFO] config_manager: 配置文件加载完成
+2025-08-10 22:25:34 [INFO] main_app: 论文分析系统启动
+2025-08-10 22:25:34 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-08-10 22:25:34 [WARNING] main_app: 未找到 2025-08-10 的分析结果文件: data\daily_reports\reports\2025-08-10_report.json
+2025-08-10 22:25:34 [INFO] main_app: 开始高级分析: 2025-08-10
+2025-08-10 22:25:35 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-08-10 22:26:23 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-08-10 22:26:23 [INFO] config_manager: 配置文件加载完成
+2025-08-10 22:26:23 [INFO] main_app: 论文分析系统启动
+2025-08-10 22:26:23 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-08-10 22:26:23 [WARNING] main_app: 未找到 2025-08-10 的分析结果文件: data\daily_reports\reports\2025-08-10_report.json
+2025-08-10 22:26:23 [INFO] main_app: 开始高级分析: 2025-08-10
+2025-08-10 22:26:24 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-08-10 22:26:50 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-08-10 22:26:50 [INFO] config_manager: 配置文件加载完成
+2025-08-10 22:26:50 [INFO] main_app: 论文分析系统启动
+2025-08-10 22:26:50 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-08-10 22:26:50 [WARNING] main_app: 未找到 2025-08-10 的分析结果文件: data\daily_reports\reports\2025-08-10_report.json
+2025-08-10 22:26:50 [INFO] main_app: 开始高级分析: 2025-08-10
+2025-08-10 22:26:51 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-08-10 22:27:33 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-08-10 22:27:33 [INFO] config_manager: 配置文件加载完成
+2025-08-10 22:27:33 [INFO] main_app: 论文分析系统启动
+2025-08-10 22:27:33 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-08-10 22:27:33 [WARNING] main_app: 未找到 2025-08-10 的分析结果文件: data\daily_reports\reports\2025-08-10_report.json
+2025-08-10 22:27:33 [INFO] main_app: 开始高级分析: 2025-08-10
+2025-08-10 22:27:34 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-08-10 22:28:21 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-08-10 22:28:21 [INFO] config_manager: 配置文件加载完成
+2025-08-10 22:28:21 [INFO] main_app: 论文分析系统启动
+2025-08-10 22:28:21 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-08-10 22:28:21 [WARNING] main_app: 未找到 2025-08-10 的分析结果文件: data\daily_reports\reports\2025-08-10_report.json
+2025-08-10 22:28:21 [INFO] main_app: 开始高级分析: 2025-08-10
+2025-08-10 22:28:21 [INFO] main_app: Advanced 分析完成: 2025-08-10 (无数据)
+2025-08-10 22:28:52 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-08-10 22:28:52 [INFO] config_manager: 配置文件加载完成
+2025-08-10 22:28:52 [INFO] main_app: 论文分析系统启动
+2025-08-10 22:28:52 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-08-10 22:28:52 [INFO] main_app: 开始日常分析: 2025-08-10
+2025-08-10 22:28:52 [INFO] downloader: 开始下载 2025-08-10 的论文元数据
+2025-08-10 22:28:52 [INFO] downloader: API请求成功，状态码: 200
+2025-08-10 22:28:52 [INFO] downloader: JSON文件保存成功: data\daily_reports\metadata\2025-08-10.json
+2025-08-10 22:28:52 [INFO] downloader: 元数据保存成功: data\daily_reports\metadata\2025-08-10.json
+2025-08-10 22:28:52 [INFO] downloader: 成功下载并保存元数据到: data\daily_reports\metadata\2025-08-10.json
+2025-08-10 22:28:52 [INFO] cleaner: 开始清洗 2025-08-10 的论文数据
+2025-08-10 22:28:52 [INFO] cleaner: 原始数据为空，返回空列表
+2025-08-10 22:28:52 [INFO] cleaner: JSON文件保存成功: data\daily_reports\cleaned\2025-08-10_clean.json
+2025-08-10 22:28:52 [INFO] cleaner: 清洗数据保存成功: data\daily_reports\cleaned\2025-08-10_clean.json
+2025-08-10 22:28:52 [INFO] cleaner: 数据清洗完成: data\daily_reports\cleaned\2025-08-10_clean.json
+2025-08-10 22:28:52 [INFO] main_app: 数据清洗完成，但 2025-08-10 没有论文数据，提前结束流程
+2025-08-10 22:28:52 [INFO] main_app: 日常分析完成: 2025-08-10 (无数据)
+2025-08-10 22:28:53 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-08-10 22:28:53 [INFO] config_manager: 配置文件加载完成
+2025-08-10 22:28:53 [INFO] main_app: 论文分析系统启动
+2025-08-10 22:28:53 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-08-10 22:28:53 [WARNING] main_app: 未找到 2025-08-10 的分析结果文件: data\daily_reports\reports\2025-08-10_report.json
+2025-08-10 22:28:53 [INFO] main_app: 开始高级分析: 2025-08-10
+2025-08-10 22:28:53 [INFO] main_app: Advanced 分析完成: 2025-08-10 (无数据)

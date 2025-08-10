@@ -95,7 +95,14 @@ class PaperAnalysisApp:
                 return False
             
             # 步骤2: 清洗数据
-            if not self._clean_data(date, silent):
+            clean_result = self._clean_data(date, silent)
+            if clean_result == "no_data":
+                # 数据为空，但这是成功的情况
+                if not silent:
+                    self.console.print_success(f"日常分析完成: {date} (无数据)")
+                self.logger.info(f"日常分析完成: {date} (无数据)")
+                return True
+            elif not clean_result:
                 return False
             
             # 步骤3: AI分析
@@ -141,10 +148,28 @@ class PaperAnalysisApp:
             # 加载分析结果（如果未提供）
             if analysis_results is None:
                 analysis_results = self.load_analysis_results(date)
-                if not analysis_results:
-                    if not silent:
-                        self.console.print_error(f"未找到 {date} 的分析结果")
-                    return False
+            
+            # 检查分析结果是否为空
+            if not analysis_results:
+                # 检查是否是因为没有数据导致的
+                cleaner = DataCleaner(self.app_config)
+                
+                # 首先检查清洗文件是否存在
+                if cleaner.check_cleaned_exists(date):
+                    cleaned_data = cleaner.load_cleaned_data(date)
+                    
+                    if cleaned_data is not None and len(cleaned_data) == 0:
+                        # 有清洗文件但数据为空，说明是正常的无数据情况
+                        if not silent:
+                            self.console.print_info(f"✅ {date} 没有论文数据，Advanced 分析无需执行")
+                            self.console.print_info("这是正常情况，通常发生在周末或节假日")
+                        self.logger.info(f"Advanced 分析完成: {date} (无数据)")
+                        return True
+                
+                # 真正的错误情况：没有清洗文件或清洗文件有数据但没有分析结果
+                if not silent:
+                    self.console.print_error(f"未找到 {date} 的分析结果")
+                return False
             
             # 步骤1: MD切分
             if not silent:
@@ -200,7 +225,20 @@ class PaperAnalysisApp:
         clean_config['use_ai'] = False  # 明确禁用AI，使用规则清洗
         
         cleaner = DataCleaner(clean_config)
-        return cleaner.clean(date, silent)
+        success = cleaner.clean(date, silent)
+        
+        if success:
+            # 检查清洗后的数据是否为空
+            cleaned_data = cleaner.load_cleaned_data(date)
+            if not cleaned_data:
+                if not silent:
+                    self.console.print_info(f"✅ 数据清洗完成，但 {date} 没有可分析的论文数据")
+                    self.console.print_info("这通常发生在周末或节假日，属于正常情况")
+                self.logger.info(f"数据清洗完成，但 {date} 没有论文数据，提前结束流程")
+                # 返回一个特殊值表示成功但无数据
+                return "no_data"
+        
+        return success
     
     def _analyze_papers(self, date: str, silent: bool, rage_mode: bool = False) -> bool:
         """分析论文"""
@@ -210,8 +248,8 @@ class PaperAnalysisApp:
         cleaned_data = cleaner.load_cleaned_data(date)
         if not cleaned_data:
             if not silent:
-                self.console.print_error(f"未找到 {date} 的清洗数据")
-            return False
+                self.console.print_warning(f"未找到 {date} 的清洗数据，可能今天没有论文发布")
+            return True  # 没有数据不算失败，特别是对于未来日期
         
         # 现在cleaned_data已经是结构化的字典列表
         if not cleaned_data:
