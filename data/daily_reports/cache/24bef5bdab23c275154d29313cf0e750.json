@@ -1,0 +1,19 @@
+{
+  "paper_id": "2507.19478",
+  "paper_title": "MMBench-GUI: Hierarchical Multi-Platform Evaluation Framework for GUI   Agents",
+  "cache_time": 1754309077.9140742,
+  "result": {
+    "id": "2507.19478",
+    "title_en": "MMBench-GUI: Hierarchical Multi-Platform Evaluation Framework for GUI   Agents",
+    "title_zh": "MMBench-GUI：面向GUI代理的分层多平台评估框架",
+    "url": "https://arxiv.org/abs/2507.19478",
+    "authors": "Xuehui Wang, Zhenyu Wu, JingJing Xie, Zichen Ding, Bowen Yang, Zehao Li, Zhaoyang Liu, Qingyun Li, Xuan Dong, Zhe Chen, Weiyun Wang, Xiangyu Zhao, Jixuan Chen, Haodong Duan, Tianbao Xie, Chenyu Yang, Shiqian Su, Yue Yu, Yuan Huang, Yiqian Liu, Xiao Zhang, Yanting Zhang, Xiangyu Yue, Weijie Su, Xizhou Zhu, Wei Shen, Jifeng Dai, Wenhai Wang",
+    "publish_date": "2025-07-25",
+    "summary_en": "We introduce MMBench-GUI, a hierarchical benchmark for evaluating GUI\nautomation agents across Windows, macOS, Linux, iOS, Android, and Web\nplatforms. It comprises four levels: GUI Content Understanding, Element\nGrounding, Task Automation, and Task Collaboration, covering essential skills\nfor GUI agents. In addition, we propose a novel Efficiency-Quality Area (EQA)\nmetric to assess GUI agent execution efficiency in online automation scenarios.\nThrough MMBench-GUI, we identify accurate visual grounding as a critical\ndeterminant of overall task success, emphasizing the substantial benefits of\nmodular frameworks that integrate specialized grounding modules. Furthermore,\nto achieve reliable GUI automation, an agent requires strong task planning and\ncross-platform generalization abilities, with long-context memory, a broad\naction space, and long-term reasoning playing a critical role. More important,\ntask efficiency remains a critically underexplored dimension, and all models\nsuffer from substantial inefficiencies, with excessive redundant steps even\nwhen tasks are ultimately completed. The integration of precise localization,\neffective planning, and early stopping strategies is indispensable to enable\ntruly efficient and scalable GUI automation. Our benchmark code, evaluation\ndata, and running environment will be publicly available at\nhttps://github.com/open-compass/MMBench-GUI.",
+    "summary_zh": "我们介绍了MMBench-GUI，一个用于评估跨Windows、macOS、Linux、iOS、Android和Web平台的GUI自动化代理的分层基准测试。它包含四个层级：GUI内容理解、元素定位、任务自动化和任务协作，涵盖了GUI代理的基本技能。此外，我们提出了一种新的效率-质量区域(EQA)指标，用于评估在线自动化场景中GUI代理的执行效率。通过MMBench-GUI，我们发现精确的视觉定位是整体任务成功的关键决定因素，强调了集成专门定位模块的模块化框架的显著优势。此外，要实现可靠的GUI自动化，代理需要强大的任务规划和跨平台泛化能力，其中长上下文记忆、广泛的动作空间和长期推理起着关键作用。更重要的是，任务效率仍然是一个严重未被探索的维度，所有模型都存在显著的低效率问题，即使任务最终完成，也存在大量冗余步骤。精确定位、有效规划和早期停止策略的结合对于实现真正高效且可扩展的GUI自动化是必不可少的。我们的基准测试代码、评估数据和运行环境将在https://github.com/open-compass/MMBench-GUI上公开提供。",
+    "github_repo": "https://github.com/open-compass/MMBench-GUI",
+    "project_page": "暂无",
+    "model_function": "评估跨多平台的GUI自动化代理，包含四个层级的能力测试，并提供效率-质量评估指标。",
+    "analysis_time": "2025-08-04T20:04:37.914074"
+  }
+}

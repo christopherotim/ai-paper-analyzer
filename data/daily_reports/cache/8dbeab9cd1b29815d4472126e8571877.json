@@ -1,0 +1,19 @@
+{
+  "paper_id": "2507.18392",
+  "paper_title": "CLEAR: Error Analysis via LLM-as-a-Judge Made Easy",
+  "cache_time": 1754309088.8262126,
+  "result": {
+    "id": "2507.18392",
+    "title_en": "CLEAR: Error Analysis via LLM-as-a-Judge Made Easy",
+    "title_zh": "CLEAR：通过LLM作为评判者简化错误分析",
+    "url": "https://arxiv.org/abs/2507.18392",
+    "authors": "Asaf Yehudai, Lilach Eden, Yotam Perlitz, Roy Bar-Haim, Michal Shmueli-Scheuer",
+    "publish_date": "2025-07-24",
+    "summary_en": "The evaluation of Large Language Models (LLMs) increasingly relies on other\nLLMs acting as judges. However, current evaluation paradigms typically yield a\nsingle score or ranking, answering which model is better but not why. While\nessential for benchmarking, these top-level scores obscure the specific,\nactionable reasons behind a model's performance. To bridge this gap, we\nintroduce CLEAR, an interactive, open-source package for LLM-based error\nanalysis. CLEAR first generates per-instance textual feedback, then it creates\na set of system-level error issues, and quantifies the prevalence of each\nidentified issue. Our package also provides users with an interactive dashboard\nthat allows for a comprehensive error analysis through aggregate\nvisualizations, applies interactive filters to isolate specific issues or score\nranges, and drills down to the individual instances that exemplify a particular\nbehavioral pattern. We demonstrate CLEAR analysis for RAG and Math benchmarks,\nand showcase its utility through a user case study.",
+    "summary_zh": "大型语言模型(LLMs)的评估越来越依赖于其他LLM作为评判者。然而，当前的评估范式通常只产生单一分数或排名，回答哪个模型更好但不回答为什么。虽然这些顶级分数对基准测试至关重要，但它们掩盖了模型性能背后的具体、可操作的原因。为了弥合这一差距，我们介绍了CLEAR，这是一个用于基于LLM的错误分析的交互式开源软件包。CLEAR首先生成每个实例的文本反馈，然后创建一组系统级错误问题，并量化每个已识别问题的普遍性。我们的软件包还为用户提供了一个交互式仪表板，允许通过聚合可视化进行全面错误分析，应用交互式过滤器来隔离特定问题或分数范围，并深入到展示特定行为模式的个体实例。我们展示了CLEAR在RAG和数学基准测试中的分析，并通过用户案例研究展示了其效用。",
+    "github_repo": "https://github.com/IBM/CLEAR",
+    "project_page": "暂无",
+    "model_function": "基于LLM的交互式错误分析工具，提供详细的错误原因可视化和量化分析。",
+    "analysis_time": "2025-08-04T20:04:48.826212"
+  }
+}

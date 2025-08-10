@@ -1,0 +1,19 @@
+{
+  "paper_id": "2507.10510",
+  "paper_title": "Chat with AI: The Surprising Turn of Real-time Video Communication from   Human to AI",
+  "cache_time": 1754309096.2416954,
+  "result": {
+    "id": "2507.10510",
+    "title_en": "Chat with AI: The Surprising Turn of Real-time Video Communication from   Human to AI",
+    "title_zh": "与AI聊天：实时视频通信从人到AI的惊人转变",
+    "url": "https://arxiv.org/abs/2507.10510",
+    "authors": "Jiangkai Wu, Zhiyuan Ren, Liming Liu, Xinggong Zhang",
+    "publish_date": "2025-07-14",
+    "summary_en": "AI Video Chat emerges as a new paradigm for Real-time Communication (RTC),\nwhere one peer is not a human, but a Multimodal Large Language Model (MLLM).\nThis makes interaction between humans and AI more intuitive, as if chatting\nface-to-face with a real person. However, this poses significant challenges to\nlatency, because the MLLM inference takes up most of the response time, leaving\nvery little time for video streaming. Due to network uncertainty and\ninstability, transmission latency becomes a critical bottleneck preventing AI\nfrom being like a real person. To address this, we propose Artic, an\nAI-oriented Real-time Communication framework, exploring the network\nrequirement shift from \"humans watching video\" to \"AI understanding video\". To\nreduce bitrate dramatically while maintaining MLLM accuracy, we propose\nContext-Aware Video Streaming that recognizes the importance of each video\nregion for chat and allocates bitrate almost exclusively to chat-important\nregions. To avoid packet retransmission, we propose Loss-Resilient Adaptive\nFrame Rate that leverages previous frames to substitute for lost/delayed frames\nwhile avoiding bitrate waste. To evaluate the impact of video streaming quality\non MLLM accuracy, we build the first benchmark, named Degraded Video\nUnderstanding Benchmark (DeViBench). Finally, we discuss some open questions\nand ongoing solutions for AI Video Chat.",
+    "summary_zh": "AI视频聊天 emerges as a new paradigm for Real-time Communication (RTC)，其中一方不是人类，而是多模态大语言模型(MLLM)。这使得人类与AI之间的交互更加直观，就像与真人面对面聊天一样。然而，这对延迟提出了重大挑战，因为MLLM推理占据了大部分响应时间，留给视频流传输的时间非常少。由于网络的不确定性和不稳定性，传输延迟成为阻碍AI像真人一样互动的关键瓶颈。为解决这一问题，我们提出了Artic，一个面向AI的实时通信框架，探索了网络需求从\"人类观看视频\"到\"AI理解视频\"的转变。为显著降低比特率同时保持MLLM准确性，我们提出了上下文感知的视频流传输，它识别聊天中每个视频区域的重要性，并将比特率几乎完全分配给聊天重要的区域。为避免数据包重传，我们提出了具有容错性的自适应帧率，它利用前一帧替代丢失/延迟的帧，同时避免比特率浪费。为评估视频流质量对MLLM准确性的影响，我们构建了第一个基准测试，名为降级视频理解基准。最后，我们讨论了AI视频聊天的一些开放问题和正在进行的解决方案。",
+    "github_repo": "暂无",
+    "project_page": "暂无",
+    "model_function": "提出Artic框架，通过上下文感知视频流和容错自适应帧率技术，实现高效的人与AI实时视频交互。",
+    "analysis_time": "2025-08-04T20:04:56.241695"
+  }
+}

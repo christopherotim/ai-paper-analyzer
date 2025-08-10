@@ -1,0 +1,19 @@
+{
+  "paper_id": "2507.21364",
+  "paper_title": "Evaluating Deep Learning Models for African Wildlife Image   Classification: From DenseNet to Vision Transformers",
+  "cache_time": 1754306469.1972516,
+  "result": {
+    "id": "2507.21364",
+    "title_en": "Evaluating Deep Learning Models for African Wildlife Image   Classification: From DenseNet to Vision Transformers",
+    "title_zh": "评估深度学习模型在非洲野生动物图像分类中的应用：从DenseNet到Vision Transformers",
+    "url": "https://arxiv.org/abs/2507.21364",
+    "authors": "Lukman Jibril Aliyu, Umar Sani Muhammad, Bilqisu Ismail, Nasiru Muhammad, Almustapha A Wakili, Seid Muhie Yimam, Shamsuddeen Hassan Muhammad, Mustapha Abdullahi",
+    "publish_date": "2025-07-28",
+    "summary_en": "Wildlife populations in Africa face severe threats, with vertebrate numbers\ndeclining by over 65% in the past five decades. In response, image\nclassification using deep learning has emerged as a promising tool for\nbiodiversity monitoring and conservation. This paper presents a comparative\nstudy of deep learning models for automatically classifying African wildlife\nimages, focusing on transfer learning with frozen feature extractors. Using a\npublic dataset of four species: buffalo, elephant, rhinoceros, and zebra; we\nevaluate the performance of DenseNet-201, ResNet-152, EfficientNet-B4, and\nVision Transformer ViT-H/14. DenseNet-201 achieved the best performance among\nconvolutional networks (67% accuracy), while ViT-H/14 achieved the highest\noverall accuracy (99%), but with significantly higher computational cost,\nraising deployment concerns. Our experiments highlight the trade-offs between\naccuracy, resource requirements, and deployability. The best-performing CNN\n(DenseNet-201) was integrated into a HF Mirror Gradio Space for real-time\nfield use, demonstrating the feasibility of deploying lightweight models in\nconservation settings. This work contributes to African-grounded AI research by\noffering practical insights into model selection, dataset preparation, and\nresponsible deployment of deep learning tools for wildlife conservation.",
+    "summary_zh": "非洲的野生动物种群面临严重威胁，在过去五十年中，脊椎动物数量下降了65%以上。作为回应，使用深度学习的图像分类已成为生物多样性监测和保护的有力工具。本文提出了一项深度学习模型的比较研究，用于自动分类非洲野生动物图像，重点关注带有冻结特征提取器的迁移学习。我们使用了一个包含四种物种（水牛、大象、犀牛和斑马）的公共数据集，评估了DenseNet-201、ResNet-152、EfficientNet-B4和Vision Transformer ViT-H/14的性能。在卷积网络中，DenseNet-201取得了最佳性能（67%的准确率），而ViT-H/14取得了最高的整体准确率（99%），但计算成本显著更高，引发了部署方面的担忧。我们的实验突显了准确性、资源需求和可部署性之间的权衡。表现最佳的CNN（DenseNet-201）被整合到一个HF Mirror Gradio Space中，用于实时野外使用，展示了在保护环境中部署轻量级模型的可行性。这项工作通过提供关于模型选择、数据集准备和深度学习工具在野生动物保护中的负责任部署的实际见解，为非洲本土AI研究做出了贡献。",
+    "github_repo": "暂无",
+    "project_page": "暂无",
+    "model_function": "评估深度学习模型在非洲野生动物图像分类中的性能，并提供模型选择和部署的实用指导。",
+    "analysis_time": "2025-08-04T19:21:09.197251"
+  }
+}

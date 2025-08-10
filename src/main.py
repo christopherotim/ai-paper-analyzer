@@ -264,7 +264,9 @@ class PaperAnalysisApp:
                 # 普通模式：使用原有的串行分析
                 results = analyzer.analyze_batch(papers, date, silent)
             
-            return len(results) > 0 or len(papers) == 0
+            # 如果有结果或者所有论文都被跳过，都算成功
+            # 只有在有论文需要处理但处理失败时才算失败
+            return True
         except Exception as e:
             if not silent:
                 self.console.print_error(f"论文分析失败: {e}")

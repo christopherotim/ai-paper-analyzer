@@ -1,0 +1,19 @@
+{
+  "paper_id": "2507.20240",
+  "paper_title": "AnimalClue: Recognizing Animals by their Traces",
+  "cache_time": 1754306472.4402823,
+  "result": {
+    "id": "2507.20240",
+    "title_en": "AnimalClue: Recognizing Animals by their Traces",
+    "title_zh": "AnimalClue: 通过动物痕迹识别动物",
+    "url": "https://arxiv.org/abs/2507.20240",
+    "authors": "Risa Shinoda, Nakamasa Inoue, Iro Laina, Christian Rupprecht, Hirokatsu Kataoka",
+    "publish_date": "2025-07-27",
+    "summary_en": "Wildlife observation plays an important role in biodiversity conservation,\nnecessitating robust methodologies for monitoring wildlife populations and\ninterspecies interactions. Recent advances in computer vision have\nsignificantly contributed to automating fundamental wildlife observation tasks,\nsuch as animal detection and species identification. However, accurately\nidentifying species from indirect evidence like footprints and feces remains\nrelatively underexplored, despite its importance in contributing to wildlife\nmonitoring. To bridge this gap, we introduce AnimalClue, the first large-scale\ndataset for species identification from images of indirect evidence. Our\ndataset consists of 159,605 bounding boxes encompassing five categories of\nindirect clues: footprints, feces, eggs, bones, and feathers. It covers 968\nspecies, 200 families, and 65 orders. Each image is annotated with\nspecies-level labels, bounding boxes or segmentation masks, and fine-grained\ntrait information, including activity patterns and habitat preferences. Unlike\nexisting datasets primarily focused on direct visual features (e.g., animal\nappearances), AnimalClue presents unique challenges for classification,\ndetection, and instance segmentation tasks due to the need for recognizing more\ndetailed and subtle visual features. In our experiments, we extensively\nevaluate representative vision models and identify key challenges in animal\nidentification from their traces. Our dataset and code are available at\nhttps://dahlian00.github.io/AnimalCluePage/",
+    "summary_zh": "野生动物观察在生物多样性保护中发挥着重要作用，需要强大的方法来监测野生动物种群和物种间相互作用。计算机视觉的最新进展极大地促进了基本野生动物观察任务的自动化，如动物检测和物种识别。然而，尽管从脚印和粪便等间接证据准确识别物种对野生动物监测很重要，但这一领域仍然相对未被充分探索。为了填补这一空白，我们介绍了AnimalClue，这是第一个用于从间接证据图像中进行物种识别的大规模数据集。我们的数据集包含159,605个边界框，涵盖五类间接线索：脚印、粪便、蛋、骨头和羽毛。它覆盖了968个物种、200个科和65个目。每张图像都标注了物种级别的标签、边界框或分割掩码，以及细粒度的特征信息，包括活动模式和栖息地偏好。与主要关注直接视觉特征（如动物外观）的现有数据集不同，由于需要识别更详细和微妙的视觉特征，AnimalClue为分类、检测和实例分割任务带来了独特的挑战。在我们的实验中，我们广泛评估了代表性的视觉模型，并确定了从动物痕迹中识别动物的关键挑战。我们的数据集和代码可在https://dahlian00.github.io/AnimalCluePage/获取",
+    "github_repo": "https://github.com/dahlian00/AnimalClue",
+    "project_page": "https://dahlian00.github.io/AnimalCluePage/",
+    "model_function": "通过动物痕迹图像识别物种，为野生动物监测提供自动化工具",
+    "analysis_time": "2025-08-04T19:21:12.440282"
+  }
+}

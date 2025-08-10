@@ -1,0 +1,19 @@
+{
+  "paper_id": "2507.16534",
+  "paper_title": "Frontier AI Risk Management Framework in Practice: A Risk Analysis   Technical Report",
+  "cache_time": 1754309086.9743478,
+  "result": {
+    "id": "2507.16534",
+    "title_en": "Frontier AI Risk Management Framework in Practice: A Risk Analysis   Technical Report",
+    "title_zh": "前沿人工智能风险管理框架实践：风险分析技术报告",
+    "url": "https://arxiv.org/abs/2507.16534",
+    "authors": "Shanghai AI Lab, Xiaoyang Chen, Yunhao Chen, Zeren Chen, Zhiyun Chen, Hanyun Cui, Yawen Duan, Jiaxuan Guo, Qi Guo, Xuhao Hu, Hong Huang, Lige Huang, Chunxiao Li, Juncheng Li, Qihao Lin, Dongrui Liu, Xinmin Liu, Zicheng Liu, Chaochao Lu, Xiaoya Lu, Jingjing Qu, Qibing Ren, Jing Shao, Jingwei Shi, Jingwei Sun, Peng Wang, Weibing Wang, Jia Xu, Lewen Yan, Xiao Yu, Yi Yu, Boxuan Zhang, Jie Zhang, Weichen Zhang, Zhijie Zheng, Tianyi Zhou, Bowen Zhou",
+    "publish_date": "2025-07-22",
+    "summary_en": "To understand and identify the unprecedented risks posed by rapidly advancing\nartificial intelligence (AI) models, this report presents a comprehensive\nassessment of their frontier risks. Drawing on the E-T-C analysis (deployment\nenvironment, threat source, enabling capability) from the Frontier AI Risk\nManagement Framework (v1.0) (SafeWork-F1-Framework), we identify critical risks\nin seven areas: cyber offense, biological and chemical risks, persuasion and\nmanipulation, uncontrolled autonomous AI R\\&D, strategic deception and\nscheming, self-replication, and collusion. Guided by the \"AI-45^circ Law,\"\nwe evaluate these risks using \"red lines\" (intolerable thresholds) and \"yellow\nlines\" (early warning indicators) to define risk zones: green (manageable risk\nfor routine deployment and continuous monitoring), yellow (requiring\nstrengthened mitigations and controlled deployment), and red (necessitating\nsuspension of development and/or deployment). Experimental results show that\nall recent frontier AI models reside in green and yellow zones, without\ncrossing red lines. Specifically, no evaluated models cross the yellow line for\ncyber offense or uncontrolled AI R\\&D risks. For self-replication, and\nstrategic deception and scheming, most models remain in the green zone, except\nfor certain reasoning models in the yellow zone. In persuasion and\nmanipulation, most models are in the yellow zone due to their effective\ninfluence on humans. For biological and chemical risks, we are unable to rule\nout the possibility of most models residing in the yellow zone, although\ndetailed threat modeling and in-depth assessment are required to make further\nclaims. This work reflects our current understanding of AI frontier risks and\nurges collective action to mitigate these challenges.",
+    "summary_zh": "为了理解和识别快速发展的人工智能(AI)模型带来的前所未有的风险，本报告对其前沿风险进行了全面评估。借鉴前沿人工智能风险管理框架(v1.0)(SafeWork-F1-Framework)中的E-T-C分析(部署环境、威胁源、赋能能力)，我们确定了七个关键风险领域：网络攻击、生物和化学风险、说服和操纵、不受控制的自主AI研发、战略欺骗和阴谋、自我复制和共谋。在\"AI-45°法则\"的指导下，我们使用\"红线\"(不可接受的阈值)和\"黄线\"(早期预警指标)来评估这些风险，从而定义风险区域：绿色(常规部署和持续监控的可管理风险)、黄色(需要加强缓解措施和受控部署)和红色(需要暂停开发和/或部署)。实验结果表明，所有最近的前沿AI模型都位于绿色和黄色区域，没有跨越红线。具体而言，没有评估的模型跨越网络攻击或不受控制的AI研发风险的黄线。对于自我复制以及战略欺骗和阴谋，大多数模型保持在绿色区域，除了某些推理模型处于黄色区域。在说服和操纵方面，由于模型能有效影响人类，大多数模型处于黄色区域。对于生物和化学风险，我们无法排除大多数模型可能处于黄色区域的可能，尽管需要详细的威胁建模和深入评估才能做出进一步的主张。这项工作反映了我们对AI前沿风险的当前理解，并呼吁集体行动来缓解这些挑战。",
+    "github_repo": "暂无",
+    "project_page": "暂无",
+    "model_function": "评估前沿AI模型风险，提供风险分类和应对建议，促进AI安全发展。",
+    "analysis_time": "2025-08-04T20:04:46.974347"
+  }
+}

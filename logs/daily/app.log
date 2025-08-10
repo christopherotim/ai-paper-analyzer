@@ -965,3 +965,227 @@
 2025-08-04 20:05:00 [INFO] analyzer: JSON文件保存成功: data\daily_reports\reports\2025-07-28_report.json
 2025-08-04 20:05:00 [INFO] analyzer: 🔥 狂暴模式分析完成，成功: 11/11，跳过: 0，耗时: 34.2秒
 2025-08-04 20:05:00 [INFO] main_app: 日常分析完成: 2025-07-28
+2025-08-10 20:51:13 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-08-10 20:51:13 [INFO] config_manager: 配置文件加载完成
+2025-08-10 20:51:13 [INFO] main_app: 论文分析系统启动
+2025-08-10 20:51:13 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-08-10 20:51:13 [INFO] main_app: 开始日常分析: 2025-08-10
+2025-08-10 20:51:13 [INFO] downloader: 开始下载 2025-08-10 的论文元数据
+2025-08-10 20:51:14 [INFO] downloader: API请求成功，状态码: 200
+2025-08-10 20:51:14 [INFO] downloader: JSON文件保存成功: data\daily_reports\metadata\2025-08-10.json
+2025-08-10 20:51:14 [INFO] downloader: 元数据保存成功: data\daily_reports\metadata\2025-08-10.json
+2025-08-10 20:51:14 [INFO] downloader: 成功下载并保存元数据到: data\daily_reports\metadata\2025-08-10.json
+2025-08-10 20:51:14 [INFO] cleaner: 开始清洗 2025-08-10 的论文数据
+2025-08-10 20:51:14 [INFO] cleaner: 原始数据为空，返回空列表
+2025-08-10 20:51:14 [INFO] cleaner: JSON文件保存成功: data\daily_reports\cleaned\2025-08-10_clean.json
+2025-08-10 20:51:14 [INFO] cleaner: 清洗数据保存成功: data\daily_reports\cleaned\2025-08-10_clean.json
+2025-08-10 20:51:14 [INFO] cleaner: 数据清洗完成: data\daily_reports\cleaned\2025-08-10_clean.json
+2025-08-10 20:51:51 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-08-10 20:51:51 [INFO] config_manager: 配置文件加载完成
+2025-08-10 20:51:51 [INFO] main_app: 论文分析系统启动
+2025-08-10 20:51:51 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-08-10 20:51:51 [INFO] main_app: 开始日常分析: 2025-08-10
+2025-08-10 20:51:51 [INFO] downloader: 开始下载 2025-08-10 的论文元数据
+2025-08-10 20:51:51 [INFO] downloader: API请求成功，状态码: 200
+2025-08-10 20:51:51 [INFO] downloader: JSON文件保存成功: data\daily_reports\metadata\2025-08-10.json
+2025-08-10 20:51:51 [INFO] downloader: 元数据保存成功: data\daily_reports\metadata\2025-08-10.json
+2025-08-10 20:51:51 [INFO] downloader: 成功下载并保存元数据到: data\daily_reports\metadata\2025-08-10.json
+2025-08-10 20:51:51 [INFO] cleaner: 开始清洗 2025-08-10 的论文数据
+2025-08-10 20:51:51 [INFO] cleaner: 原始数据为空，返回空列表
+2025-08-10 20:51:51 [INFO] cleaner: JSON文件保存成功: data\daily_reports\cleaned\2025-08-10_clean.json
+2025-08-10 20:51:51 [INFO] cleaner: 清洗数据保存成功: data\daily_reports\cleaned\2025-08-10_clean.json
+2025-08-10 20:51:51 [INFO] cleaner: 数据清洗完成: data\daily_reports\cleaned\2025-08-10_clean.json
+2025-08-10 20:52:16 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-08-10 20:52:16 [INFO] config_manager: 配置文件加载完成
+2025-08-10 20:52:16 [INFO] main_app: 论文分析系统启动
+2025-08-10 20:52:16 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-08-10 20:52:16 [INFO] main_app: 开始日常分析: 2025-07-29
+2025-08-10 20:52:16 [INFO] downloader: 开始下载 2025-07-29 的论文元数据
+2025-08-10 20:52:17 [INFO] downloader: API请求成功，状态码: 200
+2025-08-10 20:52:17 [INFO] downloader: JSON文件保存成功: data\daily_reports\metadata\2025-07-29.json
+2025-08-10 20:52:17 [INFO] downloader: 元数据保存成功: data\daily_reports\metadata\2025-07-29.json
+2025-08-10 20:52:17 [INFO] downloader: 成功下载并保存元数据到: data\daily_reports\metadata\2025-07-29.json
+2025-08-10 20:52:17 [INFO] cleaner: 开始清洗 2025-07-29 的论文数据
+2025-08-10 20:52:17 [INFO] cleaner: 数据清洗完成，原始数据: 22 条，清洗后: 22 条
+2025-08-10 20:52:17 [INFO] cleaner: JSON文件保存成功: data\daily_reports\cleaned\2025-07-29_clean.json
+2025-08-10 20:52:17 [INFO] cleaner: 清洗数据保存成功: data\daily_reports\cleaned\2025-07-29_clean.json
+2025-08-10 20:52:17 [INFO] cleaner: 数据清洗完成: data\daily_reports\cleaned\2025-07-29_clean.json
+2025-08-10 20:52:18 [INFO] cache_manager: 缓存管理器初始化完成，缓存目录: data\daily_reports\cache
+2025-08-10 20:52:18 [INFO] analyzer: 开始批量分析 22 篇论文
+2025-08-10 20:52:18 [INFO] analyzer: 批量分析完成，成功: 0/0，跳过: 22
+2025-08-10 20:53:38 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-08-10 20:53:38 [INFO] config_manager: 配置文件加载完成
+2025-08-10 20:53:38 [INFO] main_app: 论文分析系统启动
+2025-08-10 20:53:38 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-08-10 20:53:38 [INFO] main_app: 开始日常分析: 2025-07-29
+2025-08-10 20:53:38 [INFO] downloader: 开始下载 2025-07-29 的论文元数据
+2025-08-10 20:53:39 [INFO] downloader: API请求成功，状态码: 200
+2025-08-10 20:53:39 [INFO] downloader: JSON文件保存成功: data\daily_reports\metadata\2025-07-29.json
+2025-08-10 20:53:39 [INFO] downloader: 元数据保存成功: data\daily_reports\metadata\2025-07-29.json
+2025-08-10 20:53:39 [INFO] downloader: 成功下载并保存元数据到: data\daily_reports\metadata\2025-07-29.json
+2025-08-10 20:53:39 [INFO] cleaner: 开始清洗 2025-07-29 的论文数据
+2025-08-10 20:53:39 [INFO] cleaner: 数据清洗完成，原始数据: 22 条，清洗后: 22 条
+2025-08-10 20:53:39 [INFO] cleaner: JSON文件保存成功: data\daily_reports\cleaned\2025-07-29_clean.json
+2025-08-10 20:53:39 [INFO] cleaner: 清洗数据保存成功: data\daily_reports\cleaned\2025-07-29_clean.json
+2025-08-10 20:53:39 [INFO] cleaner: 数据清洗完成: data\daily_reports\cleaned\2025-07-29_clean.json
+2025-08-10 20:53:39 [INFO] cache_manager: 缓存管理器初始化完成，缓存目录: data\daily_reports\cache
+2025-08-10 20:53:39 [INFO] analyzer: 开始批量分析 22 篇论文
+2025-08-10 20:53:39 [INFO] analyzer: 批量分析完成，成功: 0/0，跳过: 22
+2025-08-10 20:53:39 [INFO] main_app: 日常分析完成: 2025-07-29
+2025-08-10 20:53:40 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-08-10 20:53:40 [INFO] config_manager: 配置文件加载完成
+2025-08-10 20:53:40 [INFO] main_app: 论文分析系统启动
+2025-08-10 20:53:40 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-08-10 20:53:40 [INFO] main_app: 成功加载 22 个分析结果
+2025-08-10 20:53:40 [INFO] main_app: 开始高级分析: 2025-07-29
+2025-08-10 20:53:41 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-08-10 20:53:41 [INFO] classifier: 开始MD切分 22 篇论文
+2025-08-10 20:53:41 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\Rep-MTL 利用表示级任务显著性增强多任务学习性能.md
+2025-08-10 20:53:41 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\智能体强化策略优化.md
+2025-08-10 20:53:41 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\SmallThinker 一类专为本地部署高效训练的大型语言模型.md
+2025-08-10 20:53:41 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\自进化智能体综述迈向人工智能超级智能之路.md
+2025-08-10 20:53:41 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\ARC-Hunyuan-Video-7B 真实世界短视频的结构化视频理解.md
+2025-08-10 20:53:41 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\几何平均策略优化.md
+2025-08-10 20:53:41 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\重建四维空间智能综述.md
+2025-08-10 20:53:41 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\GPT-IMAGE-EDIT-15M一个百万规模的GPT生成图像数据集.md
+2025-08-10 20:53:41 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\基于区域聚类的视觉表征学习.md
+2025-08-10 20:53:41 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\面向主观问题的多样性增强推理.md
+2025-08-10 20:53:42 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\UloRL一种推进大型语言模型推理能力的超长输出强化学习方法.md
+2025-08-10 20:53:42 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\Met2Net一种用于复杂气象系统的解耦两阶段时空预测模型.md
+2025-08-10 20:53:42 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\JAM一款具有细粒度可控性和美学对齐功能的小型基于流的歌曲生成器.md
+2025-08-10 20:53:42 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\ForCenNet 前景中心网络用于文档图像校正.md
+2025-08-10 20:53:42 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\场景绘制者通过概念关系对齐实现语义一致的持续3D场景生成.md
+2025-08-10 20:53:42 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\EDGE-GRPO用于优势多样性的熵驱动GRPO与引导错误校正.md
+2025-08-10 20:53:42 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\Music Arena文本到音乐的实时评估.md
+2025-08-10 20:53:42 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\超越二元奖励训练语言模型对其不确定性进行推理.md
+2025-08-10 20:53:42 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\SAND-Math利用大语言模型生成新颖困难且有用的数学问题和答案.md
+2025-08-10 20:53:42 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\在CIRCLE中运行一个针对LLM代码解释器安全性的简单基准测试.md
+2025-08-10 20:53:43 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\GenoMAS 一种基于代码驱动的基因表达分析的科学发现多智能体框架.md
+2025-08-10 20:53:43 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\基于大型语言模型的对话AI用户模拟器中的目标对齐.md
+2025-08-10 20:53:43 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-08-10 20:53:43 [INFO] classifier: 开始批量分类 22 篇论文
+2025-08-10 20:53:43 [INFO] classifier: 开始分类论文: 2507.21049
+2025-08-10 20:53:58 [INFO] httpx: HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 20:53:59 [INFO] ai_client_GLM-4.5-Air: API调用: GLM-4.5-Air_chat, 状态: success, 耗时: 15.66秒
+2025-08-10 20:53:59 [INFO] classifier: MD文件保存成功: data\analysis_results\2025-07-29\多模态生成\Rep-MTL 利用表示级任务显著性增强多任务学习性能.md
+2025-08-10 20:53:59 [INFO] classifier: 论文分类完成: 2507.21049 -> 多模态生成
+2025-08-10 20:54:00 [INFO] classifier: 开始分类论文: 2507.19849
+2025-08-10 20:54:40 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-08-10 20:54:40 [INFO] config_manager: 配置文件加载完成
+2025-08-10 20:54:40 [INFO] main_app: 论文分析系统启动
+2025-08-10 20:54:40 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-08-10 20:54:40 [INFO] main_app: 开始日常分析: 2025-07-29
+2025-08-10 20:54:40 [INFO] downloader: 开始下载 2025-07-29 的论文元数据
+2025-08-10 20:54:41 [INFO] downloader: API请求成功，状态码: 200
+2025-08-10 20:54:41 [INFO] downloader: JSON文件保存成功: data\daily_reports\metadata\2025-07-29.json
+2025-08-10 20:54:41 [INFO] downloader: 元数据保存成功: data\daily_reports\metadata\2025-07-29.json
+2025-08-10 20:54:41 [INFO] downloader: 成功下载并保存元数据到: data\daily_reports\metadata\2025-07-29.json
+2025-08-10 20:54:41 [INFO] cleaner: 开始清洗 2025-07-29 的论文数据
+2025-08-10 20:54:41 [INFO] cleaner: 数据清洗完成，原始数据: 22 条，清洗后: 22 条
+2025-08-10 20:54:41 [INFO] cleaner: JSON文件保存成功: data\daily_reports\cleaned\2025-07-29_clean.json
+2025-08-10 20:54:41 [INFO] cleaner: 清洗数据保存成功: data\daily_reports\cleaned\2025-07-29_clean.json
+2025-08-10 20:54:41 [INFO] cleaner: 数据清洗完成: data\daily_reports\cleaned\2025-07-29_clean.json
+2025-08-10 20:54:41 [INFO] cache_manager: 缓存管理器初始化完成，缓存目录: data\daily_reports\cache
+2025-08-10 20:54:42 [INFO] analyzer: 🔥 狂暴模式：开始并发分析 22 篇论文，并发数: 5
+2025-08-10 20:54:42 [INFO] main_app: 日常分析完成: 2025-07-29
+2025-08-10 20:54:42 [INFO] config_manager: 日志配置加载成功: config\logging.yaml
+2025-08-10 20:54:42 [INFO] config_manager: 配置文件加载完成
+2025-08-10 20:54:42 [INFO] main_app: 论文分析系统启动
+2025-08-10 20:54:42 [INFO] main_app: 应用配置: {'output_dir': 'data/daily_reports', 'analysis_dir': 'data/analysis_results', 'ai_model': 'zhipu', 'use_ai': True, 'batch_size': 10, 'api_delay': 1}
+2025-08-10 20:54:42 [INFO] main_app: 成功加载 22 个分析结果
+2025-08-10 20:54:42 [INFO] main_app: 开始高级分析: 2025-07-29
+2025-08-10 20:54:43 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-08-10 20:54:43 [INFO] classifier: 开始MD切分 22 篇论文
+2025-08-10 20:54:43 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\Rep-MTL 利用表示级任务显著性增强多任务学习性能.md
+2025-08-10 20:54:43 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\智能体强化策略优化.md
+2025-08-10 20:54:43 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\SmallThinker 一类专为本地部署高效训练的大型语言模型.md
+2025-08-10 20:54:43 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\自进化智能体综述迈向人工智能超级智能之路.md
+2025-08-10 20:54:43 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\ARC-Hunyuan-Video-7B 真实世界短视频的结构化视频理解.md
+2025-08-10 20:54:43 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\几何平均策略优化.md
+2025-08-10 20:54:43 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\重建四维空间智能综述.md
+2025-08-10 20:54:43 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\GPT-IMAGE-EDIT-15M一个百万规模的GPT生成图像数据集.md
+2025-08-10 20:54:43 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\基于区域聚类的视觉表征学习.md
+2025-08-10 20:54:44 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\面向主观问题的多样性增强推理.md
+2025-08-10 20:54:44 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\UloRL一种推进大型语言模型推理能力的超长输出强化学习方法.md
+2025-08-10 20:54:44 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\Met2Net一种用于复杂气象系统的解耦两阶段时空预测模型.md
+2025-08-10 20:54:44 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\JAM一款具有细粒度可控性和美学对齐功能的小型基于流的歌曲生成器.md
+2025-08-10 20:54:44 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\ForCenNet 前景中心网络用于文档图像校正.md
+2025-08-10 20:54:44 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\场景绘制者通过概念关系对齐实现语义一致的持续3D场景生成.md
+2025-08-10 20:54:44 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\EDGE-GRPO用于优势多样性的熵驱动GRPO与引导错误校正.md
+2025-08-10 20:54:44 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\Music Arena文本到音乐的实时评估.md
+2025-08-10 20:54:44 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\超越二元奖励训练语言模型对其不确定性进行推理.md
+2025-08-10 20:54:44 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\SAND-Math利用大语言模型生成新颖困难且有用的数学问题和答案.md
+2025-08-10 20:54:45 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\在CIRCLE中运行一个针对LLM代码解释器安全性的简单基准测试.md
+2025-08-10 20:54:45 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\GenoMAS 一种基于代码驱动的基因表达分析的科学发现多智能体框架.md
+2025-08-10 20:54:45 [INFO] classifier: MD文件创建成功: data\analysis_results\2025-07-29\基于大型语言模型的对话AI用户模拟器中的目标对齐.md
+2025-08-10 20:54:45 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-08-10 20:54:45 [INFO] classifier: 开始批量分类 22 篇论文
+2025-08-10 20:55:04 [INFO] httpx: HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 20:55:04 [INFO] ai_client_GLM-4.5-Air: API调用: GLM-4.5-Air_chat, 状态: success, 耗时: 18.71秒
+2025-08-10 20:55:04 [INFO] classifier: MD文件保存成功: data\analysis_results\2025-07-29\多模态生成\ARC-Hunyuan-Video-7B 真实世界短视频的结构化视频理解.md
+2025-08-10 20:55:04 [INFO] httpx: HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 20:55:04 [INFO] ai_client_GLM-4.5-Air: API调用: GLM-4.5-Air_chat, 状态: success, 耗时: 18.98秒
+2025-08-10 20:55:04 [INFO] classifier: MD文件保存成功: data\analysis_results\2025-07-29\多模态生成\智能体强化策略优化.md
+2025-08-10 20:55:06 [INFO] httpx: HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 20:55:06 [INFO] ai_client_GLM-4.5-Air: API调用: GLM-4.5-Air_chat, 状态: success, 耗时: 20.66秒
+2025-08-10 20:55:06 [INFO] classifier: MD文件保存成功: data\analysis_results\2025-07-29\多模态生成\SmallThinker 一类专为本地部署高效训练的大型语言模型.md
+2025-08-10 20:55:17 [INFO] httpx: HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 20:55:17 [INFO] ai_client_GLM-4.5-Air: API调用: GLM-4.5-Air_chat, 状态: success, 耗时: 10.96秒
+2025-08-10 20:55:17 [INFO] classifier: MD文件保存成功: data\analysis_results\2025-07-29\多模态生成\基于区域聚类的视觉表征学习.md
+2025-08-10 20:55:18 [INFO] httpx: HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 20:55:18 [INFO] ai_client_GLM-4.5-Air: API调用: GLM-4.5-Air_chat, 状态: success, 耗时: 13.88秒
+2025-08-10 20:55:18 [INFO] classifier: MD文件保存成功: data\analysis_results\2025-07-29\多模态生成\重建四维空间智能综述.md
+2025-08-10 20:55:20 [INFO] httpx: HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 20:55:20 [INFO] ai_client_GLM-4.5-Air: API调用: GLM-4.5-Air_chat, 状态: success, 耗时: 34.58秒
+2025-08-10 20:55:20 [INFO] classifier: MD文件保存成功: data\analysis_results\2025-07-29\多模态生成\几何平均策略优化.md
+2025-08-10 20:55:31 [INFO] httpx: HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 20:55:31 [INFO] ai_client_GLM-4.5-Air: API调用: GLM-4.5-Air_chat, 状态: success, 耗时: 13.15秒
+2025-08-10 20:55:31 [INFO] classifier: MD文件保存成功: data\analysis_results\2025-07-29\多模态生成\UloRL一种推进大型语言模型推理能力的超长输出强化学习方法.md
+2025-08-10 20:55:47 [INFO] httpx: HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 20:55:47 [INFO] ai_client_GLM-4.5-Air: API调用: GLM-4.5-Air_chat, 状态: success, 耗时: 16.10秒
+2025-08-10 20:55:47 [INFO] classifier: MD文件保存成功: data\analysis_results\2025-07-29\多模态生成\JAM一款具有细粒度可控性和美学对齐功能的小型基于流的歌曲生成器.md
+2025-08-10 20:55:50 [INFO] httpx: HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 20:55:50 [INFO] ai_client_GLM-4.5-Air: API调用: GLM-4.5-Air_chat, 状态: success, 耗时: 30.10秒
+2025-08-10 20:55:50 [INFO] classifier: MD文件保存成功: data\analysis_results\2025-07-29\多模态生成\Met2Net一种用于复杂气象系统的解耦两阶段时空预测模型.md
+2025-08-10 20:55:50 [INFO] httpx: HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 20:55:50 [INFO] ai_client_GLM-4.5-Air: API调用: GLM-4.5-Air_chat, 状态: success, 耗时: 33.23秒
+2025-08-10 20:55:50 [INFO] classifier: MD文件保存成功: data\analysis_results\2025-07-29\多模态生成\面向主观问题的多样性增强推理.md
+2025-08-10 20:55:54 [INFO] httpx: HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 20:55:54 [INFO] ai_client_GLM-4.5-Air: API调用: GLM-4.5-Air_chat, 状态: success, 耗时: 49.66秒
+2025-08-10 20:55:54 [INFO] classifier: MD文件保存成功: data\analysis_results\2025-07-29\多模态生成\GPT-IMAGE-EDIT-15M一个百万规模的GPT生成图像数据集.md
+2025-08-10 20:56:02 [INFO] httpx: HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 20:56:02 [INFO] ai_client_GLM-4.5-Air: API调用: GLM-4.5-Air_chat, 状态: success, 耗时: 11.88秒
+2025-08-10 20:56:02 [INFO] classifier: MD文件保存成功: data\analysis_results\2025-07-29\多模态生成\场景绘制者通过概念关系对齐实现语义一致的持续3D场景生成.md
+2025-08-10 20:56:03 [INFO] httpx: HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 20:56:03 [INFO] ai_client_GLM-4.5-Air: API调用: GLM-4.5-Air_chat, 状态: success, 耗时: 16.42秒
+2025-08-10 20:56:03 [INFO] classifier: MD文件保存成功: data\analysis_results\2025-07-29\多模态生成\ForCenNet 前景中心网络用于文档图像校正.md
+2025-08-10 20:56:08 [INFO] httpx: HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 20:56:08 [INFO] ai_client_GLM-4.5-Air: API调用: GLM-4.5-Air_chat, 状态: success, 耗时: 83.35秒
+2025-08-10 20:56:08 [INFO] classifier: MD文件保存成功: data\analysis_results\2025-07-29\多模态生成\自进化智能体综述迈向人工智能超级智能之路.md
+2025-08-10 20:56:22 [INFO] httpx: HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 20:56:22 [INFO] ai_client_GLM-4.5-Air: API调用: GLM-4.5-Air_chat, 状态: success, 耗时: 31.87秒
+2025-08-10 20:56:22 [INFO] classifier: MD文件保存成功: data\analysis_results\2025-07-29\多模态生成\EDGE-GRPO用于优势多样性的熵驱动GRPO与引导错误校正.md
+2025-08-10 20:56:24 [INFO] httpx: HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 20:56:24 [INFO] ai_client_GLM-4.5-Air: API调用: GLM-4.5-Air_chat, 状态: success, 耗时: 22.23秒
+2025-08-10 20:56:24 [INFO] classifier: MD文件保存成功: data\analysis_results\2025-07-29\多模态生成\超越二元奖励训练语言模型对其不确定性进行推理.md
+2025-08-10 20:56:29 [INFO] httpx: HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 20:56:29 [INFO] ai_client_GLM-4.5-Air: API调用: GLM-4.5-Air_chat, 状态: success, 耗时: 25.52秒
+2025-08-10 20:56:29 [INFO] classifier: MD文件保存成功: data\analysis_results\2025-07-29\多模态生成\SAND-Math利用大语言模型生成新颖困难且有用的数学问题和答案.md
+2025-08-10 20:56:39 [INFO] httpx: HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 20:56:39 [INFO] ai_client_GLM-4.5-Air: API调用: GLM-4.5-Air_chat, 状态: success, 耗时: 45.65秒
+2025-08-10 20:56:39 [INFO] classifier: MD文件保存成功: data\analysis_results\2025-07-29\多模态生成\Music Arena文本到音乐的实时评估.md
+2025-08-10 20:56:49 [INFO] httpx: HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 20:56:49 [INFO] ai_client_GLM-4.5-Air: API调用: GLM-4.5-Air_chat, 状态: success, 耗时: 27.78秒
+2025-08-10 20:56:49 [INFO] classifier: MD文件保存成功: data\analysis_results\2025-07-29\多模态生成\GenoMAS 一种基于代码驱动的基因表达分析的科学发现多智能体框架.md
+2025-08-10 20:56:55 [INFO] httpx: HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 20:56:55 [INFO] ai_client_GLM-4.5-Air: API调用: GLM-4.5-Air_chat, 状态: success, 耗时: 31.04秒
+2025-08-10 20:56:55 [INFO] classifier: MD文件保存成功: data\analysis_results\2025-07-29\多模态生成\基于大型语言模型的对话AI用户模拟器中的目标对齐.md
+2025-08-10 20:56:56 [INFO] httpx: HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-10 20:56:56 [INFO] ai_client_GLM-4.5-Air: API调用: GLM-4.5-Air_chat, 状态: success, 耗时: 47.40秒
+2025-08-10 20:56:56 [INFO] classifier: MD文件保存成功: data\analysis_results\2025-07-29\多模态生成\在CIRCLE中运行一个针对LLM代码解释器安全性的简单基准测试.md
+2025-08-10 20:56:56 [INFO] classifier: 🔥 狂暴模式分类完成，成功: 21/22，跳过: 1，耗时: 131.2秒
+2025-08-10 20:56:56 [INFO] classifier: JSON文件保存成功: data\analysis_results\2025-07-29\classification_stats.json
+2025-08-10 20:56:56 [INFO] classifier: 保存分类统计: data\analysis_results\2025-07-29\classification_stats.json
+2025-08-10 20:56:56 [INFO] classifier: 成功加载知识库: 模型分类.md
+2025-08-10 20:56:56 [INFO] classifier: 汇总报告生成成功: data\analysis_results\2025-07-29\模型分类汇总.md
+2025-08-10 20:56:56 [INFO] main_app: 高级分析完成: 2025-07-29

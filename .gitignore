@@ -91,7 +91,6 @@ logs/
 *.log
 
 # 数据文件
-data/
 temp/
 tmp/
 

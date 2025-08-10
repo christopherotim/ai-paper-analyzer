@@ -1,0 +1,19 @@
+{
+  "paper_id": "2507.19849",
+  "paper_title": "Agentic Reinforced Policy Optimization",
+  "cache_time": 1754308488.5867846,
+  "result": {
+    "id": "2507.19849",
+    "title_en": "Agentic Reinforced Policy Optimization",
+    "title_zh": "智能体强化策略优化",
+    "url": "https://arxiv.org/abs/2507.19849",
+    "authors": "Guanting Dong, Hangyu Mao, Kai Ma, Licheng Bao, Yifei Chen, Zhongyuan Wang, Zhongxia Chen, Jiazhen Du, Huiyang Wang, Fuzheng Zhang, Guorui Zhou, Yutao Zhu, Ji-Rong Wen, Zhicheng Dou",
+    "publish_date": "2025-07-26",
+    "summary_en": "Large-scale reinforcement learning with verifiable rewards (RLVR) has\ndemonstrated its effectiveness in harnessing the potential of large language\nmodels (LLMs) for single-turn reasoning tasks. In realistic reasoning\nscenarios, LLMs can often utilize external tools to assist in task-solving\nprocesses. However, current RL algorithms inadequately balance the models'\nintrinsic long-horizon reasoning capabilities and their proficiency in\nmulti-turn tool interactions. To bridge this gap, we propose Agentic Reinforced\nPolicy Optimization (ARPO), a novel agentic RL algorithm tailored for training\nmulti-turn LLM-based agents. Through preliminary experiments, we observe that\nLLMs tend to exhibit highly uncertain behavior, characterized by an increase in\nthe entropy distribution of generated tokens, immediately following\ninteractions with external tools. Motivated by this observation, ARPO\nincorporates an entropy-based adaptive rollout mechanism, dynamically balancing\nglobal trajectory sampling and step-level sampling, thereby promoting\nexploration at steps with high uncertainty after tool usage. By integrating an\nadvantage attribution estimation, ARPO enables LLMs to internalize advantage\ndifferences in stepwise tool-use interactions. Our experiments across 13\nchallenging benchmarks in computational reasoning, knowledge reasoning, and\ndeep search domains demonstrate ARPO's superiority over trajectory-level RL\nalgorithms. Remarkably, ARPO achieves improved performance using only half of\nthe tool-use budget required by existing methods, offering a scalable solution\nfor aligning LLM-based agents with real-time dynamic environments. Our code and\ndatasets are released at https://github.com/dongguanting/ARPO",
+    "summary_zh": "具有可验证奖励的大规模强化学习(RLVR)已被证明在利用大型语言模型(LLMs)进行单回合推理任务方面是有效的。在实际推理场景中，LLMs通常可以利用外部工具来协助任务解决过程。然而，当前的RL算法无法充分平衡模型的内在长程推理能力和其在多回合工具交互中的熟练度。为了弥合这一差距，我们提出了智能体强化策略优化(ARPO)，这是一种专门用于训练多回合基于LLMs的智能体的新型智能体RL算法。通过初步实验，我们观察到LLMs在与外部工具交互后往往会表现出高度不确定的行为，表现为生成令牌的熵分布增加。受这一观察结果的启发，ARPO纳入了一种基于熵的自适应回滚机制，动态平衡全局轨迹采样和步骤级采样，从而促进工具使用后在高度不确定步骤的探索。通过整合优势归因估计，ARPO使LLMs能够内化工具使用交互中的步骤级优势差异。我们在计算推理、知识推理和深度搜索领域的13个具有挑战性的基准测试中的实验表明，ARPO优于轨迹级RL算法。值得注意的是，ARPO仅使用现有方法所需工具使用预算的一半就实现了性能提升，为将基于LLMs的智能体与实时动态环境对齐提供了可扩展的解决方案。我们的代码和数据集已在 https://github.com/dongguanting/ARPO 发布。",
+    "github_repo": "https://github.com/dongguanting/ARPO",
+    "project_page": "https://github.com/dongguanting/ARPO",
+    "model_function": "一种基于熵的自适应回滚机制，用于训练多回合LLM智能体，平衡长程推理与多工具交互能力，优化工具使用效率。",
+    "analysis_time": "2025-08-04T19:54:48.586784"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "2507.18553",
+  "paper_title": "The Geometry of LLM Quantization: GPTQ as Babai's Nearest Plane   Algorithm",
+  "cache_time": 1754309077.9140742,
+  "result": {
+    "id": "2507.18553",
+    "title_en": "The Geometry of LLM Quantization: GPTQ as Babai's Nearest Plane   Algorithm",
+    "title_zh": "大型语言模型量化的几何学：GPTQ作为Babai的最接近平面算法",
+    "url": "https://arxiv.org/abs/2507.18553",
+    "authors": "Jiale Chen, Torsten Hoefler, Dan Alistarh",
+    "publish_date": "2025-07-24",
+    "summary_en": "Quantizing the weights of large language models (LLMs) from 16-bit to lower\nbitwidth is the de facto approach to deploy massive transformers onto more\naffordable accelerators. GPTQ emerged as one of the standard methods for\none-shot post-training quantization at LLM scale. Yet, its inner workings are\ndescribed as a sequence of ad-hoc algebraic updates that obscure any geometric\nmeaning or worst-case guarantees. In this work, we show that, when executed\nback-to-front (from the last to first dimension) for a linear layer, GPTQ is\nmathematically identical to Babai's nearest plane algorithm for the classical\nclosest vector problem (CVP) on a lattice defined by the Hessian matrix of the\nlayer's inputs. This equivalence is based on a sophisticated mathematical\nargument, and has two analytical consequences: (i) the GPTQ error propagation\nstep gains an intuitive geometric interpretation; (ii) GPTQ inherits the error\nupper bound of Babai's algorithm under the no-clipping condition. Taken\ntogether, these results place GPTQ on firm theoretical footing and open the\ndoor to importing decades of progress in lattice algorithms towards the design\nof future quantization algorithms for billion-parameter models.",
+    "summary_zh": "将大型语言模型(LLMs)的权重从16位量化到更低位宽是部署大规模transformer到更经济实惠的加速器上的事实标准方法。GPTQ已成为LLM规模一次性后训练量化的标准方法之一。然而，其内部工作机制被描述为一串临时性的代数更新序列，掩盖了任何几何意义或最坏情况保证。在这项工作中，我们表明，当对一个线性层从前向后（从最后一维到第一维）执行时，GPTQ在数学上等同于Babai的最接近平面算法，用于解决由层的输入的Hessian矩阵定义的格上的经典最近向量问题(CVP)。这种等价关系基于一个复杂的数学论证，并有两个分析结果：(i) GPTQ误差传播步骤获得了一个直观的几何解释；(ii) 在无裁剪条件下，GPTQ继承了Babai算法的误差上界。总的来说，这些结果为GPTQ提供了坚实的理论基础，并为导入几十年来格算法的进展以设计未来十亿参数模型的量化算法打开了大门。",
+    "github_repo": "暂无",
+    "project_page": "暂无",
+    "model_function": "揭示GPTQ量化算法的几何本质，提供理论基础，并指导未来量化算法设计",
+    "analysis_time": "2025-08-04T20:04:37.914074"
+  }
+}

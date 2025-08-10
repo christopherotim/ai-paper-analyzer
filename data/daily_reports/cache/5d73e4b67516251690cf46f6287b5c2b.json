@@ -1,0 +1,19 @@
+{
+  "paper_id": "2507.21990",
+  "paper_title": "ChemDFM-R: An Chemical Reasoner LLM Enhanced with Atomized Chemical   Knowledge",
+  "cache_time": 1754306456.9629402,
+  "result": {
+    "id": "2507.21990",
+    "title_en": "ChemDFM-R: An Chemical Reasoner LLM Enhanced with Atomized Chemical   Knowledge",
+    "title_zh": "ChemDFM-R: 一种通过原子化化学知识增强的化学推理大型语言模型",
+    "url": "https://arxiv.org/abs/2507.21990",
+    "authors": "Zihan Zhao, Bo Chen, Ziping Wan, Lu Chen, Xuanze Lin, Shiyang Yu, Situo Zhang, Da Ma, Zichen Zhu, Danyang Zhang, Huayang Wang, Zhongyang Dai, Liyang Wen, Xin Chen, Kai Yu",
+    "publish_date": "2025-07-29",
+    "summary_en": "While large language models (LLMs) have achieved impressive progress, their\napplication in scientific domains such as chemistry remains hindered by shallow\ndomain understanding and limited reasoning capabilities. In this work, we focus\non the specific field of chemistry and develop a Chemical Reasoner LLM,\nChemDFM-R. We first construct a comprehensive dataset of atomized knowledge\npoints to enhance the model's understanding of the fundamental principles and\nlogical structure of chemistry. Then, we propose a mix-sourced distillation\nstrategy that integrates expert-curated knowledge with general-domain reasoning\nskills, followed by domain-specific reinforcement learning to enhance chemical\nreasoning. Experiments on diverse chemical benchmarks demonstrate that\nChemDFM-R achieves state-of-the-art performance while providing interpretable,\nrationale-driven outputs. Further case studies illustrate how explicit\nreasoning chains significantly improve the reliability, transparency, and\npractical utility of the model in real-world human-AI collaboration scenarios.",
+    "summary_zh": "尽管大型语言模型(LLMs)已取得了令人印象深刻的进展，但它们在化学等科学领域的应用仍受限于浅层的领域理解和有限的推理能力。在本工作中，我们专注于化学这一特定领域，开发了一个化学推理大型语言模型ChemDFM-R。我们首先构建了一个全面的原子化知识点数据集，以增强模型对化学基本原理和逻辑结构的理解。然后，我们提出了一种混合来源的蒸馏策略，该策略整合了专家策划的知识与通用领域的推理技能，随后进行特定领域的强化学习以增强化学推理能力。在多样化的化学基准测试上的实验表明，ChemDFM-R取得了最先进的性能，同时提供可解释的、基于理由的输出。进一步的案例研究说明了显式推理链如何显著提高模型在现实世界人机协作场景中的可靠性、透明度和实用价值。",
+    "github_repo": "暂无",
+    "project_page": "暂无",
+    "model_function": "专注于化学领域的推理大模型，通过原子化知识增强化学推理能力并提供可解释输出。",
+    "analysis_time": "2025-08-04T19:20:56.962940"
+  }
+}

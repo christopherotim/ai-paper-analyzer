@@ -1,0 +1,19 @@
+{
+  "paper_id": "2507.19058",
+  "paper_title": "ScenePainter: Semantically Consistent Perpetual 3D Scene Generation with   Concept Relation Alignment",
+  "cache_time": 1754308514.056009,
+  "result": {
+    "id": "2507.19058",
+    "title_en": "ScenePainter: Semantically Consistent Perpetual 3D Scene Generation with   Concept Relation Alignment",
+    "title_zh": "场景绘制者：通过概念关系对齐实现语义一致的持续3D场景生成",
+    "url": "https://arxiv.org/abs/2507.19058",
+    "authors": "Chong Xia, Shengjun Zhang, Fangfu Liu, Chang Liu, Khodchaphun Hirunyaratsameewong, Yueqi Duan",
+    "publish_date": "2025-07-25",
+    "summary_en": "Perpetual 3D scene generation aims to produce long-range and coherent 3D view\nsequences, which is applicable for long-term video synthesis and 3D scene\nreconstruction. Existing methods follow a \"navigate-and-imagine\" fashion and\nrely on outpainting for successive view expansion. However, the generated view\nsequences suffer from semantic drift issue derived from the accumulated\ndeviation of the outpainting module. To tackle this challenge, we propose\nScenePainter, a new framework for semantically consistent 3D scene generation,\nwhich aligns the outpainter's scene-specific prior with the comprehension of\nthe current scene. To be specific, we introduce a hierarchical graph structure\ndubbed SceneConceptGraph to construct relations among multi-level scene\nconcepts, which directs the outpainter for consistent novel views and can be\ndynamically refined to enhance diversity. Extensive experiments demonstrate\nthat our framework overcomes the semantic drift issue and generates more\nconsistent and immersive 3D view sequences. Project Page:\nhttps://xiac20.github.io/ScenePainter/.",
+    "summary_zh": "持续3D场景生成旨在产生长距离且连贯的3D视图序列，适用于长期视频合成和3D场景重建。现有方法遵循\"导航与想象\"的模式，并依靠外扩(outpainting)技术进行连续视图扩展。然而，生成的视图序列因外扩模块的累积偏差而遭受语义漂移问题。为应对这一挑战，我们提出了ScenePainter，这是一个用于语义一致的3D场景生成的新框架，它将外扩器的场景特定先验与对当前场景的理解进行对齐。具体而言，我们引入了一个名为场景概念图(SceneConceptGraph)的分层图结构，用于构建多级场景概念之间的关系，这指导外扩器生成一致的新视图，并可动态优化以提高多样性。大量实验证明，我们的框架克服了语义漂移问题，并生成了更加一致和沉浸式的3D视图序列。项目页面：https://xiac20.github.io/ScenePainter/。GitHub仓库：https://github.com/xiac20/ScenePainter 项目页面：https://xiac20.github.io/ScenePainter/",
+    "github_repo": "https://github.com/xiac20/ScenePainter",
+    "project_page": "https://xiac20.github.io/ScenePainter/",
+    "model_function": "解决3D场景生成中的语义漂移问题，生成语义一致且沉浸式的持续3D视图序列",
+    "analysis_time": "2025-08-04T19:55:14.056008"
+  }
+}

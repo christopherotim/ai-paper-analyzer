@@ -1,0 +1,19 @@
+{
+  "paper_id": "2507.16075",
+  "paper_title": "Deep Researcher with Test-Time Diffusion",
+  "cache_time": 1754309078.706385,
+  "result": {
+    "id": "2507.16075",
+    "title_en": "Deep Researcher with Test-Time Diffusion",
+    "title_zh": "基于测试时扩散的深度研究代理",
+    "url": "https://arxiv.org/abs/2507.16075",
+    "authors": "Rujun Han, Yanfei Chen, Zoey CuiZhu, Lesly Miculicich, Guan Sun, Yuanjun Bi, Weiming Wen, Hui Wan, Chunfeng Wen, Solène Maître, George Lee, Vishy Tirumalashetty, Emily Xue, Zizhao Zhang, Salem Haykal, Burak Gokturk, Tomas Pfister, Chen-Yu Lee",
+    "publish_date": "2025-07-21",
+    "summary_en": "Deep research agents, powered by Large Language Models (LLMs), are rapidly\nadvancing; yet, their performance often plateaus when generating complex,\nlong-form research reports using generic test-time scaling algorithms. Drawing\ninspiration from the iterative nature of human research, which involves cycles\nof searching, reasoning, and revision, we propose the Test-Time Diffusion Deep\nResearcher (TTD-DR). This novel framework conceptualizes research report\ngeneration as a diffusion process. TTD-DR initiates this process with a\npreliminary draft, an updatable skeleton that serves as an evolving foundation\nto guide the research direction. The draft is then iteratively refined through\na \"denoising\" process, which is dynamically informed by a retrieval mechanism\nthat incorporates external information at each step. The core process is\nfurther enhanced by a self-evolutionary algorithm applied to each component of\nthe agentic workflow, ensuring the generation of high-quality context for the\ndiffusion process. This draft-centric design makes the report writing process\nmore timely and coherent while reducing information loss during the iterative\nsearch process. We demonstrate that our TTD-DR achieves state-of-the-art\nresults on a wide array of benchmarks that require intensive search and\nmulti-hop reasoning, significantly outperforming existing deep research agents.",
+    "summary_zh": "由大型语言模型(LLM)驱动的深度研究代理正在快速发展；然而，当使用通用的测试时扩展算法生成复杂的长篇研究报告时，它们的性能往往会达到瓶颈。受人类研究迭代性质的启发，人类研究涉及搜索、推理和修订的循环，我们提出了测试时扩散深度研究代理(TTD-DR)。这个新框架将研究报告的生成概念化为一个扩散过程。TTD-DR通过初步草稿启动这一过程，这是一个可更新的骨架，作为不断发展的基础来指导研究方向。然后，草稿通过一个\"去噪\"过程进行迭代细化，该过程由一个检索机制动态提供信息，该机制在每个步骤都融入外部信息。核心过程通过应用于代理工作流每个组件的自进化算法得到进一步增强，确保为扩散过程生成高质量上下文。这种以草稿为中心的设计使报告写作过程更加及时和连贯，同时减少了迭代搜索过程中的信息损失。我们证明了我们的TTD-DR在需要密集搜索和多跳推理的各种基准测试上取得了最先进的结果，显著优于现有的深度研究代理。",
+    "github_repo": "https://github.com/codelion/optillm/tree/main/optillm/plugins/deep_research",
+    "project_page": "暂无",
+    "model_function": "通过测试时扩散框架生成高质量研究报告，结合检索机制和自进化算法提升研究代理性能。",
+    "analysis_time": "2025-08-04T20:04:38.706384"
+  }
+}

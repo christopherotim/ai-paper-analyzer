@@ -1,0 +1,19 @@
+{
+  "paper_id": "2507.19804",
+  "paper_title": "ForCenNet: Foreground-Centric Network for Document Image Rectification",
+  "cache_time": 1754308513.8458726,
+  "result": {
+    "id": "2507.19804",
+    "title_en": "ForCenNet: Foreground-Centric Network for Document Image Rectification",
+    "title_zh": "ForCenNet: 前景中心网络用于文档图像校正",
+    "url": "https://arxiv.org/abs/2507.19804",
+    "authors": "Peng Cai, Qiang Li, Kaicheng Yang, Dong Guo, Jia Li, Nan Zhou, Xiang An, Ninghua Yang, Jiankang Deng",
+    "publish_date": "2025-07-26",
+    "summary_en": "Document image rectification aims to eliminate geometric deformation in\nphotographed documents to facilitate text recognition. However, existing\nmethods often neglect the significance of foreground elements, which provide\nessential geometric references and layout information for document image\ncorrection. In this paper, we introduce Foreground-Centric Network (ForCenNet)\nto eliminate geometric distortions in document images. Specifically, we\ninitially propose a foreground-centric label generation method, which extracts\ndetailed foreground elements from an undistorted image. Then we introduce a\nforeground-centric mask mechanism to enhance the distinction between readable\nand background regions. Furthermore, we design a curvature consistency loss to\nleverage the detailed foreground labels to help the model understand the\ndistorted geometric distribution. Extensive experiments demonstrate that\nForCenNet achieves new state-of-the-art on four real-world benchmarks, such as\nDocUNet, DIR300, WarpDoc, and DocReal. Quantitative analysis shows that the\nproposed method effectively undistorts layout elements, such as text lines and\ntable borders. The resources for further comparison are provided at\nhttps://github.com/caipeng328/ForCenNet.",
+    "summary_zh": "文档图像校正旨在消除拍摄文档中的几何变形，以便于文本识别。然而，现有方法常常忽略前景元素的重要性，这些元素为文档图像校正提供了必要的几何参考和布局信息。在本文中，我们引入了前景中心网络(ForCenNet)来消除文档图像中的几何失真。具体而言，我们首先提出了一种前景中心标签生成方法，该方法从未失真图像中提取详细的前景元素。然后，我们引入了一种前景中心掩码机制，以增强可读区域和背景区域之间的区分度。此外，我们设计了一种曲率一致性损失，利用详细的前景标签来帮助模型理解失真的几何分布。大量实验表明，ForCenNet在DocUNet、DIR300、WarpDoc和DocReal四个真实世界基准测试上取得了新的最先进性能。定量分析表明，所提出的方法能够有效校正布局元素，如文本行和表格边框。进一步比较的资源可在https://github.com/caipeng328/ForCenNet获取。",
+    "github_repo": "https://github.com/caipeng328/ForCenNet",
+    "project_page": "暂无",
+    "model_function": "ForCenNet是一个专注于前景元素的文档图像校正网络，通过提取前景参考信息消除文档图像中的几何变形，提升文本识别效果。",
+    "analysis_time": "2025-08-04T19:55:13.845872"
+  }
+}

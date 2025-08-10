@@ -1,0 +1,19 @@
+{
+  "paper_id": "2507.18742",
+  "paper_title": "Specification Self-Correction: Mitigating In-Context Reward Hacking   Through Test-Time Refinement",
+  "cache_time": 1754309100.569066,
+  "result": {
+    "id": "2507.18742",
+    "title_en": "Specification Self-Correction: Mitigating In-Context Reward Hacking   Through Test-Time Refinement",
+    "title_zh": "规范自我纠正：通过测试时优化减轻上下文奖励黑客攻击",
+    "url": "https://arxiv.org/abs/2507.18742",
+    "authors": "Víctor Gallego",
+    "publish_date": "2025-07-24",
+    "summary_en": "Language models (LMs) are susceptible to in-context reward hacking, where\nthey exploit flaws in tainted or faulty written specifications or rubrics to\nachieve high scores without fulfilling the user's true intent. We introduce\nSpecification Self-Correction (SSC), a novel, test-time framework that enables\nan LM to identify and correct flaws within its own guiding specification. SSC\nemploys a multi-step inference process where the model first generates a\nresponse based on a potentially tainted specification, critiques its output,\nand then revises the specification itself to remove the exploitable loophole. A\nfinal, more robust response is then generated using this self-corrected\nspecification. Across experiments spanning creative writing and agentic coding\ntasks with several LMs, we demonstrate that while models initially game tainted\nspecifications in 50-70\\% of cases, the SSC process reduces this vulnerability\nby over 90\\%. This dynamic repair occurs at inference time, requires no weight\nmodification, and leads to more robustly aligned model behavior. Code at\nhttps://github.com/vicgalle/specification-self-correction .",
+    "summary_zh": "语言模型(LMs)容易受到上下文奖励黑客攻击的威胁，其中模型利用被污染或有缺陷的书面规范或评分标准中的漏洞，在不满足用户真实意图的情况下获得高分。我们引入规范自我纠正(SSC)，这是一种新颖的测试时框架，使语言模型能够识别并纠正其自身指导规范中的缺陷。SSC采用多步推理过程，模型首先根据可能被污染的规范生成响应，然后对其输出进行批判，接着修改规范本身以消除可利用的漏洞。然后，使用这种自我纠正后的规范生成最终更稳健的响应。在涵盖创意写作和代理编码任务的多个语言模型的实验中，我们证明虽然模型最初在50-70%的情况下利用被污染的规范进行欺骗，但SSC过程将这种脆弱性降低了90%以上。这种动态修复发生在推理时，不需要修改权重，并导致更稳健对齐的模型行为。代码可在 https://github.com/vicgalle/specification-self-correction 获取。",
+    "github_repo": "https://github.com/vicgalle/specification-self-correction",
+    "project_page": "暂无",
+    "model_function": "规范自我纠正框架，使模型在推理时识别并纠正自身规范缺陷，减轻奖励黑客攻击，提高模型稳健性。",
+    "analysis_time": "2025-08-04T20:05:00.569065"
+  }
+}

@@ -76,7 +76,7 @@ class BatchProcessor:
         summary_file = analysis_dir / "模型分类汇总.md"
         return summary_file.exists()
     
-    def run_daily(self, date, skip_existing=True):
+    def run_daily(self, date, skip_existing=True, rage_mode=False):
         """运行daily处理"""
         if skip_existing and self.check_daily_completed(date):
             print(f"⏭️  跳过已完成的daily: {date}")
@@ -85,6 +85,8 @@ class BatchProcessor:
         
         try:
             cmd = [sys.executable, "run.py", "basic", date]
+            if rage_mode:
+                cmd.append("--rageMode")
             print(f"🔄 执行命令: {' '.join(cmd)}")
 
             # 正常执行，不设置超时限制
@@ -118,7 +120,7 @@ class BatchProcessor:
             self.failed_dates.append(date)
             return False
     
-    def run_advanced(self, date, skip_existing=True):
+    def run_advanced(self, date, skip_existing=True, rage_mode=False):
         """运行advanced处理"""
         # 检查前置条件
         if not self.check_daily_completed(date):
@@ -133,6 +135,8 @@ class BatchProcessor:
         
         try:
             cmd = [sys.executable, "run.py", "advanced", date]
+            if rage_mode:
+                cmd.append("--rageMode")
             print(f"🔄 执行命令: {' '.join(cmd)}")
 
             # 正常执行，不设置超时限制
@@ -168,12 +172,14 @@ class BatchProcessor:
             self.failed_dates.append(date)
             return False
     
-    def batch_daily(self, dates, skip_existing=True):
+    def batch_daily(self, dates, skip_existing=True, rage_mode=False):
         """批量daily处理"""
         print(f"🎯 开始批量Daily处理")
         print(f"📅 日期范围: {len(dates)} 个日期")
         print(f"📋 日期列表: {dates}")
         print(f"⚙️  跳过已完成: {'是' if skip_existing else '否'}")
+        if rage_mode:
+            print(f"🔥 狂暴模式: 已启用 (5并发AI分析)")
 
         import time
         start_time = time.time()
@@ -184,7 +190,7 @@ class BatchProcessor:
             print(f"{'='*60}")
 
             date_start = time.time()
-            success = self.run_daily(date, skip_existing)
+            success = self.run_daily(date, skip_existing, rage_mode)
             date_end = time.time()
 
             if success:
@@ -200,12 +206,14 @@ class BatchProcessor:
         print(f"\n⏱️  总耗时: {total_time/60:.1f}分钟")
         self.print_summary("Daily")
     
-    def batch_advanced(self, dates, skip_existing=True):
+    def batch_advanced(self, dates, skip_existing=True, rage_mode=False):
         """批量advanced处理"""
         print(f"🎯 开始批量Advanced处理")
         print(f"📅 日期范围: {len(dates)} 个日期")
         print(f"📋 日期列表: {dates}")
         print(f"⚙️  跳过已完成: {'是' if skip_existing else '否'}")
+        if rage_mode:
+            print(f"🔥 狂暴模式: 已启用 (5并发智能分类)")
 
         import time
         start_time = time.time()
@@ -216,7 +224,7 @@ class BatchProcessor:
             print(f"{'='*60}")
 
             date_start = time.time()
-            success = self.run_advanced(date, skip_existing)
+            success = self.run_advanced(date, skip_existing, rage_mode)
             date_end = time.time()
 
             if success:
@@ -232,11 +240,13 @@ class BatchProcessor:
         print(f"\n⏱️  总耗时: {total_time/60:.1f}分钟")
         self.print_summary("Advanced")
     
-    def batch_pipeline(self, dates, skip_existing=True):
+    def batch_pipeline(self, dates, skip_existing=True, rage_mode=False):
         """批量流水线处理（Daily + Advanced）"""
         print(f"🎯 开始批量流水线处理")
         print(f"📅 日期范围: {len(dates)} 个日期")
         print(f"📋 日期列表: {dates}")
+        if rage_mode:
+            print(f"🔥 狂暴模式: 已启用 (Daily和Advanced都将使用5并发)")
         
         for i, date in enumerate(dates, 1):
             print(f"\n{'='*60}")
@@ -245,12 +255,12 @@ class BatchProcessor:
             
             # 先执行Daily
             print(f"🔄 步骤1: Daily处理")
-            daily_success = self.run_daily(date, skip_existing)
+            daily_success = self.run_daily(date, skip_existing, rage_mode)
             
             if daily_success:
                 # 再执行Advanced
                 print(f"🔄 步骤2: Advanced处理")
-                self.run_advanced(date, skip_existing)
+                self.run_advanced(date, skip_existing, rage_mode)
             else:
                 print(f"❌ Daily失败，跳过Advanced处理")
         
@@ -344,6 +354,7 @@ def main():
     daily_parser.add_argument('--start', required=True, help='开始日期 (YYYY-MM-DD格式)')
     daily_parser.add_argument('--end', required=True, help='结束日期 (YYYY-MM-DD格式)')
     daily_parser.add_argument('--force', action='store_true', help='强制重新处理已完成的日期')
+    daily_parser.add_argument('--rageMode', action='store_true', help='🔥 狂暴模式：启用5并发AI分析，处理速度提升5倍')
 
     # Advanced子命令
     advanced_parser = subparsers.add_parser(
@@ -356,6 +367,7 @@ def main():
     advanced_group.add_argument('--start', help='开始日期 (YYYY-MM-DD格式)')
     advanced_parser.add_argument('--end', help='结束日期 (YYYY-MM-DD格式，与--start配合使用)')
     advanced_parser.add_argument('--force', action='store_true', help='强制重新处理已完成的日期')
+    advanced_parser.add_argument('--rageMode', action='store_true', help='🔥 狂暴模式：启用5并发智能分类，处理速度提升5倍')
 
     # Pipeline子命令
     pipeline_parser = subparsers.add_parser(
@@ -366,6 +378,7 @@ def main():
     pipeline_parser.add_argument('--start', required=True, help='开始日期 (YYYY-MM-DD格式)')
     pipeline_parser.add_argument('--end', required=True, help='结束日期 (YYYY-MM-DD格式)')
     pipeline_parser.add_argument('--force', action='store_true', help='强制重新处理已完成的日期')
+    pipeline_parser.add_argument('--rageMode', action='store_true', help='🔥 狂暴模式：启用5并发处理，同时加速Daily和Advanced')
     
     args = parser.parse_args()
     
@@ -378,7 +391,7 @@ def main():
     if args.command == 'daily':
         dates = processor.generate_date_range(args.start, args.end)
         if dates:
-            processor.batch_daily(dates, skip_existing=not args.force)
+            processor.batch_daily(dates, skip_existing=not args.force, rage_mode=args.rageMode)
     
     elif args.command == 'advanced':
         if args.auto:
@@ -394,12 +407,12 @@ def main():
             dates = processor.generate_date_range(args.start, args.end)
         
         if dates:
-            processor.batch_advanced(dates, skip_existing=not args.force)
+            processor.batch_advanced(dates, skip_existing=not args.force, rage_mode=args.rageMode)
     
     elif args.command == 'pipeline':
         dates = processor.generate_date_range(args.start, args.end)
         if dates:
-            processor.batch_pipeline(dates, skip_existing=not args.force)
+            processor.batch_pipeline(dates, skip_existing=not args.force, rage_mode=args.rageMode)
 
 if __name__ == '__main__':
     main()

@@ -1,0 +1,19 @@
+{
+  "paper_id": "2507.17596",
+  "paper_title": "PRIX: Learning to Plan from Raw Pixels for End-to-End Autonomous Driving",
+  "cache_time": 1754309088.0052912,
+  "result": {
+    "id": "2507.17596",
+    "title_en": "PRIX: Learning to Plan from Raw Pixels for End-to-End Autonomous Driving",
+    "title_zh": "PRIX：从原始像素学习规划以实现端到端自动驾驶",
+    "url": "https://arxiv.org/abs/2507.17596",
+    "authors": "Maciej K. Wozniak, Lianhang Liu, Yixi Cai, Patric Jensfelt",
+    "publish_date": "2025-07-23",
+    "summary_en": "While end-to-end autonomous driving models show promising results, their\npractical deployment is often hindered by large model sizes, a reliance on\nexpensive LiDAR sensors and computationally intensive BEV feature\nrepresentations. This limits their scalability, especially for mass-market\nvehicles equipped only with cameras. To address these challenges, we propose\nPRIX (Plan from Raw Pixels). Our novel and efficient end-to-end driving\narchitecture operates using only camera data, without explicit BEV\nrepresentation and forgoing the need for LiDAR. PRIX leverages a visual feature\nextractor coupled with a generative planning head to predict safe trajectories\nfrom raw pixel inputs directly. A core component of our architecture is the\nContext-aware Recalibration Transformer (CaRT), a novel module designed to\neffectively enhance multi-level visual features for more robust planning. We\ndemonstrate through comprehensive experiments that PRIX achieves\nstate-of-the-art performance on the NavSim and nuScenes benchmarks, matching\nthe capabilities of larger, multimodal diffusion planners while being\nsignificantly more efficient in terms of inference speed and model size, making\nit a practical solution for real-world deployment. Our work is open-source and\nthe code will be at https://maxiuw.github.io/prix.",
+    "summary_zh": "尽管端到端自动驾驶模型显示出 promising 的结果，但它们的实际部署常常受到大型模型尺寸、对昂贵LiDAR传感器的依赖以及计算密集型BEV特征表示的阻碍。这限制了它们的可扩展性，特别是对于仅配备摄像头的量产车辆。为应对这些挑战，我们提出了PRIX（从原始像素规划）。我们新颖且高效的端到端驾驶架构仅使用摄像头数据运行，没有显式的BEV表示，也不需要LiDAR。PRIX利用视觉特征提取器与生成式规划头相结合，直接从原始像素输入预测安全轨迹。我们架构的核心组件是上下文感知重校准Transformer（CaRT），这是一个新颖的模块，旨在有效增强多级视觉特征以实现更稳健的规划。我们通过全面实验证明，PRIX在NavSim和nuScenes基准测试上达到了最先进的性能，匹配了更大的多模态扩散规划器的能力，同时在推理速度和模型大小方面显著更高效，使其成为实际部署的实用解决方案。我们的工作是开源的，代码将在https://maxiuw.github.io/prix上提供。",
+    "github_repo": "暂无",
+    "project_page": "暂无",
+    "model_function": "仅使用摄像头数据的端到端自动驾驶规划架构，直接从原始像素预测安全轨迹，实现高效实用的自动驾驶解决方案。",
+    "analysis_time": "2025-08-04T20:04:48.005291"
+  }
+}

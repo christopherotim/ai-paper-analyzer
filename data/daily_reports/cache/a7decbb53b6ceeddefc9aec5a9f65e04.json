@@ -1,0 +1,19 @@
+{
+  "paper_id": "2507.17957",
+  "paper_title": "AFRDA: Attentive Feature Refinement for Domain Adaptive Semantic   Segmentation",
+  "cache_time": 1754309098.3402336,
+  "result": {
+    "id": "2507.17957",
+    "title_en": "AFRDA: Attentive Feature Refinement for Domain Adaptive Semantic   Segmentation",
+    "title_zh": "AFRDA：用于领域自适应语义分割的注意力特征精炼",
+    "url": "https://arxiv.org/abs/2507.17957",
+    "authors": "Md. Al-Masrur Khan, Durgakant Pushp, Lantao Liu",
+    "publish_date": "2025-07-23",
+    "summary_en": "In Unsupervised Domain Adaptive Semantic Segmentation (UDA-SS), a model is\ntrained on labeled source domain data (e.g., synthetic images) and adapted to\nan unlabeled target domain (e.g., real-world images) without access to target\nannotations. Existing UDA-SS methods often struggle to balance fine-grained\nlocal details with global contextual information, leading to segmentation\nerrors in complex regions. To address this, we introduce the Adaptive Feature\nRefinement (AFR) module, which enhances segmentation accuracy by refining\nhighresolution features using semantic priors from low-resolution logits. AFR\nalso integrates high-frequency components, which capture fine-grained\nstructures and provide crucial boundary information, improving object\ndelineation. Additionally, AFR adaptively balances local and global information\nthrough uncertaintydriven attention, reducing misclassifications. Its\nlightweight design allows seamless integration into HRDA-based UDA methods,\nleading to state-of-the-art segmentation performance. Our approach improves\nexisting UDA-SS methods by 1.05% mIoU on GTA V --> Cityscapes and 1.04% mIoU on\nSynthia-->Cityscapes. The implementation of our framework is available at:\nhttps://github.com/Masrur02/AFRDA",
+    "summary_zh": "在无监督领域自适应语义分割(UDA-SS)中，模型在有标签的源域数据(例如合成图像)上进行训练，并在没有目标域标注的情况下适应无标签的目标域(例如真实世界图像)。现有的UDA-SS方法往往难以平衡细粒度的局部细节和全局上下文信息，导致复杂区域出现分割错误。为解决这一问题，我们引入了自适应特征精炼(AFR)模块，该模块通过利用低分辨率logits的语义先验来精炼高分辨率特征，从而提高分割准确性。AFR还集成了高频分量，这些分量能够捕获细粒度结构并提供重要的边界信息，改善对象轮廓划分。此外，AFR通过不确定性驱动的注意力机制自适应地平衡局部和全局信息，减少错误分类。其轻量级设计允许无缝集成到基于HRDA的UDA方法中，实现最先进的分割性能。我们的方法在GTA V --> Cityscapes上将现有的UDA-SS方法提高了1.05% mIoU，在Synthia-->Cityscapes上提高了1.04% mIoU。我们框架的实现可在以下网址获取：https://github.com/Masrur02/AFRDA",
+    "github_repo": "https://github.com/Masrur02/AFRDA",
+    "project_page": "暂无",
+    "model_function": "通过注意力特征精炼模块提升领域自适应语义分割性能，平衡局部细节与全局信息，改善复杂区域的分割准确性。",
+    "analysis_time": "2025-08-04T20:04:58.340233"
+  }
+}

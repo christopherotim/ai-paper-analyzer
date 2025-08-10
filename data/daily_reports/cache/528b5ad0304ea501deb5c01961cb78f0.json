@@ -1,0 +1,19 @@
+{
+  "paper_id": "2507.20673",
+  "paper_title": "Geometric-Mean Policy Optimization",
+  "cache_time": 1754308499.4201698,
+  "result": {
+    "id": "2507.20673",
+    "title_en": "Geometric-Mean Policy Optimization",
+    "title_zh": "几何平均策略优化",
+    "url": "https://arxiv.org/abs/2507.20673",
+    "authors": "Yuzhong Zhao, Yue Liu, Junpeng Liu, Jingye Chen, Xun Wu, Yaru Hao, Tengchao Lv, Shaohan Huang, Lei Cui, Qixiang Ye, Fang Wan, Furu Wei",
+    "publish_date": "2025-07-28",
+    "summary_en": "Recent advancements, such as Group Relative Policy Optimization (GRPO), have\nenhanced the reasoning capabilities of large language models by optimizing the\narithmetic mean of token-level rewards. However, GRPO suffers from unstable\npolicy updates when processing tokens with outlier importance-weighted rewards,\nwhich manifests as extreme importance sampling ratios during training, i.e.,\nthe ratio between the sampling probabilities assigned to a token by the current\nand old policies. In this work, we propose Geometric-Mean Policy Optimization\n(GMPO), a stabilized variant of GRPO. Instead of optimizing the arithmetic\nmean, GMPO maximizes the geometric mean of token-level rewards, which is\ninherently less sensitive to outliers and maintains a more stable range of\nimportance sampling ratio. In addition, we provide comprehensive theoretical\nand experimental analysis to justify the design and stability benefits of GMPO.\nBeyond improved stability, GMPO-7B outperforms GRPO by an average of 4.1% on\nmultiple mathematical benchmarks and 1.4% on multimodal reasoning benchmark,\nincluding AIME24, AMC, MATH500, OlympiadBench, Minerva, and Geometry3K. Code is\navailable at https://github.com/callsys/GMPO.",
+    "summary_zh": "最近的进展，如组相对策略优化（GRPO），通过优化标记级奖励的算术平均值，增强了大型语言模型的推理能力。然而，GRPO在处理具有异常值重要性加权奖励的标记时，会遇到不稳定的策略更新问题，这表现为训练期间极端的重要性采样比率，即当前策略和旧策略分配给标记的采样概率之间的比率。在这项工作中，我们提出了几何平均策略优化（GMPO），这是GRPO的一个稳定变体。GMPO不是优化算术平均值，而是最大化标记级奖励的几何平均值，这本质上对异常值不那么敏感，并保持更稳定的重要性采样比率范围。此外，我们提供了全面的理论和实验分析，以证明GMPO的设计和稳定性优势。除了提高稳定性外，GMPO-7B在多个数学基准测试上的平均表现比GRPO高出4.1%，在多模态推理基准测试上高出1.4%，包括AIME24、AMC、MATH500、OlympiadBench、Minerva和Geometry3K。代码可在https://github.com/callsys/GMPO获取。",
+    "github_repo": "https://github.com/callsys/GMPO",
+    "project_page": "暂无",
+    "model_function": "基于几何平均的奖励优化，提升语言模型推理能力与稳定性",
+    "analysis_time": "2025-08-04T19:54:59.420169"
+  }
+}

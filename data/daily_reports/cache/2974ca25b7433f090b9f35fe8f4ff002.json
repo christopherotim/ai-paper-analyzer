@@ -1,0 +1,19 @@
+{
+  "paper_id": "2507.20198",
+  "paper_title": "When Tokens Talk Too Much: A Survey of Multimodal Long-Context Token   Compression across Images, Videos, and Audios",
+  "cache_time": 1754309077.427211,
+  "result": {
+    "id": "2507.20198",
+    "title_en": "When Tokens Talk Too Much: A Survey of Multimodal Long-Context Token   Compression across Images, Videos, and Audios",
+    "title_zh": "当token过多说话时：跨图像、视频和音频的多模态长上下文token压缩综述",
+    "url": "https://arxiv.org/abs/2507.20198",
+    "authors": "Kele Shao, Keda Tao, Kejia Zhang, Sicheng Feng, Mu Cai, Yuzhang Shang, Haoxuan You, Can Qin, Yang Sui, Huan Wang",
+    "publish_date": "2025-07-27",
+    "summary_en": "Multimodal large language models (MLLMs) have made remarkable strides,\nlargely driven by their ability to process increasingly long and complex\ncontexts, such as high-resolution images, extended video sequences, and lengthy\naudio input. While this ability significantly enhances MLLM capabilities, it\nintroduces substantial computational challenges, primarily due to the quadratic\ncomplexity of self-attention mechanisms with numerous input tokens. To mitigate\nthese bottlenecks, token compression has emerged as an auspicious and critical\napproach, efficiently reducing the number of tokens during both training and\ninference. In this paper, we present the first systematic survey and synthesis\nof the burgeoning field of multimodal long context token compression.\nRecognizing that effective compression strategies are deeply tied to the unique\ncharacteristics and redundancies of each modality, we categorize existing\napproaches by their primary data focus, enabling researchers to quickly access\nand learn methods tailored to their specific area of interest: (1)\nimage-centric compression, which addresses spatial redundancy in visual data;\n(2) video-centric compression, which tackles spatio-temporal redundancy in\ndynamic sequences; and (3) audio-centric compression, which handles temporal\nand spectral redundancy in acoustic signals. Beyond this modality-driven\ncategorization, we further dissect methods based on their underlying\nmechanisms, including transformation-based, similarity-based, attention-based,\nand query-based approaches. By providing a comprehensive and structured\noverview, this survey aims to consolidate current progress, identify key\nchallenges, and inspire future research directions in this rapidly evolving\ndomain. We also maintain a public repository to continuously track and update\nthe latest advances in this promising area.",
+    "summary_zh": "多模态大型语言模型(MLLMs)取得了显著进展，这主要得益于它们处理越来越长和复杂上下文的能力，例如高分辨率图像、扩展的视频序列和长时间的音频输入。虽然这种能力显著增强了MLLM的能力，但它也带来了重大的计算挑战，主要由于自注意力机制与大量输入token之间的二次方复杂性。为了缓解这些瓶颈，token压缩已成为一种有前景且关键的方法，有效地减少了训练和推理过程中的token数量。在本文中，我们提出了对新兴的多模态长上下文token压缩领域的首次系统性综述和综合。认识到有效的压缩策略与每种模态的独特特征和冗余性密切相关，我们根据其主要数据焦点对现有方法进行分类，使研究人员能够快速访问和学习适合其特定兴趣领域的方法：(1)以图像为中心的压缩，解决视觉数据中的空间冗余；(2)以视频为中心的压缩，处理动态序列中的时空冗余；(3)以音频为中心的压缩，处理声学信号中的时间和频谱冗余。除了这种模态驱动的分类外，我们还进一步基于其底层机制对方法进行剖析，包括基于变换的、基于相似度的、基于注意力的和基于查询的方法。通过提供全面和结构化的概述，本综述旨在巩固当前进展，确定关键挑战，并激发这个快速发展的领域中未来研究方向。我们还维护了一个公共仓库，以持续跟踪和更新这个有前景领域的最新进展。",
+    "github_repo": "https://github.com/cokeshao/Awesome-Multimodal-Token-Compression",
+    "project_page": "https://github.com/cokeshao/Awesome-Multimodal-Token-Compression",
+    "model_function": "综述多模态长上下文token压缩方法，分类图像、视频和音频的压缩技术，为研究人员提供系统性参考",
+    "analysis_time": "2025-08-04T20:04:37.427211"
+  }
+}
