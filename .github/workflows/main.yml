@@ -34,16 +34,13 @@ jobs:
       - name: 4. Activate environment and run main script
         id: run_script
         shell: cmd
-        run: |
-          call .\启动环境.bat
-          python run_pipeline.py --rageMode
+        # 这里也使用 && 串联，是更安全的做法
+        run: call .\启动环境.bat && python run_pipeline.py --rageMode
       
       # 发送邮件通知的步骤 (最终修正版)
       - name: 5. Send email notification
         if: always()
         shell: cmd
         # --- 这是唯一的、关键的改动 ---
-        # 我们必须在这一步中，也先激活虚拟环境
-        run: |
-          call .\启动环境.bat
-          python send_email.py ${{ job.status }}
+        # 使用 && 将两个命令串联成一个单行命令
+        run: call .\启动环境.bat && python send_email.py ${{ job.status }}
