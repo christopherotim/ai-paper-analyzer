@@ -12,6 +12,12 @@ jobs:
   run-daily-briefing:
     runs-on: windows-latest
 
+    # 设置默认的 shell 和工作目录，这是更稳妥的做法
+    defaults:
+      run:
+        shell: cmd
+        working-directory: ${{ github.workspace }}
+
     env:
       ZHIPUAI_API_KEY: ${{ secrets.ZHIPUAI_API_KEY }}
       SMTP_USER: ${{ secrets.SMTP_USER }}
@@ -27,22 +33,20 @@ jobs:
         with:
           python-version: '3.11.9'
 
+      # 这个步骤现在会继承 defaults 设置，自动在正确的目录下运行
       - name: Install dependencies via BAT file
-        shell: cmd
         run: .\安装环境.bat
 
+      # 这个步骤同样继承 defaults
       - name: Activate environment and run main script
         id: run_script
-        shell: cmd
         run: |
           call .\启动环境.bat
           python run_pipeline.py --rageMode
       
-      # 发送邮件通知的步骤 (已更新)
+      # 发送邮件通知的步骤 (已修正)
       - name: Send email notification
-        if: always() # 无论成功失败，总是执行
-        shell: cmd
+        if: always()
         run: |
           echo "Preparing to send email notification for job status: ${{ job.status }}"
-          # 以新的方式调用邮件脚本，只传递任务状态
           python send_email.py ${{ job.status }}
