@@ -1,4 +1,4 @@
-# send_email.py (新版本)
+# send_email.py - Email notification for GitHub Actions
 import os
 import sys
 import smtplib
@@ -8,134 +8,134 @@ from email.header import Header
 from datetime import datetime
 import json
 
-# --- 从环境变量中读取机密信息 ---
+# Read credentials from environment variables
 SMTP_USER = os.getenv("SMTP_USER")
 SMTP_PASSWORD = os.getenv("SMTP_PASSWORD")
 TO_EMAIL = os.getenv("TO_EMAIL")
 
-# --- 邮件服务器配置 (以QQ邮箱为例) ---
+# Email server configuration (QQ Mail example)
 SMTP_HOST = "smtp.qq.com"
 SMTP_PORT = 587
 
 def send_notification(job_status):
-    """根据任务状态发送邮件通知"""
-    print(f"📧 开始处理邮件通知，任务状态: {job_status}")
-    print(f"📂 当前工作目录: {os.getcwd()}")
+    """Send email notification based on job status"""
+    print(f"Starting email notification process, job status: {job_status}")
+    print(f"Current working directory: {os.getcwd()}")
     
     if not all([SMTP_USER, SMTP_PASSWORD, TO_EMAIL]):
-        print("❌ 错误：邮件发送所需的环境变量不完整")
-        print(f"   SMTP_USER: {'✅' if SMTP_USER else '❌'}")
-        print(f"   SMTP_PASSWORD: {'✅' if SMTP_PASSWORD else '❌'}")
-        print(f"   TO_EMAIL: {'✅' if TO_EMAIL else '❌'}")
+        print("ERROR: Missing required environment variables for email")
+        print(f"   SMTP_USER: {'OK' if SMTP_USER else 'MISSING'}")
+        print(f"   SMTP_PASSWORD: {'OK' if SMTP_PASSWORD else 'MISSING'}")
+        print(f"   TO_EMAIL: {'OK' if TO_EMAIL else 'MISSING'}")
         sys.exit(1)
     
-    print(f"✅ 环境变量检查通过")
+    print("Environment variables check passed")
 
     today_str = datetime.now().strftime('%Y-%m-%d')
     subject = ""
     body = ""
 
-    # 1. 根据任务状态，准备邮件主题和正文内容
+    # Prepare email subject and body based on job status
     if job_status.lower() == 'success':
-        subject = f"✅ 每日AI简报生成成功 - {today_str}"
+        subject = f"Daily AI Paper Briefing Success - {today_str}"
         
-        # 构造成功报告的文件路径
-        # 如: data/daily_reports/reports/2025-08-01_report.json
+        # Look for report file
         report_filename = f"{today_str}_report.json"
         report_filepath = os.path.join("data", "daily_reports", "reports", report_filename)
         
-        print(f"🔍 查找报告文件: {report_filepath}")
+        print(f"Looking for report file: {report_filepath}")
         
         if os.path.exists(report_filepath):
-            print(f"✅ 找到报告文件，正在读取...")
+            print("Report file found, reading...")
             try:
                 with open(report_filepath, 'r', encoding='utf-8') as f:
-                    # 读取JSON并格式化，使其在邮件中更易读
                     report_data = json.load(f)
-                    paper_count = len(report_data) if isinstance(report_data, list) else "未知"
-                    body = f"""你好，
+                    paper_count = len(report_data) if isinstance(report_data, list) else "unknown"
+                    body = f"""Hello,
 
-今日AI论文简报生成成功！
+Daily AI Paper Briefing generated successfully!
 
-📊 统计信息:
-• 分析日期: {today_str}
-• 论文数量: {paper_count}篇
-• 生成时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+Statistics:
+- Analysis Date: {today_str}
+- Paper Count: {paper_count}
+- Generated Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 
-📋 详细报告:
-<pre>{json.dumps(report_data, indent=2, ensure_ascii=False)}</pre>
+Detailed Report:
+{json.dumps(report_data, indent=2, ensure_ascii=False)}
 
 ---
-AI简报机器人 🤖"""
-                # 使用HTML格式发送，以便<pre>标签生效
-                email_format = 'html'
-                print(f"✅ 报告文件读取成功，论文数量: {paper_count}")
+AI Briefing Bot"""
+                email_format = 'plain'
+                print(f"Report file read successfully, paper count: {paper_count}")
             except Exception as e:
-                print(f"❌ 读取报告文件失败: {e}")
-                body = f"任务执行成功，但读取报告文件时出错：\n\n错误信息: {e}\n文件路径: {report_filepath}"
+                print(f"Failed to read report file: {e}")
+                body = f"Task completed successfully, but failed to read report file.\n\nError: {e}\nFile path: {report_filepath}"
                 email_format = 'plain'
         else:
-            print(f"⚠️ 未找到报告文件")
-            # 列出可能的文件，帮助调试
+            print("Report file not found")
+            # List existing files for debugging
             reports_dir = os.path.join("data", "daily_reports", "reports")
             if os.path.exists(reports_dir):
                 existing_files = os.listdir(reports_dir)
-                print(f"📁 reports目录中的文件: {existing_files}")
+                print(f"Files in reports directory: {existing_files}")
             else:
-                print(f"📁 reports目录不存在: {reports_dir}")
+                print(f"Reports directory does not exist: {reports_dir}")
             
-            body = f"""任务状态显示成功，但未找到预期的报告文件。
+            body = f"""Task status shows success, but expected report file not found.
 
-预期文件路径: {report_filepath}
-当前工作目录: {os.getcwd()}
+Expected file path: {report_filepath}
+Current working directory: {os.getcwd()}
 
-这可能是因为:
-1. 今天没有可分析的论文数据
-2. 文件生成路径与预期不符
-3. 任务执行过程中出现了问题
+This might be because:
+1. No paper data available for analysis today
+2. File generation path differs from expected
+3. Issues occurred during task execution
 
-请检查 GitHub Actions 的详细日志以确定具体原因。
+Please check GitHub Actions detailed logs for specific reasons.
 
 ---
-AI简报机器人 🤖"""
+AI Briefing Bot"""
             email_format = 'plain'
 
-    else: # 任务状态为 'failure'
-        subject = f"❌ 每日AI简报生成失败 - {today_str}"
-        body = (
-            "你好，\n\n"
-            "每日AI简报生成任务执行失败。\n"
-            "这可能是因为今天（例如周末）没有可供分析的数据，或者发生了其他错误。\n\n"
-            "请登录到 GitHub Actions 后台查看详细的运行日志以确定原因。"
-        )
+    else:  # Job status is 'failure'
+        subject = f"Daily AI Paper Briefing Failed - {today_str}"
+        body = """Hello,
+
+Daily AI Paper Briefing task execution failed.
+This might be because there's no data available for analysis today (e.g., weekends) or other errors occurred.
+
+Please check GitHub Actions backend for detailed execution logs to determine the cause.
+
+---
+AI Briefing Bot"""
         email_format = 'plain'
 
-    # 2. 构造邮件对象
+    # Create email message
     msg = MIMEMultipart()
-    msg['From'] = Header(f"AI简报机器人 <{SMTP_USER}>", 'utf-8')
+    msg['From'] = Header(f"AI Briefing Bot <{SMTP_USER}>", 'utf-8')
     msg['To'] = Header(TO_EMAIL, 'utf-8')
     msg['Subject'] = Header(subject, 'utf-8')
     msg.attach(MIMEText(body, email_format, 'utf-8'))
 
-    # 3. 发送邮件
+    # Send email
     try:
-        print(f"正在连接邮件服务器 {SMTP_HOST}:{SMTP_PORT}...")
+        print(f"Connecting to email server {SMTP_HOST}:{SMTP_PORT}...")
         server = smtplib.SMTP(SMTP_HOST, SMTP_PORT)
         server.starttls()
-        print("正在登录邮箱...")
+        print("Logging in...")
         server.login(SMTP_USER, SMTP_PASSWORD)
-        print("正在发送邮件...")
+        print("Sending email...")
         server.sendmail(SMTP_USER, [TO_EMAIL], msg.as_string())
         server.quit()
-        print(f"邮件已成功发送！主题: {subject}")
+        print(f"Email sent successfully! Subject: {subject}")
     except Exception as e:
-        print(f"邮件发送失败！错误: {e}")
+        print(f"Email sending failed! Error: {e}")
         sys.exit(1)
 
 if __name__ == "__main__":
-    # 这个脚本现在只接收一个参数：任务状态 ('success' 或 'failure')
+    # This script accepts one parameter: job status ('success' or 'failure')
     if len(sys.argv) != 2:
-        print("使用方法: python send_email.py <job_status>")
+        print("Usage: python send_email.py <job_status>")
         sys.exit(1)
     
     status = sys.argv[1]
